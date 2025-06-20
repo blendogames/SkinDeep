@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{D979D4E8-2213-3DCF-8C97-7B616036B780}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>base</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)\..\..\neo\solution\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">base.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">base</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)\..\..\neo\solution\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">base.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">base</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(ProjectDir)\..\..\neo\solution\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">base.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">base</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(ProjectDir)\..\..\neo\solution\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">base.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">base</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)/../../neo/game;$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4100;4127;4244;4245;4267;4714;4996;4068</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;GAME_DLL;_ALLOW_KEYWORD_MACROS;WINVER=0x0501;_WIN32_WINNT=0x0501;CMAKE_INTDIR="Debug";base_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;GAME_DLL;_ALLOW_KEYWORD_MACROS;WINVER=0x0501;_WIN32_WINNT=0x0501;CMAKE_INTDIR=\"Debug\";base_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions>%(AdditionalOptions)  /machine:x64</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;Debug\idlib.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>Debug</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>$(ProjectDir)/../../neo/solution/Debug/base.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(ProjectDir)/../../neo/solution/Debug/base.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)/../../neo/game;$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4100;4127;4244;4245;4267;4714;4996;4068</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <OmitFramePointers>true</OmitFramePointers>
+      <Optimization>Full</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;GAME_DLL;_ALLOW_KEYWORD_MACROS;WINVER=0x0501;_WIN32_WINNT=0x0501;CMAKE_INTDIR="Release";base_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;GAME_DLL;_ALLOW_KEYWORD_MACROS;WINVER=0x0501;_WIN32_WINNT=0x0501;CMAKE_INTDIR=\"Release\";base_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions>%(AdditionalOptions)  /machine:x64</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;Release\idlib.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>No</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>$(ProjectDir)/../../neo/solution/Release/base.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(ProjectDir)/../../neo/solution/Release/base.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)/../../neo/game;$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4100;4127;4244;4245;4267;4714;4996;4068</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <Optimization>Full</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;GAME_DLL;_ALLOW_KEYWORD_MACROS;WINVER=0x0501;_WIN32_WINNT=0x0501;CMAKE_INTDIR="MinSizeRel";base_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;GAME_DLL;_ALLOW_KEYWORD_MACROS;WINVER=0x0501;_WIN32_WINNT=0x0501;CMAKE_INTDIR=\"MinSizeRel\";base_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions>%(AdditionalOptions)  /machine:x64</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;MinSizeRel\idlib.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>No</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>$(ProjectDir)/../../neo/solution/MinSizeRel/base.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(ProjectDir)/../../neo/solution/MinSizeRel/base.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)/../../neo/game;$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4100;4127;4244;4245;4267;4714;4996;4068</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <OmitFramePointers>true</OmitFramePointers>
+      <Optimization>Full</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;GAME_DLL;_ALLOW_KEYWORD_MACROS;WINVER=0x0501;_WIN32_WINNT=0x0501;CMAKE_INTDIR="RelWithDebInfo";base_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;GAME_DLL;_ALLOW_KEYWORD_MACROS;WINVER=0x0501;_WIN32_WINNT=0x0501;CMAKE_INTDIR=\"RelWithDebInfo\";base_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions>%(AdditionalOptions)  /machine:x64</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;RelWithDebInfo\idlib.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>Debug</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>$(ProjectDir)/../../neo/solution/RelWithDebInfo/base.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(ProjectDir)/../../neo/solution/RelWithDebInfo/base.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\AF.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\AFEntity.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\Actor.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\Camera.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\Entity.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\BrittleFracture.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\Fx.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\GameEdit.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\Game_local.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\Game_network.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\Item.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\IK.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\Light.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\Misc.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\Mover.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\Moveable.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\MultiplayerGame.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\Player.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\PlayerIcon.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\PlayerView.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\Projectile.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\Pvs.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\SecurityCamera.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\SmokeParticles.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\Sound.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\Target.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\Trigger.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\Weapon.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\WorldSpawn.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\ai\AAS.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\ai\AAS_debug.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\ai\AAS_pathing.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\ai\AAS_routing.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\ai\AI.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\ai\AI_events.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\ai\AI_pathing.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\ai\AI_Vagary.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\gamesys\DebugGraph.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\gamesys\Class.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\gamesys\Event.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\gamesys\SaveGame.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\gamesys\SysCmds.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\gamesys\SysCvar.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\gamesys\TypeInfo.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\anim\Anim.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\anim\Anim_Blend.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\anim\Anim_Import.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\anim\Anim_Testmodel.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\script\Script_Compiler.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\script\Script_Interpreter.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\script\Script_Program.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\script\Script_Thread.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\physics\Clip.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\physics\Force.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\physics\Force_Constant.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\physics\Force_Drag.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\physics\Force_Field.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\physics\Force_Spring.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\physics\Physics.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\physics\Physics_AF.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\physics\Physics_Actor.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\physics\Physics_Base.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\physics\Physics_Monster.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\physics\Physics_Parametric.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\physics\Physics_Player.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\physics\Physics_RigidBody.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\physics\Physics_Static.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\physics\Physics_StaticMulti.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\game\physics\Push.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(ProjectDir)\..\..\neo\solution\ZERO_CHECK.vcxproj">
+      <Project>{63DD7E9A-D4C7-343D-856A-1167E132BD4E}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+    <ProjectReference Include="$(ProjectDir)\..\..\neo\solution\idlib.vcxproj">
+      <Project>{0F98DEB8-DB06-381E-AFC5-0AEBBD8813EF}</Project>
+      <Name>idlib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

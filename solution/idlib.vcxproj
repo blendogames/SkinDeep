@@ -1,0 +1,441 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="DebugAsan|x64">
+      <Configuration>DebugAsan</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DemoRelWithDebInfo|x64">
+      <Configuration>DemoRelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelEpicWithDebInfo|x64">
+      <Configuration>RelEpicWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{0F98DEB8-DB06-381E-AFC5-0AEBBD8813EF}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>idlib</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugAsan|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+    <EnableASAN>true</EnableASAN>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelEpicWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DemoRelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)\..\..\neo\solution\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='DebugAsan|x64'">$(ProjectDir)\..\..\neo\solution\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">idlib.dir\Debug\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='DebugAsan|x64'">idlib.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">idlib</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='DebugAsan|x64'">idlib</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='DebugAsan|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)\..\..\neo\solution\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">idlib.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">idlib</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(ProjectDir)\..\..\neo\solution\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">idlib.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">idlib</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(ProjectDir)\..\..\neo\solution\RelWithDebInfo\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelEpicWithDebInfo|x64'">$(ProjectDir)\..\..\neo\solution\RelWithDebInfo\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='DemoRelWithDebInfo|x64'">$(ProjectDir)\..\..\neo\solution\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">idlib.dir\RelWithDebInfo\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelEpicWithDebInfo|x64'">idlib.dir\RelWithDebInfo\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='DemoRelWithDebInfo|x64'">idlib.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">idlib</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelEpicWithDebInfo|x64'">idlib</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='DemoRelWithDebInfo|x64'">idlib</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelEpicWithDebInfo|x64'">.lib</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='DemoRelWithDebInfo|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>5054;5055;4100;4127;4244;4245;4267;4714;4996;4068;4458;4456;4305;4800;4457;4459;4750</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>__BLENDO_SIMD_INLINE__;__BLENDO_SIMD__;WIN32;_WINDOWS;_DEBUG;_ALLOW_KEYWORD_MACROS;WINVER=0x0501;_WIN32_WINNT=0x0501;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <AdditionalOptions>/wd4458  /wd4312 %(AdditionalOptions)</AdditionalOptions>
+      <UndefinePreprocessorDefinitions>
+      </UndefinePreprocessorDefinitions>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_ALLOW_KEYWORD_MACROS;WINVER=0x0501;_WIN32_WINNT=0x0501;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions)  /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugAsan|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>5054;5055;4100;4127;4244;4245;4267;4714;4996;4068;4458;4456;4305;4800;4457;4459;4750</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>__BLENDO_SIMD_INLINE__;__BLENDO_SIMD__;WIN32;_WINDOWS;_DEBUG;_ALLOW_KEYWORD_MACROS;WINVER=0x0501;_WIN32_WINNT=0x0501;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <AdditionalOptions>/wd4458  /wd4312 %(AdditionalOptions)</AdditionalOptions>
+      <UndefinePreprocessorDefinitions>
+      </UndefinePreprocessorDefinitions>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_ALLOW_KEYWORD_MACROS;WINVER=0x0501;_WIN32_WINNT=0x0501;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions)  /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>5054;5055;4100;4127;4244;4245;4267;4714;4996;4068;4458;4456;4305;4800;4457;4459;4750</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <OmitFramePointers>true</OmitFramePointers>
+      <Optimization>Full</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>__BLENDO_SIMD_INLINE__;__BLENDO_SIMD__;WIN32;_WINDOWS;_ALLOW_KEYWORD_MACROS;WINVER=0x0501;_WIN32_WINNT=0x0501;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_ALLOW_KEYWORD_MACROS;WINVER=0x0501;_WIN32_WINNT=0x0501;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions)  /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>5054;5055;4100;4127;4244;4245;4267;4714;4996;4068;4458;4456;4305;4800;4457;4459;4750</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <Optimization>Full</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>__BLENDO_SIMD_INLINE__;__BLENDO_SIMD__;WIN32;_WINDOWS;_ALLOW_KEYWORD_MACROS;WINVER=0x0501;_WIN32_WINNT=0x0501;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_ALLOW_KEYWORD_MACROS;WINVER=0x0501;_WIN32_WINNT=0x0501;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions)  /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>5054;5055;4100;4127;4244;4245;4267;4714;4996;4068;4458;4456;4305;4800;4457;4459;4750</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <OmitFramePointers>true</OmitFramePointers>
+      <Optimization>Full</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>__BLENDO_SIMD_INLINE__;__BLENDO_SIMD__;WIN32;_WINDOWS;_ALLOW_KEYWORD_MACROS;WINVER=0x0501;_WIN32_WINNT=0x0501;CMAKE_INTDIR="RelWithDebInfo";_RELWITHDEBINFO;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <UndefinePreprocessorDefinitions>
+      </UndefinePreprocessorDefinitions>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_ALLOW_KEYWORD_MACROS;WINVER=0x0501;_WIN32_WINNT=0x0501;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions)  /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelEpicWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>5054;5055;4100;4127;4244;4245;4267;4714;4996;4068;4458;4456;4305;4800;4457;4459;4750</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <OmitFramePointers>true</OmitFramePointers>
+      <Optimization>Full</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>__BLENDO_SIMD_INLINE__;__BLENDO_SIMD__;WIN32;_WINDOWS;_ALLOW_KEYWORD_MACROS;WINVER=0x0501;_WIN32_WINNT=0x0501;CMAKE_INTDIR="RelWithDebInfo";_RELWITHDEBINFO;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <UndefinePreprocessorDefinitions>
+      </UndefinePreprocessorDefinitions>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_ALLOW_KEYWORD_MACROS;WINVER=0x0501;_WIN32_WINNT=0x0501;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions)  /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DemoRelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>5054;5055;4100;4127;4244;4245;4267;4714;4996;4068;4458;4456;4305;4800;4457;4459;4750</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <OmitFramePointers>true</OmitFramePointers>
+      <Optimization>Full</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>__BLENDO_SIMD_INLINE__;__BLENDO_SIMD__;WIN32;_WINDOWS;_ALLOW_KEYWORD_MACROS;WINVER=0x0501;_WIN32_WINNT=0x0501;CMAKE_INTDIR="RelWithDebInfo";_RELWITHDEBINFO;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <UndefinePreprocessorDefinitions>
+      </UndefinePreprocessorDefinitions>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_ALLOW_KEYWORD_MACROS;WINVER=0x0501;_WIN32_WINNT=0x0501;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions)  /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\bv\Bounds.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\bv\Frustum.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\bv\Sphere.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\bv\Box.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\geometry\DrawVert.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\geometry\Winding2D.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\geometry\Surface_SweptSpline.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\geometry\Winding.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\geometry\Surface.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\geometry\Surface_Patch.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\geometry\TraceModel.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\geometry\JointTransform.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\hashing\CRC32.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\hashing\MD4.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\hashing\MD5.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\math\Angles.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\math\Lcp.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\math\Math.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\math\Matrix.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\math\Ode.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\math\Plane.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\math\Pluecker.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\math\Polynomial.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\math\Quat.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\math\Rotation.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\math\Simd.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\math\Simd_Generic.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\math\Simd_AltiVec.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\math\Simd_MMX.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\math\Simd_3DNow.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\math\Simd_SSE.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\math\Simd_SSE2.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\math\Simd_SSE3.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\math\Simd_Blendo.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\math\Vector.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\BitMsg.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\LangDict.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\Lexer.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\Lib.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\containers\HashIndex.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\Dict.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\Str.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\Parser.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\MapFile.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\CmdArgs.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\Token.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\Base64.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\Timer.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\idlib\Heap.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

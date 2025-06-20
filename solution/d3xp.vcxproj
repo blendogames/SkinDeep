@@ -1,0 +1,632 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{823BDA75-B4B8-31DC-B010-8EAA05A4A19D}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>d3xp</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\..\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">d3xp.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">base</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\..\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">d3xp.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">base</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">..\..\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">d3xp.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">base</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">..\..\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">d3xp.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">base</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\d3xp;$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4100;4127;4244;4245;4267;4714;4996;4068;4458;4456;4305;4800;4457;4459</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>__BLENDO_SIMD__WIN32;_WINDOWS;_DEBUG;GAME_DLL;_D3XP;CTF;_ALLOW_KEYWORD_MACROS;WINVER=0x0501;_WIN32_WINNT=0x0501;CMAKE_INTDIR="Debug";d3xp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <TreatSpecificWarningsAsErrors>4211;4238;4239;4715</TreatSpecificWarningsAsErrors>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <UndefinePreprocessorDefinitions>__BLENDO_SIMD_INLINE__;</UndefinePreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;GAME_DLL;_D3XP;CTF;_ALLOW_KEYWORD_MACROS;WINVER=0x0501;_WIN32_WINNT=0x0501;CMAKE_INTDIR=\"Debug\";d3xp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions>%(AdditionalOptions)  /machine:x64</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;Debug\idlib.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>Debug</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>$(ProjectDir)\..\..\neo\solution/Debug/d3xp.lib</ImportLibrary>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\d3xp;$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4100;4127;4244;4245;4267;4714;4996;4068;4458;4456;4305;4800;4457;4459;4702;4750;</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <OmitFramePointers>true</OmitFramePointers>
+      <Optimization>Full</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>__BLENDO_SIMD_INLINE__;__BLENDO_SIMD__;WIN32;_WINDOWS;GAME_DLL;_D3XP;CTF;_ALLOW_KEYWORD_MACROS;WINVER=0x0501;_WIN32_WINNT=0x0501;CMAKE_INTDIR="Release";d3xp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <TreatSpecificWarningsAsErrors>4211;4238;4239;4715</TreatSpecificWarningsAsErrors>
+      <TreatWarningAsError>true</TreatWarningAsError>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;GAME_DLL;_D3XP;CTF;_ALLOW_KEYWORD_MACROS;WINVER=0x0501;_WIN32_WINNT=0x0501;CMAKE_INTDIR=\"Release\";d3xp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions>%(AdditionalOptions)  /machine:x64</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;Release\idlib.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>No</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>$(ProjectDir)\..\..\neo\solution/Release/d3xp.lib</ImportLibrary>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\d3xp;$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4100;4127;4244;4245;4267;4714;4996;4068;4458;4456;4305;4800;4457;4459;4702;4750;</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <Optimization>Full</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>__BLENDO_SIMD_INLINE__;__BLENDO_SIMD__;WIN32;_WINDOWS;GAME_DLL;_D3XP;CTF;_ALLOW_KEYWORD_MACROS;WINVER=0x0501;_WIN32_WINNT=0x0501;CMAKE_INTDIR="MinSizeRel";d3xp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <TreatSpecificWarningsAsErrors>4211;4238;4239;4715</TreatSpecificWarningsAsErrors>
+      <TreatWarningAsError>true</TreatWarningAsError>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;GAME_DLL;_D3XP;CTF;_ALLOW_KEYWORD_MACROS;WINVER=0x0501;_WIN32_WINNT=0x0501;CMAKE_INTDIR=\"MinSizeRel\";d3xp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions>%(AdditionalOptions)  /machine:x64</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;MinSizeRel\idlib.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>No</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>$(ProjectDir)\..\..\neo\solution/MinSizeRel/d3xp.lib</ImportLibrary>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\d3xp;$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4100;4127;4244;4245;4267;4714;4996;4068;4458;4456;4305;4800;4457;4459;4702;4750;</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <OmitFramePointers>true</OmitFramePointers>
+      <Optimization>Full</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>__BLENDO_SIMD_INLINE__;__BLENDO_SIMD__;WIN32;_WINDOWS;GAME_DLL;_D3XP;CTF;_ALLOW_KEYWORD_MACROS;WINVER=0x0501;_WIN32_WINNT=0x0501;CMAKE_INTDIR="RelWithDebInfo";d3xp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <TreatSpecificWarningsAsErrors>4211;4238;4239;4715</TreatSpecificWarningsAsErrors>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <UndefinePreprocessorDefinitions>
+      </UndefinePreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;GAME_DLL;_D3XP;CTF;_ALLOW_KEYWORD_MACROS;WINVER=0x0501;_WIN32_WINNT=0x0501;CMAKE_INTDIR=\"RelWithDebInfo\";d3xp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\neo\solution\dependencies\include;$(ProjectDir)\..\..\neo\solution\dependencies\ogg;$(ProjectDir)\..\..\neo\solution\dependencies\include\sdl2;$(ProjectDir)\..\..\neo\solution;$(ProjectDir)\..\..\neo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions>%(AdditionalOptions)  /machine:x64</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;RelWithDebInfo\idlib.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>Debug</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>$(ProjectDir)\..\..\neo\solution/RelWithDebInfo/d3xp.lib</ImportLibrary>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\d3xp\bc_actoricon.cpp" />
+    <ClCompile Include="..\d3xp\bc_acropoint.cpp" />
+    <ClCompile Include="..\d3xp\bc_airlock.cpp" />
+    <ClCompile Include="..\d3xp\bc_airlock_accumulator.cpp" />
+    <ClCompile Include="..\d3xp\bc_aloe.cpp" />
+    <ClCompile Include="..\d3xp\bc_asteroid.cpp" />
+    <ClCompile Include="..\d3xp\bc_baffler.cpp" />
+    <ClCompile Include="..\d3xp\bc_bananapeel.cpp" />
+    <ClCompile Include="..\d3xp\bc_beaconlogic.cpp" />
+    <ClCompile Include="..\d3xp\bc_bloodbag.cpp" />
+    <ClCompile Include="..\d3xp\bc_bossmonster.cpp" />
+    <ClCompile Include="..\d3xp\bc_bossspawnpoint.cpp" />
+    <ClCompile Include="..\d3xp\bc_camerasplice.cpp" />
+    <ClCompile Include="..\d3xp\bc_carepackage.cpp" />
+    <ClCompile Include="..\d3xp\bc_cargohide.cpp" />
+    <ClCompile Include="..\d3xp\bc_cat.cpp" />
+    <ClCompile Include="..\d3xp\bc_catcage.cpp" />
+    <ClCompile Include="..\d3xp\bc_chembomb.cpp" />
+    <ClCompile Include="..\d3xp\bc_cryointerior.cpp" />
+    <ClCompile Include="..\d3xp\bc_cryospawn.cpp" />
+    <ClCompile Include="..\d3xp\bc_damagejet.cpp" />
+    <ClCompile Include="..\d3xp\bc_diagnosticbox.cpp" />
+    <ClCompile Include="..\d3xp\bc_doorbarricade.cpp" />
+    <ClCompile Include="..\d3xp\bc_dozerbot.cpp" />
+    <ClCompile Include="..\d3xp\bc_dozerhatch.cpp" />
+    <ClCompile Include="..\d3xp\bc_drinkingfountain.cpp" />
+    <ClCompile Include="..\d3xp\bc_duper.cpp" />
+    <ClCompile Include="..\d3xp\bc_dynatip.cpp" />
+    <ClCompile Include="..\d3xp\bc_electricalbox.cpp" />
+    <ClCompile Include="..\d3xp\bc_elevatorcable.cpp" />
+    <ClCompile Include="..\d3xp\bc_elevatorcable_space.cpp" />
+    <ClCompile Include="..\d3xp\bc_empgrenade.cpp" />
+    <ClCompile Include="..\d3xp\bc_enemyspawnpoint.cpp" />
+    <ClCompile Include="..\d3xp\bc_engineer.cpp" />
+    <ClCompile Include="..\d3xp\bc_envirospawner.cpp" />
+    <ClCompile Include="..\d3xp\bc_escapepod.cpp" />
+    <ClCompile Include="..\d3xp\bc_exteriorstrut.cpp" />
+    <ClCompile Include="..\d3xp\bc_fireattachment.cpp" />
+    <ClCompile Include="..\d3xp\bc_fireball.cpp" />
+    <ClCompile Include="..\d3xp\bc_flyingbarrel.cpp" />
+    <ClCompile Include="..\d3xp\bc_foldingchair.cpp" />
+    <ClCompile Include="..\d3xp\bc_food.cpp" />
+    <ClCompile Include="..\d3xp\bc_frobcube.cpp" />
+    <ClCompile Include="..\d3xp\bc_ftl.cpp" />
+    <ClCompile Include="..\d3xp\bc_glasspiece.cpp" />
+    <ClCompile Include="..\d3xp\bc_grabring.cpp" />
+    <ClCompile Include="..\d3xp\bc_gunner.cpp" />
+    <ClCompile Include="..\d3xp\bc_hackgrenade.cpp" />
+    <ClCompile Include="..\d3xp\bc_handdryer.cpp" />
+    <ClCompile Include="..\d3xp\bc_handsanitizer.cpp" />
+    <ClCompile Include="..\d3xp\bc_hazardpipe.cpp" />
+    <ClCompile Include="..\d3xp\bc_healthstation.cpp" />
+    <ClCompile Include="..\d3xp\bc_idletask.cpp" />
+    <ClCompile Include="..\d3xp\bc_infomap.cpp" />
+    <ClCompile Include="..\d3xp\bc_infoscreen.cpp" />
+    <ClCompile Include="..\d3xp\bc_infostation.cpp" />
+    <ClCompile Include="..\d3xp\bc_interestpoint.cpp" />
+    <ClCompile Include="..\d3xp\bc_itembox.cpp" />
+    <ClCompile Include="..\d3xp\bc_jockeybreakable.cpp" />
+    <ClCompile Include="..\d3xp\bc_key.cpp" />
+    <ClCompile Include="..\d3xp\bc_keypad.cpp" />
+    <ClCompile Include="..\d3xp\bc_landmine.cpp" />
+    <ClCompile Include="..\d3xp\bc_lever.cpp" />
+    <ClCompile Include="..\d3xp\bc_librarian.cpp" />
+    <ClCompile Include="..\d3xp\bc_lifeboat.cpp" />
+    <ClCompile Include="..\d3xp\bc_lifeboat_catpod.cpp" />
+    <ClCompile Include="..\d3xp\bc_lighter.cpp" />
+    <ClCompile Include="..\d3xp\bc_lostandfound.cpp" />
+    <ClCompile Include="..\d3xp\bc_lostandfound_monitor.cpp" />
+    <ClCompile Include="..\d3xp\bc_maintpanel.cpp" />
+    <ClCompile Include="..\d3xp\bc_manifeststation.cpp" />
+    <ClCompile Include="..\d3xp\bc_mech.cpp" />
+    <ClCompile Include="..\d3xp\bc_meta.cpp" />
+    <ClCompile Include="..\d3xp\bc_mushroom.cpp" />
+    <ClCompile Include="..\d3xp\bc_notewall.cpp" />
+    <ClCompile Include="..\d3xp\bc_nudgepoint.cpp" />
+    <ClCompile Include="..\d3xp\bc_oxygenbubble.cpp" />
+    <ClCompile Include="..\d3xp\bc_oxygenstation.cpp" />
+    <ClCompile Include="..\d3xp\bc_pa_control.cpp" />
+    <ClCompile Include="..\d3xp\bc_pepperbag.cpp" />
+    <ClCompile Include="..\d3xp\bc_pirateship.cpp" />
+    <ClCompile Include="..\d3xp\bc_radio.cpp" />
+    <ClCompile Include="..\d3xp\bc_radiocheckin.cpp" />
+    <ClCompile Include="..\d3xp\bc_radiowall.cpp" />
+    <ClCompile Include="..\d3xp\bc_refinery.cpp" />
+    <ClCompile Include="..\d3xp\bc_repairbot.cpp" />
+    <ClCompile Include="..\d3xp\bc_repairpatrol.cpp" />
+    <ClCompile Include="..\d3xp\bc_sabotagelever.cpp" />
+    <ClCompile Include="..\d3xp\bc_sabotagepoint.cpp" />
+    <ClCompile Include="..\d3xp\bc_sabotageshutdown.cpp" />
+    <ClCompile Include="..\d3xp\bc_searchnode.cpp" />
+    <ClCompile Include="..\d3xp\bc_securitystation.cpp" />
+    <ClCompile Include="..\d3xp\bc_seekerball.cpp" />
+    <ClCompile Include="..\d3xp\bc_seekergrenade.cpp" />
+    <ClCompile Include="..\d3xp\bc_shower.cpp" />
+    <ClCompile Include="..\d3xp\bc_signalkit.cpp" />
+    <ClCompile Include="..\d3xp\bc_sink.cpp" />
+    <ClCompile Include="..\d3xp\bc_skullsaver.cpp" />
+    <ClCompile Include="..\d3xp\bc_smokegrenade.cpp" />
+    <ClCompile Include="..\d3xp\bc_soap.cpp" />
+    <ClCompile Include="..\d3xp\bc_sonar.cpp" />
+    <ClCompile Include="..\d3xp\bc_spearbot.cpp" />
+    <ClCompile Include="..\d3xp\bc_spearprojectile.cpp" />
+    <ClCompile Include="..\d3xp\bc_supplystation.cpp" />
+    <ClCompile Include="..\d3xp\bc_tablet.cpp" />
+    <ClCompile Include="..\d3xp\bc_teleportpuck.cpp" />
+    <ClCompile Include="..\d3xp\bc_tnt.cpp" />
+    <ClCompile Include="..\d3xp\bc_toilet.cpp" />
+    <ClCompile Include="..\d3xp\bc_trashairlock.cpp" />
+    <ClCompile Include="..\d3xp\bc_trashchute.cpp" />
+    <ClCompile Include="..\d3xp\bc_trashcube.cpp" />
+    <ClCompile Include="..\d3xp\bc_trashcuber.cpp" />
+    <ClCompile Include="..\d3xp\bc_trashexit.cpp" />
+    <ClCompile Include="..\d3xp\bc_trashfish.cpp" />
+    <ClCompile Include="..\d3xp\bc_trashfish_hive.cpp" />
+    <ClCompile Include="..\d3xp\bc_trigger_confinedarea.cpp" />
+    <ClCompile Include="..\d3xp\bc_trigger_deodorant.cpp" />
+    <ClCompile Include="..\d3xp\bc_trigger_gascloud.cpp" />
+    <ClCompile Include="..\d3xp\bc_trigger_healcloud.cpp" />
+    <ClCompile Include="..\d3xp\bc_trigger_sneeze.cpp" />
+    <ClCompile Include="..\d3xp\bc_turret.cpp" />
+    <ClCompile Include="..\d3xp\bc_tutorialstation.cpp" />
+    <ClCompile Include="..\d3xp\bc_upgradecargo.cpp" />
+    <ClCompile Include="..\d3xp\bc_vacuumspline.cpp" />
+    <ClCompile Include="..\d3xp\bc_vendingmachine.cpp" />
+    <ClCompile Include="..\d3xp\bc_ventdoor.cpp" />
+    <ClCompile Include="..\d3xp\bc_ventpeek.cpp" />
+    <ClCompile Include="..\d3xp\bc_vomanager.cpp" />
+    <ClCompile Include="..\d3xp\bc_walkietalkie.cpp" />
+    <ClCompile Include="..\d3xp\bc_wallitem.cpp" />
+    <ClCompile Include="..\d3xp\bc_wallspeaker.cpp" />
+    <ClCompile Include="..\d3xp\bc_windowseal.cpp" />
+    <ClCompile Include="..\d3xp\bc_windowshutter.cpp" />
+    <ClCompile Include="..\d3xp\bc_wiregrenade.cpp" />
+    <ClCompile Include="..\d3xp\sw_skycontroller.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\AF.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\AFEntity.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\Actor.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\Camera.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\Entity.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\BrittleFracture.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\Fx.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\GameEdit.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\Game_local.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\Game_network.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\Item.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\IK.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\Light.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\Misc.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\Mover.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\Moveable.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\MultiplayerGame.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\Player.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\PlayerIcon.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\PlayerView.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\Projectile.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\Pvs.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\SecurityCamera.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\SmokeParticles.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\Sound.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\Target.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\Trigger.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\Weapon.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\WorldSpawn.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\ai\AAS.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\ai\AAS_debug.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\ai\AAS_pathing.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\ai\AAS_routing.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\ai\AI.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\ai\AI_events.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\ai\AI_pathing.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\ai\AI_Vagary.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\gamesys\DebugGraph.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\gamesys\Class.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\gamesys\Event.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\gamesys\SaveGame.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\gamesys\SysCmds.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\gamesys\SysCvar.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\gamesys\TypeInfo.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\anim\Anim.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\anim\Anim_Blend.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\anim\Anim_Import.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\anim\Anim_Testmodel.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\script\Script_Compiler.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\script\Script_Interpreter.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\script\Script_Program.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\script\Script_Thread.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\physics\Clip.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\physics\Force.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\physics\Force_Constant.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\physics\Force_Drag.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\physics\Force_Field.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\physics\Force_Spring.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\physics\Physics.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\physics\Physics_AF.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\physics\Physics_Actor.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\physics\Physics_Base.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\physics\Physics_Monster.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\physics\Physics_Parametric.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\physics\Physics_Player.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\physics\Physics_RigidBody.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\physics\Physics_Static.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\physics\Physics_StaticMulti.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\physics\Push.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\Grabber.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\..\neo\d3xp\physics\Force_Grab.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(ProjectDir)\..\..\neo\solution\idlib.vcxproj">
+      <Project>{0F98DEB8-DB06-381E-AFC5-0AEBBD8813EF}</Project>
+      <Name>idlib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\d3xp\bc_actoricon.h" />
+    <ClInclude Include="..\d3xp\bc_acropoint.h" />
+    <ClInclude Include="..\d3xp\bc_airlock.h" />
+    <ClInclude Include="..\d3xp\bc_airlock_accumulator.h" />
+    <ClInclude Include="..\d3xp\bc_aloe.h" />
+    <ClInclude Include="..\d3xp\bc_asteroid.h" />
+    <ClInclude Include="..\d3xp\bc_baffler.h" />
+    <ClInclude Include="..\d3xp\bc_bananapeel.h" />
+    <ClInclude Include="..\d3xp\bc_beaconlogic.h" />
+    <ClInclude Include="..\d3xp\bc_bloodbag.h" />
+    <ClInclude Include="..\d3xp\bc_bossmonster.h" />
+    <ClInclude Include="..\d3xp\bc_bossspawnpoint.h" />
+    <ClInclude Include="..\d3xp\bc_camerasplice.h" />
+    <ClInclude Include="..\d3xp\bc_carepackage.h" />
+    <ClInclude Include="..\d3xp\bc_cargohide.h" />
+    <ClInclude Include="..\d3xp\bc_cat.h" />
+    <ClInclude Include="..\d3xp\bc_catcage.h" />
+    <ClInclude Include="..\d3xp\bc_chembomb.h" />
+    <ClInclude Include="..\d3xp\bc_cryointerior.h" />
+    <ClInclude Include="..\d3xp\bc_cryospawn.h" />
+    <ClInclude Include="..\d3xp\bc_damagejet.h" />
+    <ClInclude Include="..\d3xp\bc_diagnosticbox.h" />
+    <ClInclude Include="..\d3xp\bc_doorbarricade.h" />
+    <ClInclude Include="..\d3xp\bc_dozerhatch.h" />
+    <ClInclude Include="..\d3xp\bc_drinkingfountain.h" />
+    <ClInclude Include="..\d3xp\bc_duper.h" />
+    <ClInclude Include="..\d3xp\bc_dynatip.h" />
+    <ClInclude Include="..\d3xp\bc_electricalbox.h" />
+    <ClInclude Include="..\d3xp\bc_elevatorcable.h" />
+    <ClInclude Include="..\d3xp\bc_elevatorcable_space.h" />
+    <ClInclude Include="..\d3xp\bc_empgrenade.h" />
+    <ClInclude Include="..\d3xp\bc_enemyspawnpoint.h" />
+    <ClInclude Include="..\d3xp\bc_engineer.h" />
+    <ClInclude Include="..\d3xp\bc_envirospawner.h" />
+    <ClInclude Include="..\d3xp\bc_escapepod.h" />
+    <ClInclude Include="..\d3xp\bc_exteriorstrut.h" />
+    <ClInclude Include="..\d3xp\bc_fireattachment.h" />
+    <ClInclude Include="..\d3xp\bc_fireball.h" />
+    <ClInclude Include="..\d3xp\bc_flyingbarrel.h" />
+    <ClInclude Include="..\d3xp\bc_foldingchair.h" />
+    <ClInclude Include="..\d3xp\bc_food.h" />
+    <ClInclude Include="..\d3xp\bc_frobcube.h" />
+    <ClInclude Include="..\d3xp\bc_ftl.h" />
+    <ClInclude Include="..\d3xp\bc_glasspiece.h" />
+    <ClInclude Include="..\d3xp\bc_grabring.h" />
+    <ClInclude Include="..\d3xp\bc_gunner.h" />
+    <ClInclude Include="..\d3xp\bc_hackgrenade.h" />
+    <ClInclude Include="..\d3xp\bc_handdryer.h" />
+    <ClInclude Include="..\d3xp\bc_handsanitizer.h" />
+    <ClInclude Include="..\d3xp\bc_hazardpipe.h" />
+    <ClInclude Include="..\d3xp\bc_healthstation.h" />
+    <ClInclude Include="..\d3xp\bc_idletask.h" />
+    <ClInclude Include="..\d3xp\bc_infomap.h" />
+    <ClInclude Include="..\d3xp\bc_infoscreen.h" />
+    <ClInclude Include="..\d3xp\bc_infostation.h" />
+    <ClInclude Include="..\d3xp\bc_interestpoint.h" />
+    <ClInclude Include="..\d3xp\bc_itembox.h" />
+    <ClInclude Include="..\d3xp\bc_jockeybreakable.h" />
+    <ClInclude Include="..\d3xp\bc_key.h" />
+    <ClInclude Include="..\d3xp\bc_keypad.h" />
+    <ClInclude Include="..\d3xp\bc_landmine.h" />
+    <ClInclude Include="..\d3xp\bc_lever.h" />
+    <ClInclude Include="..\d3xp\bc_librarian.h" />
+    <ClInclude Include="..\d3xp\bc_lifeboat.h" />
+    <ClInclude Include="..\d3xp\bc_lifeboat_catpod.h" />
+    <ClInclude Include="..\d3xp\bc_lighter.h" />
+    <ClInclude Include="..\d3xp\bc_lostandfound.h" />
+    <ClInclude Include="..\d3xp\bc_lostandfound_monitor.h" />
+    <ClInclude Include="..\d3xp\bc_maintpanel.h" />
+    <ClInclude Include="..\d3xp\bc_manifeststation.h" />
+    <ClInclude Include="..\d3xp\bc_mech.h" />
+    <ClInclude Include="..\d3xp\bc_meta.h" />
+    <ClInclude Include="..\d3xp\bc_mushroom.h" />
+    <ClInclude Include="..\d3xp\bc_notewall.h" />
+    <ClInclude Include="..\d3xp\bc_nudgepoint.h" />
+    <ClInclude Include="..\d3xp\bc_oxygenbubble.h" />
+    <ClInclude Include="..\d3xp\bc_oxygenstation.h" />
+    <ClInclude Include="..\d3xp\bc_pa_control.h" />
+    <ClInclude Include="..\d3xp\bc_pepperbag.h" />
+    <ClInclude Include="..\d3xp\bc_pirateship.h" />
+    <ClInclude Include="..\d3xp\bc_radio.h" />
+    <ClInclude Include="..\d3xp\bc_radiocheckin.h" />
+    <ClInclude Include="..\d3xp\bc_radiowall.h" />
+    <ClInclude Include="..\d3xp\bc_refinery.h" />
+    <ClInclude Include="..\d3xp\bc_repairpatrol.h" />
+    <ClInclude Include="..\d3xp\bc_sabotagelever.h" />
+    <ClInclude Include="..\d3xp\bc_sabotagepoint.h" />
+    <ClInclude Include="..\d3xp\bc_sabotageshutdown.h" />
+    <ClInclude Include="..\d3xp\bc_searchnode.h" />
+    <ClInclude Include="..\d3xp\bc_securitystation.h" />
+    <ClInclude Include="..\d3xp\bc_seekerball.h" />
+    <ClInclude Include="..\d3xp\bc_seekergrenade.h" />
+    <ClInclude Include="..\d3xp\bc_shower.h" />
+    <ClInclude Include="..\d3xp\bc_signalkit.h" />
+    <ClInclude Include="..\d3xp\bc_sink.h" />
+    <ClInclude Include="..\d3xp\bc_skullsaver.h" />
+    <ClInclude Include="..\d3xp\bc_smokegrenade.h" />
+    <ClInclude Include="..\d3xp\bc_soap.h" />
+    <ClInclude Include="..\d3xp\bc_sonar.h" />
+    <ClInclude Include="..\d3xp\bc_spearbot.h" />
+    <ClInclude Include="..\d3xp\bc_spearprojectile.h" />
+    <ClInclude Include="..\d3xp\bc_supplystation.h" />
+    <ClInclude Include="..\d3xp\bc_tablet.h" />
+    <ClInclude Include="..\d3xp\bc_teleportpuck.h" />
+    <ClInclude Include="..\d3xp\bc_tnt.h" />
+    <ClInclude Include="..\d3xp\bc_toilet.h" />
+    <ClInclude Include="..\d3xp\bc_trashairlock.h" />
+    <ClInclude Include="..\d3xp\bc_trashchute.h" />
+    <ClInclude Include="..\d3xp\bc_trashcube.h" />
+    <ClInclude Include="..\d3xp\bc_trashcuber.h" />
+    <ClInclude Include="..\d3xp\bc_trashexit.h" />
+    <ClInclude Include="..\d3xp\bc_trashfish.h" />
+    <ClInclude Include="..\d3xp\bc_trashfish_hive.h" />
+    <ClInclude Include="..\d3xp\bc_trigger_confinedarea.h" />
+    <ClInclude Include="..\d3xp\bc_trigger_deodorant.h" />
+    <ClInclude Include="..\d3xp\bc_trigger_gascloud.h" />
+    <ClInclude Include="..\d3xp\bc_trigger_healcloud.h" />
+    <ClInclude Include="..\d3xp\bc_trigger_sneeze.h" />
+    <ClInclude Include="..\d3xp\bc_turret.h" />
+    <ClInclude Include="..\d3xp\bc_tutorialstation.h" />
+    <ClInclude Include="..\d3xp\bc_upgradecargo.h" />
+    <ClInclude Include="..\d3xp\bc_vacuumspline.h" />
+    <ClInclude Include="..\d3xp\bc_vendingmachine.h" />
+    <ClInclude Include="..\d3xp\bc_ventdoor.h" />
+    <ClInclude Include="..\d3xp\bc_ventpeek.h" />
+    <ClInclude Include="..\d3xp\bc_vomanager.h" />
+    <ClInclude Include="..\d3xp\bc_walkietalkie.h" />
+    <ClInclude Include="..\d3xp\bc_wallitem.h" />
+    <ClInclude Include="..\d3xp\bc_wallspeaker.h" />
+    <ClInclude Include="..\d3xp\bc_windowseal.h" />
+    <ClInclude Include="..\d3xp\bc_windowshutter.h" />
+    <ClInclude Include="..\d3xp\bc_wiregrenade.h" />
+    <ClInclude Include="..\d3xp\sw_skycontroller.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="skindeep.natvis" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
