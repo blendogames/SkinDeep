@@ -1745,7 +1745,8 @@ idModList *idFileSystemLocal::ListMods( void ) {
 
 	idModList	*list = new idModList;
 
-	const char	*search[ 4 ];
+	const int	NUM_SEARCH_PATHS = 3;
+	const char	*search[ NUM_SEARCH_PATHS ];
 	int			isearch;
 
 	search[0] = fs_savepath.GetString();
@@ -1755,7 +1756,7 @@ idModList *idFileSystemLocal::ListMods( void ) {
 	// (prevents double-listing of mods when a workshop one is loaded)
 	// search[3] = fs_cdpath.GetString();
 
-	for ( isearch = 0; isearch < 4; isearch++ ) {
+	for ( isearch = 0; isearch < NUM_SEARCH_PATHS; isearch++ ) {
 
 		dirs.Clear();
 		pk4s.Clear();
@@ -1788,7 +1789,7 @@ idModList *idFileSystemLocal::ListMods( void ) {
 	// read the descriptions for each mod - search all paths
 	for ( i = 0; i < list->mods.Num(); i++ ) {
 
-		for ( isearch = 0; isearch < 4; isearch++ ) {
+		for ( isearch = 0; isearch < NUM_SEARCH_PATHS; isearch++ ) {
 
 			idStr descfile = BuildOSPath( search[ isearch ], list->mods[ i ], "description.txt" );
 			FILE *f = OpenOSFile( descfile, "r" );
@@ -1805,7 +1806,7 @@ idModList *idFileSystemLocal::ListMods( void ) {
 			}
 		}
 
-		if ( isearch == 4 ) {
+		if ( isearch == NUM_SEARCH_PATHS ) {
 			list->descriptions.Append( list->mods[ i ] );
 		}
 	}
