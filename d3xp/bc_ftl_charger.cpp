@@ -5,7 +5,7 @@
 #include "Fx.h"
 
 #include "Item.h"
-#include "player.h"
+#include "Player.h"
 #include "bc_frobcube.h"
 #include "bc_ftl_charger.h"
 

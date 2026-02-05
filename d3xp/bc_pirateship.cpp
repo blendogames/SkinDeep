@@ -4,7 +4,7 @@
 #include "Light.h"
 #include "Fx.h"
 #include "framework/DeclEntityDef.h"
-#include "player.h"
+#include "Player.h"
 
 #include "idlib/LangDict.h"
 #include "bc_airlock_accumulator.h"

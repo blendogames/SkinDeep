@@ -53,10 +53,10 @@ If you have questions concerning this license or the applicable additional terms
 #include "bc_ventpeek.h"
 #include "sw_skycontroller.h"
 
-#include "securitycamera.h"
+#include "SecurityCamera.h"
 #include "BrittleFracture.h"
 
-#include "misc.h"
+#include "Misc.h"
 
 #include "bc_infostation.h"
 #include "bc_trigger_deodorant.h"

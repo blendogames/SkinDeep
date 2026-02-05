@@ -6,7 +6,7 @@
 #include "Mover.h"
 #include "Fx.h"
 #include "bc_meta.h"
-#include "player.h"
+#include "Player.h"
 #include "idlib/LangDict.h"
 
 #include "bc_dozerhatch.h"

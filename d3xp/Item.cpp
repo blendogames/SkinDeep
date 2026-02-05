@@ -40,7 +40,7 @@ If you have questions concerning this license or the applicable additional terms
 #include "Misc.h"
 #include "framework/DeclEntityDef.h"
 
-#include "worldspawn.h"
+#include "WorldSpawn.h"
 
 #include "idlib/LangDict.h"
 #include "bc_catcage.h"

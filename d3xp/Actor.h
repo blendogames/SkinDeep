@@ -33,7 +33,7 @@ If you have questions concerning this license or the applicable additional terms
 #include "IK.h"
 #include "PlayerView.h"
 
-#include "trigger.h"
+#include "Trigger.h"
 
 
 

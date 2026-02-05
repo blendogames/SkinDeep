@@ -49,7 +49,7 @@ If you have questions concerning this license or the applicable additional terms
 #include "bc_maintpanel.h"
 #include "bc_tablet.h"
 #include "bc_notewall.h"
-#include "securitycamera.h"
+#include "SecurityCamera.h"
 #include "bc_catcage.h"
 #include "bc_glasspiece.h"
 #include "bc_meta.h"

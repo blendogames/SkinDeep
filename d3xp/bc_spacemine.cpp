@@ -1,7 +1,7 @@
 #include "framework/DeclEntityDef.h"
 
 #include "SmokeParticles.h"
-#include "fx.h"
+#include "Fx.h"
 #include "bc_spacemine.h"
 
 

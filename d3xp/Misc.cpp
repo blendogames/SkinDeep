@@ -43,7 +43,7 @@ Various utility objects and functions.
 #include "Moveable.h"
 #include "SmokeParticles.h"
 
-#include "fx.h"
+#include "Fx.h"
 #include "Misc.h"
 
 /*

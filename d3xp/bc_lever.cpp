@@ -1,7 +1,7 @@
 #include "script/Script_Thread.h"
 
-#include "player.h"
-#include "ai\AI.h"
+#include "Player.h"
+#include "ai/AI.h"
 #include "bc_lever.h"
 
 const idEventDef EV_Button_Enable("enableButton", "d");

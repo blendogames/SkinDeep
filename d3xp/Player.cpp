@@ -229,7 +229,7 @@ If you have questions concerning this license or the applicable additional terms
 #include "bc_cryointerior.h"
 #include "bc_cryospawn.h"
 #include "bc_trashchute.h"
-#include "securitycamera.h"
+#include "SecurityCamera.h"
 #include "bc_electricalbox.h"
 #include "bc_skullsaver.h"
 #include "bc_interestpoint.h"

@@ -6,7 +6,7 @@
 #include "Player.h"
 #include "Fx.h"
 
-#include "ai\AI.h"
+#include "ai/AI.h"
 #include "bc_gunner.h"
 #include "bc_idletask.h"
 
