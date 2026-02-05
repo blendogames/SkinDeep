@@ -7797,8 +7797,8 @@ bool idGameLocal::DoOriginContainmentCheck(idEntity *ent)
 	{
 #ifdef _DEBUG
 		gameRenderWorld->DebugArrow(colorRed, ent->GetPhysics()->GetOrigin(), ent->GetPhysics()->GetAbsBounds().GetCenter(), 4, 60000);
-		gameRenderWorld->DrawTextA(va("%s", ent->GetName()), ent->GetPhysics()->GetAbsBounds().GetCenter() + idVec3(0, 0, 6), .12f, colorRed, mat3_default, 1, 60000);
-		gameRenderWorld->DrawTextA("origin is outside of brush.", ent->GetPhysics()->GetAbsBounds().GetCenter() + idVec3(0, 0, 2), .12f, colorRed, mat3_default, 1, 60000);
+		gameRenderWorld->DrawText(va("%s", ent->GetName()), ent->GetPhysics()->GetAbsBounds().GetCenter() + idVec3(0, 0, 6), .12f, colorRed, mat3_default, 1, 60000);
+		gameRenderWorld->DrawText("origin is outside of brush.", ent->GetPhysics()->GetAbsBounds().GetCenter() + idVec3(0, 0, 2), .12f, colorRed, mat3_default, 1, 60000);
 #endif
 		return false;
 	}

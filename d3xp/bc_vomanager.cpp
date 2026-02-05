@@ -63,7 +63,7 @@ int idVOManager::SayVO(idEntity *speaker, const char *soundname, int lineCategor
 				drawPos.x += gameLocal.random.RandomInt(-POS_RANDVARIANCE, POS_RANDVARIANCE);
 				drawPos.y += gameLocal.random.RandomInt(-POS_RANDVARIANCE, POS_RANDVARIANCE);
 				drawPos.z += gameLocal.random.RandomInt(-POS_RANDVARIANCE, POS_RANDVARIANCE);
-				gameRenderWorld->DrawTextA(soundname, drawPos, .2f, colorGreen, gameLocal.GetLocalPlayer()->viewAngles.ToMat3(), 1, 10000);
+				gameRenderWorld->DrawText(soundname, drawPos, .2f, colorGreen, gameLocal.GetLocalPlayer()->viewAngles.ToMat3(), 1, 10000);
 			}
 		}
 

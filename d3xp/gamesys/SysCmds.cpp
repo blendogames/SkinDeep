@@ -2871,7 +2871,7 @@ static void Cmd_ListEntitiesVisible_f(const idCmdArgs &args)
 
 
 		gameRenderWorld->DebugArrow(colorRed, gameLocal.GetLocalPlayer()->GetEyePosition(), check->GetPhysics()->GetOrigin(), 2, 60000);
-		gameRenderWorld->DrawTextA(check->name.c_str(), check->GetPhysics()->GetOrigin() + idVec3(0, 0, 4), .15f, colorRed, gameLocal.GetLocalPlayer()->viewAxis, 1, 60000);
+		gameRenderWorld->DrawText(check->name.c_str(), check->GetPhysics()->GetOrigin() + idVec3(0, 0, 4), .15f, colorRed, gameLocal.GetLocalPlayer()->viewAxis, 1, 60000);
 
 
 		count++;		
@@ -3085,8 +3085,8 @@ static void Cmd_EntityNumber_f(const idCmdArgs &args)
 	{
 		if (gameLocal.entities[tr.c.entityNum])
 		{
-			gameRenderWorld->DrawTextA(gameLocal.entities[tr.c.entityNum]->GetName(), gameLocal.entities[tr.c.entityNum]->GetPhysics()->GetAbsBounds().GetCenter() + idVec3(0,0,12), 0.3f, colorWhite, gameLocal.GetLocalPlayer()->viewAngles.ToMat3(), 1, 10000);
-			gameRenderWorld->DrawTextA(va("%d", tr.c.entityNum), gameLocal.entities[tr.c.entityNum]->GetPhysics()->GetAbsBounds().GetCenter() + idVec3(0,0,-12), 0.7f, colorWhite, gameLocal.GetLocalPlayer()->viewAngles.ToMat3(), 1, 10000);
+			gameRenderWorld->DrawText(gameLocal.entities[tr.c.entityNum]->GetName(), gameLocal.entities[tr.c.entityNum]->GetPhysics()->GetAbsBounds().GetCenter() + idVec3(0,0,12), 0.3f, colorWhite, gameLocal.GetLocalPlayer()->viewAngles.ToMat3(), 1, 10000);
+			gameRenderWorld->DrawText(va("%d", tr.c.entityNum), gameLocal.entities[tr.c.entityNum]->GetPhysics()->GetAbsBounds().GetCenter() + idVec3(0,0,-12), 0.7f, colorWhite, gameLocal.GetLocalPlayer()->viewAngles.ToMat3(), 1, 10000);
 
 			gameRenderWorld->DebugBounds(colorGreen, gameLocal.entities[tr.c.entityNum]->GetPhysics()->GetBounds(), gameLocal.entities[tr.c.entityNum]->GetPhysics()->GetOrigin(), 10000);
 			success = true;
@@ -3342,7 +3342,7 @@ void Cmd_LocateEntityViaName(const idCmdArgs& args)
 		idBounds entityBounds = check->GetPhysics()->GetAbsBounds();
 		gameRenderWorld->DebugBounds(colorGreen, entityBounds, vec3_origin, 500000);
 		idAngles drawAngle = gameLocal.GetLocalPlayer()->viewAngles;
-		gameRenderWorld->DrawTextA(check->name.c_str(), check->GetPhysics()->GetOrigin() + idVec3(0, 0, 60), 0.2f, colorGreen, drawAngle.ToMat3(), 1, 500000); //text string
+		gameRenderWorld->DrawText(check->name.c_str(), check->GetPhysics()->GetOrigin() + idVec3(0, 0, 60), 0.2f, colorGreen, drawAngle.ToMat3(), 1, 500000); //text string
 
 		common->Printf("%d. Found match: %s\n", counter+1, check->name.c_str());
 		counter++;
@@ -3353,7 +3353,7 @@ void Cmd_LocateEntityViaName(const idCmdArgs& args)
 		{
 			if (check->GetEntityDefName()[0] != '\0')
 			{
-				gameRenderWorld->DrawTextA(idStr::Format("entitydef: %s", check->GetEntityDefName()).c_str(), check->GetPhysics()->GetOrigin() + idVec3(0, 0, 60), 0.2f, colorGreen, drawAngle.ToMat3(), 1, 500000); //text string
+				gameRenderWorld->DrawText(idStr::Format("entitydef: %s", check->GetEntityDefName()).c_str(), check->GetPhysics()->GetOrigin() + idVec3(0, 0, 60), 0.2f, colorGreen, drawAngle.ToMat3(), 1, 500000); //text string
 			}
 		}
 
@@ -3361,14 +3361,14 @@ void Cmd_LocateEntityViaName(const idCmdArgs& args)
 		{
 			if (check->GetClassname()[0] != '\0')
 			{
-				gameRenderWorld->DrawTextA(idStr::Format("classname: %s", check->GetClassname()).c_str(), check->GetPhysics()->GetOrigin() + idVec3(0, 0, 50), 0.2f, colorGreen, drawAngle.ToMat3(), 1, 500000); //text string
+				gameRenderWorld->DrawText(idStr::Format("classname: %s", check->GetClassname()).c_str(), check->GetPhysics()->GetOrigin() + idVec3(0, 0, 50), 0.2f, colorGreen, drawAngle.ToMat3(), 1, 500000); //text string
 			}
 		}
 
 		idStr modelname = check->spawnArgs.GetString("model");
 		if (modelname.Length() > 0)
 		{			
-			gameRenderWorld->DrawTextA(idStr::Format("model: %s", modelname.c_str()), check->GetPhysics()->GetOrigin() + idVec3(0, 0, 40), 0.2f, colorGreen, drawAngle.ToMat3(), 1, 500000); //text string
+			gameRenderWorld->DrawText(idStr::Format("model: %s", modelname.c_str()), check->GetPhysics()->GetOrigin() + idVec3(0, 0, 40), 0.2f, colorGreen, drawAngle.ToMat3(), 1, 500000); //text string
 			
 		}
 
@@ -3471,7 +3471,7 @@ void Cmd_DebugFuseboxCodes_f(const idCmdArgs& args)
 			drawDir.yaw += 180;
 			drawDir.pitch = 0;
 
-			gameRenderWorld->DrawTextA(ent->spawnArgs.GetString("code"), ent->GetPhysics()->GetOrigin() + idVec3(0, 0, 4), .5f, colorGreen, drawDir.ToMat3(), 1, 9000000);
+			gameRenderWorld->DrawText(ent->spawnArgs.GetString("code"), ent->GetPhysics()->GetOrigin() + idVec3(0, 0, 4), .5f, colorGreen, drawDir.ToMat3(), 1, 9000000);
 		}
 	}
 
@@ -4002,7 +4002,7 @@ void TeleportToViaEntityNumber(int entityNumber)
 	idVec3 viewUp;
 	player->viewAngles.ToVectors(nullptr, nullptr, &viewUp);
 
-	gameRenderWorld->DrawTextA(noteEnt->locID.c_str(), noteEnt->GetPhysics()->GetOrigin() + viewUp * 8, 0.1f, colorGreen, gameLocal.GetLocalPlayer()->viewAngles.ToMat3(), 1, 2000);
+	gameRenderWorld->DrawText(noteEnt->locID.c_str(), noteEnt->GetPhysics()->GetOrigin() + viewUp * 8, 0.1f, colorGreen, gameLocal.GetLocalPlayer()->viewAngles.ToMat3(), 1, 2000);
 	gameRenderWorld->DebugBounds(colorGreen, idBounds(idVec3(-6, -6, -6), idVec3(6, 6, 6)), noteEnt->GetPhysics()->GetOrigin(), 2000);
 }
 
@@ -4047,7 +4047,7 @@ void TeleportToNote(int orderIndex)
 	player->viewAngles.ToVectors(nullptr, nullptr, &viewUp);
 
 	common->Printf("#%-2d: %s\n", gameLocal.lastDebugNoteIndex + 1, noteEnt->locID.c_str());
-	gameRenderWorld->DrawTextA(noteEnt->locID.c_str(), noteEnt->GetPhysics()->GetOrigin() + viewUp * 8, 0.1f, colorGreen, gameLocal.GetLocalPlayer()->viewAngles.ToMat3(), 1, 2000);
+	gameRenderWorld->DrawText(noteEnt->locID.c_str(), noteEnt->GetPhysics()->GetOrigin() + viewUp * 8, 0.1f, colorGreen, gameLocal.GetLocalPlayer()->viewAngles.ToMat3(), 1, 2000);
 	gameRenderWorld->DebugBounds(colorGreen, idBounds(idVec3(-6, -6, -6), idVec3(6, 6, 6)), noteEnt->GetPhysics()->GetOrigin(), 2000);
 }
 
@@ -4150,9 +4150,9 @@ void Cmd_DebugNotesLocate_f(const idCmdArgs& args)
 		idAngles drawAngle = gameLocal.GetLocalPlayer()->viewAngles;
 		drawAngle.pitch = 0;
 		drawAngle.roll = 0;
-		gameRenderWorld->DrawTextA(idStr::Format("#%d", count + 1).c_str(), ent->GetPhysics()->GetOrigin() + idVec3(0, 0, 90), 1.5f, colorGreen, drawAngle.ToMat3(), 1, 90000000); //number.
+		gameRenderWorld->DrawText(idStr::Format("#%d", count + 1).c_str(), ent->GetPhysics()->GetOrigin() + idVec3(0, 0, 90), 1.5f, colorGreen, drawAngle.ToMat3(), 1, 90000000); //number.
 
-		gameRenderWorld->DrawTextA(stringName.c_str(), ent->GetPhysics()->GetOrigin() + idVec3(0, 0, 65), 0.2f, colorGreen, drawAngle.ToMat3(), 1, 90000000); //text string
+		gameRenderWorld->DrawText(stringName.c_str(), ent->GetPhysics()->GetOrigin() + idVec3(0, 0, 65), 0.2f, colorGreen, drawAngle.ToMat3(), 1, 90000000); //text string
 
 		count++;
 	}
