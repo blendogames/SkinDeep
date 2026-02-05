@@ -11,7 +11,7 @@
 #include "WorldSpawn.h"
 
 #include "gamesys/SysCvar.h"
-#include "player.h"
+#include "Player.h"
 #include "framework/DeclEntityDef.h"
 #include "idlib/LangDict.h"
 
@@ -834,11 +834,11 @@ void idGunnerMonster::Think(void)
 	{
 		if (this->lastInterest.IsValid())
 		{
-			gameRenderWorld->DrawTextA(idStr::Format("%s -- %i", this->lastInterest.GetEntity()->name.c_str(), this->lastInterestPriority), this->GetEyePosition() + idVec3(0, 0, 8), .1f, colorGreen, gameLocal.GetLocalPlayer()->viewAngles.ToMat3(), 1, 100);
+			gameRenderWorld->DrawText(idStr::Format("%s -- %i", this->lastInterest.GetEntity()->name.c_str(), this->lastInterestPriority), this->GetEyePosition() + idVec3(0, 0, 8), .1f, colorGreen, gameLocal.GetLocalPlayer()->viewAngles.ToMat3(), 1, 100);
 		}
 		else
 		{
-			gameRenderWorld->DrawTextA("No interest", this->GetEyePosition() + idVec3(0, 0, 8), .1f, colorRed, gameLocal.GetLocalPlayer()->viewAngles.ToMat3(), 1, 10);
+			gameRenderWorld->DrawText("No interest", this->GetEyePosition() + idVec3(0, 0, 8), .1f, colorRed, gameLocal.GetLocalPlayer()->viewAngles.ToMat3(), 1, 10);
 		}	
 	}
 
@@ -3919,8 +3919,8 @@ void idGunnerMonster::InterestPointReact(idEntity *interestpoint, int roletype)
 		}
 	
 		gameRenderWorld->DebugArrow(colorWhite, interestpoint->GetPhysics()->GetOrigin() + idVec3(0, 0, arrowLength), interestpoint->GetPhysics()->GetOrigin(), 4, 30000);
-		gameRenderWorld->DrawTextA(idStr::Format("%s", intName.c_str()), interestpoint->GetPhysics()->GetOrigin() + idVec3(0, 0, arrowLength + 8), .1f, colorWhite, gameLocal.GetLocalPlayer()->viewAngles.ToMat3(), 1, 30000);
-		gameRenderWorld->DrawTextA(idStr::Format("priority: %d", static_cast<idInterestPoint *>(interestpoint)->priority), interestpoint->GetPhysics()->GetOrigin() + idVec3(0, 0, arrowLength + 4), .1f, colorWhite, gameLocal.GetLocalPlayer()->viewAngles.ToMat3(), 1, 30000);
+		gameRenderWorld->DrawText(idStr::Format("%s", intName.c_str()), interestpoint->GetPhysics()->GetOrigin() + idVec3(0, 0, arrowLength + 8), .1f, colorWhite, gameLocal.GetLocalPlayer()->viewAngles.ToMat3(), 1, 30000);
+		gameRenderWorld->DrawText(idStr::Format("priority: %d", static_cast<idInterestPoint *>(interestpoint)->priority), interestpoint->GetPhysics()->GetOrigin() + idVec3(0, 0, arrowLength + 4), .1f, colorWhite, gameLocal.GetLocalPlayer()->viewAngles.ToMat3(), 1, 30000);
 	}
 
 	interestWalkableDestination = FindValidPosition(interestpoint->GetPhysics()->GetOrigin());

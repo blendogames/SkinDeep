@@ -1,7 +1,7 @@
 #include "script/Script_Thread.h"
 #include "framework/DeclEntityDef.h"
 
-#include "player.h"
+#include "Player.h"
 #include "bc_meta.h"
 #include "bc_lifeboat.h"
 #include "bc_beaconlogic.h"

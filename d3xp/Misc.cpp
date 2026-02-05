@@ -43,7 +43,7 @@ Various utility objects and functions.
 #include "Moveable.h"
 #include "SmokeParticles.h"
 
-#include "fx.h"
+#include "Fx.h"
 #include "Misc.h"
 
 /*
@@ -412,7 +412,7 @@ void idPathCorner::Spawn( void )
 		if (value <= 0)
 		{
 			common->Warning("pathcorner '%s' is not within an AAS-reachable area (%s).", this->GetName(), aas->GetSettings()->fileExtension.c_str());
-			gameRenderWorld->DrawTextA(idStr::Format("'%s' not within AAS reachable area (%s).", this->GetName(), aas->GetSettings()->fileExtension.c_str()), this->GetPhysics()->GetOrigin() + idVec3(0, 0, 70), 1.5f, idVec4(1, 0, 0, 1), mat3_identity, 1, 90000);
+			gameRenderWorld->DrawText(idStr::Format("'%s' not within AAS reachable area (%s).", this->GetName(), aas->GetSettings()->fileExtension.c_str()), this->GetPhysics()->GetOrigin() + idVec3(0, 0, 70), 1.5f, idVec4(1, 0, 0, 1), mat3_identity, 1, 90000);
 			gameRenderWorld->DebugArrow(colorRed, this->GetPhysics()->GetOrigin() + idVec3(0, 0, 64), this->GetPhysics()->GetOrigin(), 4, 90000);
 		}
 	}
@@ -2428,7 +2428,7 @@ void idVacuumSeparatorEntity::Spawn() {
 	if ( !portal )
 	{
 		gameLocal.Warning("VacuumSeparator '%s' doesn't contact a portal at %.1f %.1f %.1f", this->GetName(), this->GetPhysics()->GetOrigin().x, this->GetPhysics()->GetOrigin().y, this->GetPhysics()->GetOrigin().z); //BC
-		gameRenderWorld->DrawTextA(va("'%s' doesn't contact a portal", this->GetName()), this->GetPhysics()->GetOrigin() + idVec3(0, 0, 70), 0.5f, idVec4(1, 0, 0, 1), mat3_identity, 1, 90000);
+		gameRenderWorld->DrawText(va("'%s' doesn't contact a portal", this->GetName()), this->GetPhysics()->GetOrigin() + idVec3(0, 0, 70), 0.5f, idVec4(1, 0, 0, 1), mat3_identity, 1, 90000);
 		gameRenderWorld->DebugArrow(colorRed, this->GetPhysics()->GetOrigin() + idVec3(0, 0, 64), this->GetPhysics()->GetOrigin(), 4, 90000);
 		return;
 	}

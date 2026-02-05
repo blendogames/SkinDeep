@@ -1,7 +1,7 @@
 #include "framework/DeclEntityDef.h"
 
-#include "trigger.h"
-#include "fx.h"
+#include "Trigger.h"
+#include "Fx.h"
 #include "Light.h"
 
 #include "bc_flyingbarrel.h"

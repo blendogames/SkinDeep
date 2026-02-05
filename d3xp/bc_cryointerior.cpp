@@ -8,7 +8,7 @@
 
 #include "WorldSpawn.h"
 
-#include "target.h"
+#include "Target.h"
 #include "bc_frobcube.h"
 #include "bc_ventpeek.h"
 #include "bc_meta.h"

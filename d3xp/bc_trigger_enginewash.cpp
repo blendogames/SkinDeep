@@ -1,4 +1,4 @@
-#include "trigger.h"
+#include "Trigger.h"
 #include "Player.h"
 
 #include "bc_meta.h"

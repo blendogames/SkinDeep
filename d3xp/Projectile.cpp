@@ -39,7 +39,7 @@ If you have questions concerning this license or the applicable additional terms
 #include "BrittleFracture.h"
 
 #include "bc_lever.h"
-#include "fx.h"
+#include "Fx.h"
 
 #include "bc_gunner.h"
 #include "bc_frobcube.h"

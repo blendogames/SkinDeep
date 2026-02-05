@@ -1,6 +1,6 @@
 
 #include "Entity.h"
-#include "target.h"
+#include "Target.h"
 #include "ai/AI.h"
 // Be careful adding includes here if you don't need them (you can forward declare instead)
 

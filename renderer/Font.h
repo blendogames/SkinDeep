@@ -67,8 +67,9 @@ private:
 	struct glyphInfo_t {
 		byte	width;	// width of glyph in pixels
 		byte	height;	// height of glyph in pixels
-		char	top;	// distance in pixels from the base line to the top of the glyph
-		char	left;	// distance in pixels from the pen to the left edge of the glyph
+		//karin: char is unsigned on arm
+		signed char	top;	// distance in pixels from the base line to the top of the glyph
+		signed char	left;	// distance in pixels from the pen to the left edge of the glyph
 		byte	xSkip;	// x adjustment after rendering this glyph
 		uint16	s;		// x offset in image where glyph starts (in pixels)
 		uint16	t;		// y offset in image where glyph starts (in pixels)

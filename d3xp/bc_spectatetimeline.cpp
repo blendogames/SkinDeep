@@ -1,7 +1,7 @@
 
 #include "Entity.h"
-#include "actor.h"
-#include "player.h"
+#include "Actor.h"
+#include "Player.h"
 
 
 #include "bc_spectatenode.h"

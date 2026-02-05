@@ -8,7 +8,7 @@
 #include "SmokeParticles.h"
 #include "framework/DeclEntityDef.h"
 #include "bc_meta.h"
-#include "player.h"
+#include "Player.h"
 #include "bc_spearprojectile.h"
 #include "bc_spearbot.h"
 

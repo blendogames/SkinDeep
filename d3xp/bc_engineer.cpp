@@ -1,7 +1,7 @@
 #include "Fx.h"
 #include "WorldSpawn.h"
 #include "gamesys/SysCvar.h"
-#include "player.h"
+#include "Player.h"
 #include "framework/DeclEntityDef.h"
 
 #include "bc_vomanager.h"

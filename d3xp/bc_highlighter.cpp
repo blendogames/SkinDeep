@@ -3,9 +3,9 @@
 #include "gamesys/SysCvar.h"
 #include "idlib/LangDict.h"
 
-#include "worldspawn.h"
-#include "player.h"
-#include "actor.h"
+#include "WorldSpawn.h"
+#include "Player.h"
+#include "Actor.h"
 #include "bc_meta.h"
 #include "bc_highlighter.h"
 

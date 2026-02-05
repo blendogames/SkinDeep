@@ -1,5 +1,5 @@
-#include "player.h"
-#include "worldspawn.h"
+#include "Player.h"
+#include "WorldSpawn.h"
 #include "bc_meta.h"
 #include "bc_sabotagepoint.h"
 #include "bc_ftl.h"

@@ -1,8 +1,8 @@
 #include "framework/DeclEntityDef.h"
 
-#include "worldspawn.h"
-#include "player.h"
-#include "fx.h"
+#include "WorldSpawn.h"
+#include "Player.h"
+#include "Fx.h"
 #include "bc_ftl.h"
 #include "bc_skullsaver.h"
 #include "bc_meta.h"

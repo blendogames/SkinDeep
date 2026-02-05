@@ -9,7 +9,7 @@
 #include "idlib/LangDict.h"
 #include "SmokeParticles.h"
 #include "Game_local.h"
-#include "trigger.h"
+#include "Trigger.h"
 #include "Misc.h"
 #include "BrittleFracture.h"
 

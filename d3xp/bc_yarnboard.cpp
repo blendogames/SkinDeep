@@ -4,7 +4,7 @@
 #include "Entity.h"
 //#include "Light.h"
 #include "Player.h"
-#include "trigger.h"
+#include "Trigger.h"
 #include "framework/DeclEntityDef.h"
 
 

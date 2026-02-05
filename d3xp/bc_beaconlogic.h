@@ -1,5 +1,5 @@
 #include "Misc.h"
-#include "target.h"
+#include "Target.h"
 
 class idBeaconLogic : public idEntity
 {

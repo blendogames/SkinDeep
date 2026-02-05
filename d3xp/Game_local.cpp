@@ -53,10 +53,10 @@ If you have questions concerning this license or the applicable additional terms
 #include "bc_ventpeek.h"
 #include "sw_skycontroller.h"
 
-#include "securitycamera.h"
+#include "SecurityCamera.h"
 #include "BrittleFracture.h"
 
-#include "misc.h"
+#include "Misc.h"
 
 #include "bc_infostation.h"
 #include "bc_trigger_deodorant.h"
@@ -6827,7 +6827,7 @@ idEntity* idGameLocal::DoParticleAng(const char* particleName, idVec3 position, 
 			idleSmoke->PostEventMS(&EV_Remove, 5000);
 		}
 
-		idleSmoke->PostEventMS(&EV_Activate, 0, NULL);
+		idleSmoke->PostEventMS(&EV_Activate, 0, (idEntity *)NULL);
 		return idleSmoke;
 	}
 
@@ -6862,7 +6862,7 @@ idEntity * idGameLocal::DoParticle(const char *particleName, idVec3 position, id
 			idleSmoke->PostEventMS(&EV_Remove, 5000);
 		}
 
-		idleSmoke->PostEventMS(&EV_Activate, 0, NULL);
+		idleSmoke->PostEventMS(&EV_Activate, 0, (idEntity *)NULL);
 		return idleSmoke;
 	}
 
@@ -7797,8 +7797,8 @@ bool idGameLocal::DoOriginContainmentCheck(idEntity *ent)
 	{
 #ifdef _DEBUG
 		gameRenderWorld->DebugArrow(colorRed, ent->GetPhysics()->GetOrigin(), ent->GetPhysics()->GetAbsBounds().GetCenter(), 4, 60000);
-		gameRenderWorld->DrawTextA(va("%s", ent->GetName()), ent->GetPhysics()->GetAbsBounds().GetCenter() + idVec3(0, 0, 6), .12f, colorRed, mat3_default, 1, 60000);
-		gameRenderWorld->DrawTextA("origin is outside of brush.", ent->GetPhysics()->GetAbsBounds().GetCenter() + idVec3(0, 0, 2), .12f, colorRed, mat3_default, 1, 60000);
+		gameRenderWorld->DrawText(va("%s", ent->GetName()), ent->GetPhysics()->GetAbsBounds().GetCenter() + idVec3(0, 0, 6), .12f, colorRed, mat3_default, 1, 60000);
+		gameRenderWorld->DrawText("origin is outside of brush.", ent->GetPhysics()->GetAbsBounds().GetCenter() + idVec3(0, 0, 2), .12f, colorRed, mat3_default, 1, 60000);
 #endif
 		return false;
 	}

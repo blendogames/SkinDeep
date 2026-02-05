@@ -121,7 +121,7 @@ void idRefinery::Spawn(void)
 	
 	rotationCounter = 0;
 	
-	if (spawnArgs.GetBool("start_on") == FALSE)
+	if (spawnArgs.GetBool("start_on") == false)
 	{
 		refineryState = REFINERY_STATIC;
 	}	

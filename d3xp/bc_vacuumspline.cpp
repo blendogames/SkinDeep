@@ -1,8 +1,8 @@
 //#include "script/Script_Thread.h"
 #include "framework/DeclEntityDef.h"
 
-#include "player.h"
-#include "mover.h"
+#include "Player.h"
+#include "Mover.h"
 #include "bc_vacuumspline.h"
 
 //TODO: particle trail path

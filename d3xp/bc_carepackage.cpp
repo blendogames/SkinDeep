@@ -2,7 +2,7 @@
 #include "Entity.h"
 #include "Player.h"
 
-#include "fx.h"
+#include "Fx.h"
 #include "bc_carepackage.h"
 
 const int LANDING_DISTANCE_FROM_POD = 384;

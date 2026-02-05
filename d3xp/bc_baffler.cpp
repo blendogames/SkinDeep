@@ -9,7 +9,7 @@
 #include "WorldSpawn.h"
 #include "SmokeParticles.h"
 #include "framework/DeclEntityDef.h"
-#include "trigger.h"
+#include "Trigger.h"
 
 #include "bc_baffler.h"
 

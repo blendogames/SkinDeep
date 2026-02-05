@@ -50,7 +50,7 @@ void idSearchNode::Spawn(void)
 		{
 			common->Warning("searchnode '%s' is not within an AAS-reachable area.", this->GetName());
 
-			gameRenderWorld->DrawTextA(idStr::Format("'%s' not within AAS reachable area.", this->GetName()), this->GetPhysics()->GetOrigin() + idVec3(0, 0, 70), 1.5f, idVec4(1, 0, 0, 1), mat3_identity, 1, 90000);
+			gameRenderWorld->DrawText(idStr::Format("'%s' not within AAS reachable area.", this->GetName()), this->GetPhysics()->GetOrigin() + idVec3(0, 0, 70), 1.5f, idVec4(1, 0, 0, 1), mat3_identity, 1, 90000);
 			gameRenderWorld->DebugArrow(colorRed, this->GetPhysics()->GetOrigin() + idVec3(0, 0, 64), this->GetPhysics()->GetOrigin(), 4, 90000);
 		}
 	}

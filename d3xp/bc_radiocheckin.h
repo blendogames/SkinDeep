@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Misc.h"
-#include "target.h"
+#include "Target.h"
 
 #define				RADIOCHECK_MAX 12 //this needs to match up with the amount of nato alphabet letter states we have. Refer to the UNIT_ enum in this file.
 

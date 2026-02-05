@@ -380,6 +380,9 @@ public:
 
 	idEntityPtr<type> &		operator=( type *ent );
 	bool					operator==(idEntityPtr<type>& other) const;
+#if !defined(_MSC_VER)
+	bool					operator==(const idEntityPtr<type>& other) const;
+#endif
 
 	// synchronize entity pointers over the network
 	int						GetSpawnId( void ) const { return spawnId; }
@@ -1060,6 +1063,13 @@ template< class type >
 ID_INLINE bool idEntityPtr<type>::operator==(idEntityPtr<type>& other) const {
 	return spawnId == other.spawnId;
 }
+
+#if !defined(_MSC_VER)
+template< class type >
+ID_INLINE bool idEntityPtr<type>::operator==(const idEntityPtr<type>& other) const {
+	return spawnId == other.spawnId;
+}
+#endif
 
 template< class type >
 ID_INLINE bool idEntityPtr<type>::SetSpawnId( int id ) {

@@ -1,6 +1,6 @@
 #include "framework/DeclEntityDef.h"
 
-#include "fx.h"
+#include "Fx.h"
 #include "bc_ftl.h"
 #include "bc_skullsaver.h"
 #include "bc_meta.h"
