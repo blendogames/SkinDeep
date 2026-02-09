@@ -1,4 +1,4 @@
-#include "trigger.h"
+#include "Trigger.h"
 #include "framework/DeclEntityDef.h"
 #include "Player.h"
 #include "Fx.h"

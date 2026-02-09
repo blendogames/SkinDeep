@@ -11,7 +11,7 @@
 #include "bc_meta.h"
 #include "bc_notewall.h"
 #include "bc_frobcube.h"
-#include "securitycamera.h"
+#include "SecurityCamera.h"
 #include "bc_camerasplice.h"
 
 const int ANIM_OPENTIME = 500; //Delay before camera switches allegience

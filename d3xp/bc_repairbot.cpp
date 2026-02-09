@@ -6,7 +6,7 @@
 #include "Mover.h"
 #include "Fx.h"
 #include "bc_meta.h"
-#include "player.h"
+#include "Player.h"
 #include "idlib/LangDict.h"
 
 #include "bc_dozerhatch.h"
@@ -588,7 +588,7 @@ idVec3 idAI_Repairbot::AttemptGoToRepairPoint(idEntity *ent)
 		#define REPAIRARROW_SHOWTIME 5000
 		#define	REPAIRARROW_LENGTH 24
 		gameRenderWorld->DebugArrow(colorRed, _repairPos + idVec3(0, 0, REPAIRARROW_LENGTH), _repairPos, 2, REPAIRARROW_SHOWTIME);
-		gameRenderWorld->DrawTextA("Repairbot can't reach", _repairPos + idVec3(0, 0, REPAIRARROW_LENGTH), .2f, colorRed, mat3_default, 1, REPAIRARROW_SHOWTIME);
+		gameRenderWorld->DrawText("Repairbot can't reach", _repairPos + idVec3(0, 0, REPAIRARROW_LENGTH), .2f, colorRed, mat3_default, 1, REPAIRARROW_SHOWTIME);
 	}
 
 	return vec3_zero; //total fail

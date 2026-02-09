@@ -6,10 +6,10 @@
 #include "Player.h"
 #include "Fx.h"
 #include "Moveable.h"
-#include "trigger.h"
+#include "Trigger.h"
 #include "SmokeParticles.h"
 #include "framework/DeclEntityDef.h"
-#include "projectile.h"
+#include "Projectile.h"
 
 
 #include "ai/AI.h"

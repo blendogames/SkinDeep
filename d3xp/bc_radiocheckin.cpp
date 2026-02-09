@@ -1,10 +1,10 @@
 //#include "script/Script_Thread.h"
 #include "framework/DeclEntityDef.h"
 
-#include "worldspawn.h"
-#include "actor.h"
-#include "mover.h"
-#include "player.h"
+#include "WorldSpawn.h"
+#include "Actor.h"
+#include "Mover.h"
+#include "Player.h"
 #include "bc_meta.h"
 #include "bc_radiocheckin.h"
 

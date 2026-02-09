@@ -4,7 +4,7 @@
 #include "Player.h"
 #include "idlib/LangDict.h"
 
-#include "securitycamera.h"
+#include "SecurityCamera.h"
 #include "bc_turret.h"
 #include "bc_dozerhatch.h"
 

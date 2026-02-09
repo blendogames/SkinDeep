@@ -3250,8 +3250,8 @@ void idAI::Event_GetCoverNode(void)
 
 		if (developer.GetInteger() >= 2)
 		{
-			gameRenderWorld->DrawTextA(va("%.1f", candidateScore), ent->GetPhysics()->GetOrigin() + idVec3(0, 0, 16), .3f, colorWhite, gameLocal.GetLocalPlayer()->viewAngles.ToMat3(), 0, 4000);
-			//gameRenderWorld->DrawTextA(va("%.2f  ", facingDot), ent->GetPhysics()->GetOrigin() + idVec3(0, 0, 8), .2f, colorOrange, gameLocal.GetLocalPlayer()->viewAngles.ToMat3(), 0, 4000);
+			gameRenderWorld->DrawText(va("%.1f", candidateScore), ent->GetPhysics()->GetOrigin() + idVec3(0, 0, 16), .3f, colorWhite, gameLocal.GetLocalPlayer()->viewAngles.ToMat3(), 0, 4000);
+			//gameRenderWorld->DrawText(va("%.2f  ", facingDot), ent->GetPhysics()->GetOrigin() + idVec3(0, 0, 8), .2f, colorOrange, gameLocal.GetLocalPlayer()->viewAngles.ToMat3(), 0, 4000);
 		}
 
 		if (candidateScore > bestScore)
@@ -3827,7 +3827,7 @@ bool idAI::CanHitFromAnim(const char *animname, idVec3 targetPos)
 	if (ai_debugPerception.GetInteger() > 0)
 	{
 		gameRenderWorld->DebugArrow(tr.fraction >= .98f ? colorGreen : colorRed, fromPos, tr.endpos, 4, 1000);
-		gameRenderWorld->DrawTextA(animname, fromPos, 0.07f, tr.fraction >= .98f ? colorGreen : colorRed, gameLocal.GetLocalPlayer()->viewAngles.ToMat3(), 1, 1000);
+		gameRenderWorld->DrawText(animname, fromPos, 0.07f, tr.fraction >= .98f ? colorGreen : colorRed, gameLocal.GetLocalPlayer()->viewAngles.ToMat3(), 1, 1000);
 	}
 
 	//gameRenderWorld->DebugArrow(colorRed, fromPos, targetPos + idVec3(0,0,-4), 1, 1000);

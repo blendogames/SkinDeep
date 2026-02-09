@@ -9,7 +9,7 @@
 //#include "trigger.h"
 #include "WorldSpawn.h"
 
-#include "misc.h"
+#include "Misc.h"
 #include "bc_skullsaver.h"
 #include "bc_bossmonster.h"
 #include "bc_sabotagelever.h"

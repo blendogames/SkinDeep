@@ -5,9 +5,9 @@
 #include "script/Script_Thread.h"
 #include "Fx.h"
 
-#include "player.h"
+#include "Player.h"
 #include "Actor.h"
-#include "ai\AI.h"
+#include "ai/AI.h"
 
 #include "framework/DeclEntityDef.h"
 #include "framework/FileSystem.h"

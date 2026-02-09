@@ -6,7 +6,7 @@
 #include "Player.h"
 #include "Fx.h"
 
-#include "ai\AI.h"
+#include "ai/AI.h"
 #include "bc_gunner.h"
 #include "bc_interestpoint.h"
 #include "bc_meta.h"
@@ -183,15 +183,15 @@ void idInterestPoint::Think()
 		}
 
 		gameRenderWorld->DebugArrow(debugcolor, this->GetPhysics()->GetOrigin() + idVec3(0, 0, arrowLength), this->GetPhysics()->GetOrigin(), 4, 100);
-		gameRenderWorld->DrawTextA(idStr::Format("%s", intName.c_str()), this->GetPhysics()->GetOrigin() + idVec3(0, 0, arrowLength + 16), .1f, debugcolor, gameLocal.GetLocalPlayer()->viewAngles.ToMat3(), 1, 100);
-		gameRenderWorld->DrawTextA(idStr::Format("priority: %d", this->priority), this->GetPhysics()->GetOrigin() + idVec3(0, 0, arrowLength + 12), .1f, debugcolor, gameLocal.GetLocalPlayer()->viewAngles.ToMat3(), 1, 100);
+		gameRenderWorld->DrawText(idStr::Format("%s", intName.c_str()), this->GetPhysics()->GetOrigin() + idVec3(0, 0, arrowLength + 16), .1f, debugcolor, gameLocal.GetLocalPlayer()->viewAngles.ToMat3(), 1, 100);
+		gameRenderWorld->DrawText(idStr::Format("priority: %d", this->priority), this->GetPhysics()->GetOrigin() + idVec3(0, 0, arrowLength + 12), .1f, debugcolor, gameLocal.GetLocalPlayer()->viewAngles.ToMat3(), 1, 100);
 
 		idStr ownername;
 		if (this->GetPhysics()->GetClipModel()->GetOwner() == NULL)
 			ownername = "none";
 		else
 			ownername = this->GetPhysics()->GetClipModel()->GetOwner()->GetName();
-		gameRenderWorld->DrawTextA(idStr::Format("owner: %s", ownername.c_str()), this->GetPhysics()->GetOrigin() + idVec3(0, 0, arrowLength + 8), .1f, debugcolor, gameLocal.GetLocalPlayer()->viewAngles.ToMat3(), 1, 100);
+		gameRenderWorld->DrawText(idStr::Format("owner: %s", ownername.c_str()), this->GetPhysics()->GetOrigin() + idVec3(0, 0, arrowLength + 8), .1f, debugcolor, gameLocal.GetLocalPlayer()->viewAngles.ToMat3(), 1, 100);
 
 
 		if (this->claimant.IsValid())

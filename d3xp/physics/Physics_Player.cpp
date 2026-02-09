@@ -33,7 +33,7 @@ If you have questions concerning this license or the applicable additional terms
 #include "Player.h"
 #include "bc_acropoint.h"
 #include "Fx.h"
-#include "Worldspawn.h"
+#include "WorldSpawn.h"
 
 #include "physics/Physics_Player.h"
 

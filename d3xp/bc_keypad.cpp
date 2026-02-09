@@ -6,7 +6,7 @@
 
 #include "Entity.h"
 #include "Misc.h"
-#include "player.h"
+#include "Player.h"
 //#include "Game_local.h"
 
 #include "framework/DeclEntityDef.h"

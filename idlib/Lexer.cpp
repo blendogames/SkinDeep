@@ -290,7 +290,12 @@ int idLexer::ReadWhiteSpace( void ) {
 	while(1) {
 		// skip white space
 		// SM: Don't treat negative values as whitespace (because UTF-8)
-		while(*idLexer::script_p <= ' ' && *idLexer::script_p >= 0) {
+#if defined(__arm__) || defined(__aarch64__) //karin: char is unsigned on arm. Or compile with -fsigned-char option
+		while(*(const signed char *)idLexer::script_p <= ' ')
+#else
+		while(*idLexer::script_p <= ' ' && *idLexer::script_p >= 0)
+#endif
+		{
 			if (!*idLexer::script_p) {
 				return 0;
 			}
@@ -1282,7 +1287,12 @@ const char*	idLexer::ReadRestOfLine(idStr& out) {
 			break;
 		}
 
-		if(*idLexer::script_p <= ' ') {
+#if defined(__arm__) || defined(__aarch64__) //karin: char is unsigned on arm. Or compile with -fsigned-char option
+		if (*(const signed char *)idLexer::script_p <= ' ')
+#else
+		if(*idLexer::script_p <= ' ')
+#endif
+		{
 			out += " ";
 		} else {
 			out += *idLexer::script_p;

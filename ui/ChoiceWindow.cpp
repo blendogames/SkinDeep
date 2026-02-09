@@ -384,6 +384,41 @@ void idChoiceWindow::UpdateChoicesAndVals( void ) {
 		src.SetFlags( LEXFL_NOFATALERRORS | LEXFL_ALLOWPATHNAMES | LEXFL_ALLOWMULTICHARLITERALS | LEXFL_ALLOWBACKSLASHSTRINGCONCAT );
 		src.LoadMemory( choicesStr, choicesStr.Length(), "<ChoiceList>" );
 		if ( src.IsLoaded() ) {
+#if 1 //def _DIII4A //karin: fix utf8 on choice widget
+			idStr readStr = choicesStr;
+			if(idStr::IsValidUTF8(readStr.c_str(), readStr.Length()))
+			{
+				int charIndex = 0;
+				int len = readStr.Length();
+				str2 = "";
+
+				while( charIndex < len ) {
+					uint32_t textChar = readStr.UTF8Char( charIndex );
+					if(textChar == ';')
+					{
+						if (str2.Length()) {
+							str2.StripTrailingWhitespace();
+							str2 = common->GetLanguageDict()->GetString(str2);
+							choices.Append(str2);
+							str2 = "";
+						}
+
+						continue;
+					}
+
+					// skin leading space chars
+					if(textChar != ' ' || !str2.IsEmpty())
+						str2.AppendUTF8Char(textChar);
+				}
+
+				if (str2.Length()) {
+					str2.StripTrailingWhitespace();
+					choices.Append(str2);
+				}
+			}
+			else
+			{
+#endif
 			while( src.ReadToken( &token ) ) {
 				if ( token == ";" ) {
 					if ( str2.Length() ) {
@@ -401,6 +436,9 @@ void idChoiceWindow::UpdateChoicesAndVals( void ) {
 				str2.StripTrailingWhitespace();
 				choices.Append( str2 );
 			}
+#if 1 //def _DIII4A //karin: fix utf8 on choice widget
+			}
+#endif
 		}
 		latchedChoices = choicesStr.c_str();
 	}

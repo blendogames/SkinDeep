@@ -1,4 +1,4 @@
-#include "trigger.h"
+#include "Trigger.h"
 
 class idTrigger_healcloud : public idTrigger_Multi
 {

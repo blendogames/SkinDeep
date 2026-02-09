@@ -3,7 +3,7 @@
 #include "Mover.h"
 #include "Camera.h"
 #include "Misc.h"
-#include "target.h"
+#include "Target.h"
 
 #define MAX_ARROWS 2
 
