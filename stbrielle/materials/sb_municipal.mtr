@@ -1,0 +1,41 @@
+// MUNICIPAL GOTHIC / original material and lighting pass.
+// Existing fallback lights remain available for the Record labs.
+// Practical lights have a soft radial mask and depth falloff; ambient fills
+// are deliberately weak and shadowless to keep navigation readable.
+
+lights/stbrielle/practical
+{
+    lightFalloffImage _quadratic
+    {
+        clamp
+        map textures/stbrielle/annex/light_radial.tga
+        colored
+    }
+}
+
+lights/stbrielle/ambient
+{
+    ambientLight
+    lightFalloffImage _noFalloff
+    {
+        map _white
+        colored
+    }
+}
+
+textures/stbrielle/city_brick
+{
+    qer_editorimage textures/stbrielle/annex/brick_d.tga
+    diffusemap textures/stbrielle/annex/brick_d.tga
+    bumpmap textures/stbrielle/annex/brick_local.tga
+    specularmap textures/stbrielle/annex/brick_s.tga
+}
+
+textures/stbrielle/city_asphalt
+{
+    qer_editorimage textures/stbrielle/annex/asphalt_d.tga
+    diffusemap textures/stbrielle/annex/asphalt_d.tga
+    bumpmap textures/stbrielle/annex/asphalt_local.tga
+    specularmap textures/stbrielle/annex/asphalt_s.tga
+}
+

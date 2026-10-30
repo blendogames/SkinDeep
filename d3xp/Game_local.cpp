@@ -393,6 +393,18 @@ void idGameLocal::Clear( void ) {
 	eventLogAlerts = nullptr;
 }
 
+static void LoadOptionalInputDict( const char *fileName, idDict &dict ) {
+	dict.Clear();
+
+	idParser parser( fileName, LEXFL_ALLOWMULTICHARLITERALS );
+	if ( !parser.IsLoaded() ) {
+		common->Warning( "Optional input dictionary '%s' not found; continuing with an empty mapping.", fileName );
+		return;
+	}
+
+	dict.Parse( parser );
+}
+
 /*
 ===========
 idGameLocal::Init
@@ -511,41 +523,13 @@ void idGameLocal::Init( void ) {
 	Printf( "...%d aas types\n", aasList.Num() );
 
 
-	{
-		controllerButtonDicts[CT_XBOX360].Clear();
-		idParser buttonParser("misc/controller_360.dict", LEXFL_ALLOWMULTICHARLITERALS);
-		controllerButtonDicts[CT_XBOX360].Parse(buttonParser);
-	}
-	{
-		controllerButtonDicts[CT_XBOXONE].Clear();
-		idParser buttonParser("misc/controller_xboxone.dict", LEXFL_ALLOWMULTICHARLITERALS);
-		controllerButtonDicts[CT_XBOXONE].Parse(buttonParser);
-	}
-	{
-		controllerButtonDicts[CT_PS4].Clear();
-		idParser buttonParser("misc/controller_ps4.dict", LEXFL_ALLOWMULTICHARLITERALS);
-		controllerButtonDicts[CT_PS4].Parse(buttonParser);
-	}
-	{
-		controllerButtonDicts[CT_PS5].Clear();
-		idParser buttonParser("misc/controller_ps5.dict", LEXFL_ALLOWMULTICHARLITERALS);
-		controllerButtonDicts[CT_PS5].Parse(buttonParser);
-	}
-	{
-		controllerButtonDicts[CT_SWITCHPRO].Clear();
-		idParser buttonParser("misc/controller_switch.dict", LEXFL_ALLOWMULTICHARLITERALS);
-		controllerButtonDicts[CT_SWITCHPRO].Parse(buttonParser);
-	}
-	{
-		controllerButtonDicts[CT_STEAMDECK].Clear();
-		idParser buttonParser("misc/controller_steamdeck.dict", LEXFL_ALLOWMULTICHARLITERALS);
-		controllerButtonDicts[CT_STEAMDECK].Parse(buttonParser);
-	}
-	{
-		mouseButtonDict.Clear();
-		idParser buttonParser("misc/mouse.dict", LEXFL_ALLOWMULTICHARLITERALS);
-		mouseButtonDict.Parse(buttonParser);
-	}
+	LoadOptionalInputDict( "misc/controller_360.dict", controllerButtonDicts[CT_XBOX360] );
+	LoadOptionalInputDict( "misc/controller_xboxone.dict", controllerButtonDicts[CT_XBOXONE] );
+	LoadOptionalInputDict( "misc/controller_ps4.dict", controllerButtonDicts[CT_PS4] );
+	LoadOptionalInputDict( "misc/controller_ps5.dict", controllerButtonDicts[CT_PS5] );
+	LoadOptionalInputDict( "misc/controller_switch.dict", controllerButtonDicts[CT_SWITCHPRO] );
+	LoadOptionalInputDict( "misc/controller_steamdeck.dict", controllerButtonDicts[CT_STEAMDECK] );
+	LoadOptionalInputDict( "misc/mouse.dict", mouseButtonDict );
 }
 
 /*
@@ -7247,8 +7231,18 @@ void idGameLocal::OnMapChange()
 			}
 		}
 	}
+	idPlayer *localPlayer = GetLocalPlayer();
+	if ( localPlayer && localPlayer->spawnArgs.GetBool( "stbrielle_minimal_player", "0" ) ) {
+		// ST. BRIELLE standalone greybox maps intentionally omit Skin Deep's
+		// Event Log and PDA GUIs. Core map/player initialization is complete;
+		// these commercial UI systems are not required for gameplay.
+		return;
+	}
+
 	InitEventLog();
-	GetLocalPlayer()->UpdatePDAInfo( false );
+	if ( localPlayer ) {
+		localPlayer->UpdatePDAInfo( false );
+	}
 }
 
 void idGameLocal::CloseEventLogFile(void)
@@ -7266,9 +7260,15 @@ void idGameLocal::CloseEventLogFile(void)
 
 void idGameLocal::InitEventLog(void)
 {
+	idPlayer *localPlayer = gameLocal.GetLocalPlayer();
+	if ( localPlayer == NULL || localPlayer->eventlogMenu == NULL ) {
+		Warning( "InitEventLog skipped: no Event Log GUI is available for the local player." );
+		return;
+	}
+
 	eventlogGuiList = uiManager->AllocListGUI();
 	eventlogGuiList->Clear();
-	eventlogGuiList->Config(gameLocal.GetLocalPlayer()->eventlogMenu, "eventlist");
+	eventlogGuiList->Config(localPlayer->eventlogMenu, "eventlist");
 	eventlogGuiList->SetSelection(0);
 
 	if (g_eventLog_logToFile.GetBool())

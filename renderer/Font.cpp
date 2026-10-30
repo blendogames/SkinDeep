@@ -32,6 +32,7 @@ If you have questions concerning this license or the applicable additional terms
 #define ID_SWAP_LITE
 #include "idlib/Swap.h"
 #include "renderer/RenderSystem.h"
+#include "renderer/Image.h"
 #include "framework/Common.h"
 #include "framework/FileSystem.h"
 
@@ -42,6 +43,146 @@ static const float old_scale1 = 0.3f;
 
 idCVar gui_smallFontLimit( "gui_smallFontLimit", "0.30", CVAR_GUI | CVAR_ARCHIVE, "" );
 idCVar gui_mediumFontLimit( "gui_mediumFontLimit", "0.90", CVAR_GUI | CVAR_ARCHIVE, "" );
+
+// -----------------------------------------------------------------------------
+// ST. BRIELLE STANDALONE FALLBACK FONT
+//
+// The public standalone data set intentionally does not contain the original
+// proprietary font package.  Generate a compact 5x7-derived ASCII atlas in
+// memory so every HUD/menu remains readable without external font assets.
+// -----------------------------------------------------------------------------
+
+static void SB_GetFallbackGlyphRows( unsigned char ch, byte rows[7] ) {
+	memset( rows, 0, 7 );
+
+	if ( ch >= 'a' && ch <= 'z' ) {
+		ch = static_cast<unsigned char>( ch - 'a' + 'A' );
+	}
+
+	#define SB_GLYPH(a,b,c,d,e,f,g) do { rows[0]=a; rows[1]=b; rows[2]=c; rows[3]=d; rows[4]=e; rows[5]=f; rows[6]=g; } while(0)
+	switch ( ch ) {
+		case 'A': SB_GLYPH(14,17,17,31,17,17,17); break;
+		case 'B': SB_GLYPH(30,17,17,30,17,17,30); break;
+		case 'C': SB_GLYPH(15,16,16,16,16,16,15); break;
+		case 'D': SB_GLYPH(30,17,17,17,17,17,30); break;
+		case 'E': SB_GLYPH(31,16,16,30,16,16,31); break;
+		case 'F': SB_GLYPH(31,16,16,30,16,16,16); break;
+		case 'G': SB_GLYPH(15,16,16,19,17,17,15); break;
+		case 'H': SB_GLYPH(17,17,17,31,17,17,17); break;
+		case 'I': SB_GLYPH(31,4,4,4,4,4,31); break;
+		case 'J': SB_GLYPH(7,2,2,2,18,18,12); break;
+		case 'K': SB_GLYPH(17,18,20,24,20,18,17); break;
+		case 'L': SB_GLYPH(16,16,16,16,16,16,31); break;
+		case 'M': SB_GLYPH(17,27,21,21,17,17,17); break;
+		case 'N': SB_GLYPH(17,25,21,19,17,17,17); break;
+		case 'O': SB_GLYPH(14,17,17,17,17,17,14); break;
+		case 'P': SB_GLYPH(30,17,17,30,16,16,16); break;
+		case 'Q': SB_GLYPH(14,17,17,17,21,18,13); break;
+		case 'R': SB_GLYPH(30,17,17,30,20,18,17); break;
+		case 'S': SB_GLYPH(15,16,16,14,1,1,30); break;
+		case 'T': SB_GLYPH(31,4,4,4,4,4,4); break;
+		case 'U': SB_GLYPH(17,17,17,17,17,17,14); break;
+		case 'V': SB_GLYPH(17,17,17,17,17,10,4); break;
+		case 'W': SB_GLYPH(17,17,17,21,21,21,10); break;
+		case 'X': SB_GLYPH(17,17,10,4,10,17,17); break;
+		case 'Y': SB_GLYPH(17,17,10,4,4,4,4); break;
+		case 'Z': SB_GLYPH(31,1,2,4,8,16,31); break;
+
+		case '0': SB_GLYPH(14,17,19,21,25,17,14); break;
+		case '1': SB_GLYPH(4,12,4,4,4,4,14); break;
+		case '2': SB_GLYPH(14,17,1,2,4,8,31); break;
+		case '3': SB_GLYPH(30,1,1,14,1,1,30); break;
+		case '4': SB_GLYPH(2,6,10,18,31,2,2); break;
+		case '5': SB_GLYPH(31,16,16,30,1,1,30); break;
+		case '6': SB_GLYPH(14,16,16,30,17,17,14); break;
+		case '7': SB_GLYPH(31,1,2,4,8,8,8); break;
+		case '8': SB_GLYPH(14,17,17,14,17,17,14); break;
+		case '9': SB_GLYPH(14,17,17,15,1,1,14); break;
+
+		case ':': SB_GLYPH(0,4,4,0,4,4,0); break;
+		case ';': SB_GLYPH(0,4,4,0,4,4,8); break;
+		case '.': SB_GLYPH(0,0,0,0,0,12,12); break;
+		case ',': SB_GLYPH(0,0,0,0,4,4,8); break;
+		case '-': SB_GLYPH(0,0,0,31,0,0,0); break;
+		case '_': SB_GLYPH(0,0,0,0,0,0,31); break;
+		case '/': SB_GLYPH(1,2,2,4,8,8,16); break;
+		case '\\': SB_GLYPH(16,8,8,4,2,2,1); break;
+		case '!': SB_GLYPH(4,4,4,4,4,0,4); break;
+		case '?': SB_GLYPH(14,17,1,2,4,0,4); break;
+		case '+': SB_GLYPH(0,4,4,31,4,4,0); break;
+		case '=': SB_GLYPH(0,31,0,31,0,0,0); break;
+		case '(': SB_GLYPH(2,4,8,8,8,4,2); break;
+		case ')': SB_GLYPH(8,4,2,2,2,4,8); break;
+		case '[': SB_GLYPH(14,8,8,8,8,8,14); break;
+		case ']': SB_GLYPH(14,2,2,2,2,2,14); break;
+		case '\'': SB_GLYPH(4,4,8,0,0,0,0); break;
+		case '"': SB_GLYPH(10,10,0,0,0,0,0); break;
+		case '#': SB_GLYPH(10,31,10,10,31,10,0); break;
+		case '%': SB_GLYPH(17,2,4,8,16,17,0); break;
+		case '&': SB_GLYPH(12,18,20,8,21,18,13); break;
+		case '*': SB_GLYPH(0,21,14,31,14,21,0); break;
+		case '|': SB_GLYPH(4,4,4,4,4,4,4); break;
+		case '<': SB_GLYPH(2,4,8,16,8,4,2); break;
+		case '>': SB_GLYPH(8,4,2,1,2,4,8); break;
+		case ' ': break;
+		default: SB_GLYPH(14,17,1,2,4,0,4); break;
+	}
+	#undef SB_GLYPH
+}
+
+static void SB_GenerateFallbackFontImage( idImage *image ) {
+	static const int ATLAS_W = 2048;
+	static const int ATLAS_H = 1024;
+	static const int CELL_W = 96;
+	static const int CELL_H = 128;
+	static const int PIXEL_SCALE = 14;
+	static const int X_PAD = 8;
+	static const int Y_PAD = 12;
+
+	byte *data = static_cast<byte *>( Mem_ClearedAlloc( ATLAS_W * ATLAS_H * 4 ) );
+	const int pixelCount = ATLAS_W * ATLAS_H;
+	for ( int i = 0; i < pixelCount; i++ ) {
+		data[i * 4 + 0] = 255;
+		data[i * 4 + 1] = 255;
+		data[i * 4 + 2] = 255;
+		data[i * 4 + 3] = 0;
+	}
+
+	for ( int ch = 32; ch <= 126; ch++ ) {
+		byte rows[7];
+		SB_GetFallbackGlyphRows( static_cast<unsigned char>( ch ), rows );
+
+		const int glyphIndex = ch - 32;
+		const int cellX = ( glyphIndex % 16 ) * CELL_W;
+		const int cellY = ( glyphIndex / 16 ) * CELL_H;
+		const int x0 = cellX + X_PAD;
+		const int y0 = cellY + Y_PAD;
+
+		for ( int row = 0; row < 7; row++ ) {
+			for ( int col = 0; col < 5; col++ ) {
+				if ( !( rows[row] & ( 1 << ( 4 - col ) ) ) ) {
+					continue;
+				}
+				for ( int py = 0; py < PIXEL_SCALE; py++ ) {
+					for ( int px = 0; px < PIXEL_SCALE; px++ ) {
+						const int x = x0 + col * PIXEL_SCALE + px;
+						const int y = y0 + row * PIXEL_SCALE + py;
+						const int o = ( y * ATLAS_W + x ) * 4;
+						data[o + 0] = 255;
+						data[o + 1] = 255;
+						data[o + 2] = 255;
+						data[o + 3] = 255;
+					}
+				}
+			}
+		}
+	}
+
+	image->GenerateImage( data, ATLAS_W, ATLAS_H,
+		TF_NEAREST, false, TR_CLAMP, TD_HIGH_QUALITY );
+	Mem_Free( data );
+}
+
 
 // SM: Added this so new font scales properly match the old ones
 static float GetConvertedFontScale( float scale )
@@ -137,16 +278,86 @@ idFont::idFont( const char * n ) : name( n ) {
 	}
 
 	if ( !LoadFont() ) {
-		if ( name.Icmp( DEFAULT_FONT ) == 0 ) {
-			idLib::Error( "Could not load default font \"%s\"", DEFAULT_FONT );
-		} else {
-			// SM: If the name is empty, this is okay, so just silently accept it
+		// St. Brielle standalone bootstrap: the original commercial font package
+		// is not distributed with this project. Generate a small built-in ASCII
+		// atlas so HUD/menu text remains fully readable.
+		if ( !LoadFallbackFont() ) {
 			if ( name.Length() > 0 ) {
-				idLib::Warning( "Could not load font %s", name.c_str() );
+				idLib::Warning( "Could not load or generate fallback font %s.", name.c_str() );
 			}
-			alias = renderSystem->RegisterFont( DEFAULT_FONT );
+			alias = NULL;
+		} else {
+			common->DPrintf( "[ST. BRIELLE FONT] using built-in fallback for '%s'\n", name.c_str() );
 		}
 	}
+}
+
+
+
+/*
+==============================
+idFont::LoadFallbackFont
+==============================
+*/
+bool idFont::LoadFallbackFont() {
+	if ( !globalImages || !declManager ) {
+		return false;
+	}
+
+	static const char *FALLBACK_IMAGE = "_stbrielleFallbackFont";
+	static const int FIRST_CHAR = 32;
+	static const int LAST_CHAR = 126;
+	static const int NUM_CHARS = LAST_CHAR - FIRST_CHAR + 1;
+	static const int CELL_W = 96;
+	static const int CELL_H = 128;
+	static const int X_PAD = 8;
+	static const int Y_PAD = 12;
+	static const int GLYPH_W = 70;
+	static const int GLYPH_H = 98;
+	static const int GLYPH_SKIP = 82;
+
+	globalImages->ImageFromFunction( FALLBACK_IMAGE, SB_GenerateFallbackFontImage );
+
+	fontInfo = new fontInfo_t;
+	memset( fontInfo, 0, sizeof( *fontInfo ) );
+	fontInfo->ascender = 88;
+	fontInfo->descender = -18;
+	fontInfo->numGlyphs = NUM_CHARS;
+	fontInfo->glyphData = static_cast<glyphInfo_t *>( Mem_ClearedAlloc( sizeof( glyphInfo_t ) * NUM_CHARS ) );
+	fontInfo->charIndex = static_cast<uint32 *>( Mem_ClearedAlloc( sizeof( uint32 ) * NUM_CHARS ) );
+	memset( fontInfo->ascii, -1, sizeof( fontInfo->ascii ) );
+
+	for ( int i = 0; i < 3; i++ ) {
+		fontInfo->oldInfo[i].maxWidth = GLYPH_SKIP;
+		fontInfo->oldInfo[i].maxHeight = 118;
+	}
+
+	for ( int i = 0; i < NUM_CHARS; i++ ) {
+		const int ch = FIRST_CHAR + i;
+		const int cellX = ( i % 16 ) * CELL_W;
+		const int cellY = ( i / 16 ) * CELL_H;
+
+		glyphInfo_t &g = fontInfo->glyphData[i];
+		g.width = GLYPH_W;
+		g.height = GLYPH_H;
+		g.top = 88;
+		g.left = 0;
+		g.xSkip = GLYPH_SKIP;
+		g.s = cellX + X_PAD;
+		g.t = cellY + Y_PAD;
+
+		fontInfo->charIndex[i] = ch;
+		if ( ch < 128 ) {
+			fontInfo->ascii[ch] = i;
+		}
+	}
+
+	fontInfo->material = declManager->FindMaterial( FALLBACK_IMAGE );
+	if ( !fontInfo->material ) {
+		return false;
+	}
+	fontInfo->material->SetSort( SS_GUI );
+	return true;
 }
 
 struct oldGlyphInfo_t {
@@ -312,6 +523,9 @@ idFont::GetGlyphIndex
 ==============================
 */
 int	idFont::GetGlyphIndex( uint32 idx ) const {
+	if ( fontInfo == NULL ) {
+		return -1;
+	}
 	if ( idx < 128 ) {
 		return fontInfo->ascii[idx];
 	}

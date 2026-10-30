@@ -2706,18 +2706,32 @@ void idFileSystemLocal::Init( void ) {
 	if (fs_basepath.GetString()[0] == '\0' && Sys_GetPath(PATH_BASE, path))
 		fs_basepath.SetString(path);
 
-	if (fs_savepath.GetString()[0] == '\0' && Sys_GetPath(PATH_SAVE, path))
-		fs_savepath.SetString(path);
-
-	if (fs_configpath.GetString()[0] == '\0' && Sys_GetPath(PATH_CONFIG, path))
-		fs_configpath.SetString(path);
-
-	if ( fs_devpath.GetString()[0] == '\0' ) {
-#ifdef WIN32
-		fs_devpath.SetString( fs_cdpath.GetString()[0] ? fs_cdpath.GetString() : fs_basepath.GetString() );
-#else
-		fs_devpath.SetString( fs_savepath.GetString() );
+#if defined(WIN32) && defined(_DEBUG)
+	// ST. BRIELLE development builds keep all mutable/searchable game data in
+	// the repository tree.  Do not mix AppData's PATH_SAVE/PATH_CONFIG into the
+	// search order: an older .proc, GUI or cfg there can mask freshly compiled
+	// development data from fs_basepath/fs_devpath.
+	if ( !idStr::Icmp( fs_game.GetString(), "stbrielle" ) && fs_basepath.GetString()[0] ) {
+		fs_savepath.SetString( fs_basepath.GetString() );
+		fs_configpath.SetString( fs_basepath.GetString() );
+		fs_devpath.SetString( fs_basepath.GetString() );
+		common->Printf( "[ST. BRIELLE DEV FS] base/save/config/dev = %s\n", fs_basepath.GetString() );
+	} else
 #endif
+	{
+		if (fs_savepath.GetString()[0] == '\0' && Sys_GetPath(PATH_SAVE, path))
+			fs_savepath.SetString(path);
+
+		if (fs_configpath.GetString()[0] == '\0' && Sys_GetPath(PATH_CONFIG, path))
+			fs_configpath.SetString(path);
+
+		if ( fs_devpath.GetString()[0] == '\0' ) {
+#ifdef WIN32
+			fs_devpath.SetString( fs_cdpath.GetString()[0] ? fs_cdpath.GetString() : fs_basepath.GetString() );
+#else
+			fs_devpath.SetString( fs_savepath.GetString() );
+#endif
+		}
 	}
 
 	// try to start up normally

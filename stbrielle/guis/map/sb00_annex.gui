@@ -1,0 +1,27 @@
+windowDef Desktop {
+	rect 0, 0, 640, 480
+	visible 1
+	noCursor 1
+	backcolor 0.008, 0.008, 0.012, 1
+
+	windowDef title {
+		rect 72, 192, 496, 28
+		text "ST. BRIELLE MUNICIPAL ANNEX"
+		textscale 0.34
+		textalign 1
+		forecolor 0.82, 0.80, 0.76, 1
+	}
+
+	windowDef rule {
+		rect 180, 228, 280, 1
+		backcolor 0.32, 0.07, 0.09, 1
+	}
+
+	windowDef status {
+		rect 72, 244, 496, 18
+		text "AFTER-HOURS MUNICIPAL ACCESS"
+		textscale 0.20
+		textalign 1
+		forecolor 0.48, 0.48, 0.50, 1
+	}
+}

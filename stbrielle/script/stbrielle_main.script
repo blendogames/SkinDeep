@@ -1,0 +1,10 @@
+// ST. BRIELLE: THE INTERVAL
+// Game-specific script layer.
+//
+// The engine automatically checks for script/<fs_game>_main.script after
+// compiling the inherited default script set. Keeping this file separate gives
+// St. Brielle a clean place for project-only script functions as the game grows.
+//
+// Intentionally contains no global main() function: the inherited game script
+// already owns normal startup. St. Brielle runtime logic is introduced through
+// namespaced C++ systems, map scripts, and sb_* script functions.

@@ -2720,7 +2720,11 @@ void idCommonLocal::PrintLoadingMessage( const char *msg ) {
 		return;
 	}
 	renderSystem->BeginFrame( renderSystem->GetScreenWidth(), renderSystem->GetScreenHeight() );
-	renderSystem->DrawStretchPic( 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, 0, 0, 1, 1, declManager->FindMaterial( "splashScreen" ) );
+	// ST. BRIELLE standalone currently has no packaged legacy splash image.
+	// Use an internal renderer material so startup does not probe for a missing
+	// Doom/Skin Deep splashscreen asset. A dedicated St. Brielle splash can
+	// replace this later without affecting initialization.
+	renderSystem->DrawStretchPic( 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, 0, 0, 1, 1, declManager->FindMaterial( "_black" ) );
 
 	//BC 3-11-2025: this doesn't support localized text, so don't draw text at all here.
 	//int len = strlen( msg );

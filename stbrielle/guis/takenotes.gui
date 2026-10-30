@@ -1,0 +1,11 @@
+windowDef Desktop {
+	rect 0, 0, 640, 480
+	visible 1
+	backcolor 0.02, 0.02, 0.025, 1
+	windowDef label {
+		rect 60, 60, 520, 40
+		text "CONTINUITY NOTES"
+		textscale 0.35
+		forecolor 0.9, 0.9, 0.9, 1
+	}
+}

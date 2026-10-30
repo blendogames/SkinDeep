@@ -1,0 +1,54 @@
+// ST. BRIELLE standalone player script object.
+// idPlayer binds these booleans during Spawn(). The commercial Skin Deep
+// player script is not part of the public source release, so the greybox
+// player supplies only the state fields the C++ player class requires.
+object player
+{
+	void init();
+
+	boolean AI_FORWARD;
+	boolean AI_BACKWARD;
+	boolean AI_STRAFE_LEFT;
+	boolean AI_STRAFE_RIGHT;
+	boolean AI_ATTACK_HELD;
+	boolean AI_WEAPON_FIRED;
+	boolean AI_JUMP;
+	boolean AI_CROUCH;
+	boolean AI_ONGROUND;
+	boolean AI_ONLADDER;
+	boolean AI_DEAD;
+	boolean AI_RUN;
+	boolean AI_PAIN;
+	boolean AI_HARDLANDING;
+	boolean AI_SOFTLANDING;
+	boolean AI_RELOAD;
+	boolean AI_TELEPORT;
+	boolean AI_TURN_LEFT;
+	boolean AI_TURN_RIGHT;
+
+	boolean AI_HEAL_GLASSWOUND;
+	boolean AI_HEAL_BURNING;
+	boolean AI_HEAL_BLEEDOUT;
+	boolean AI_ACRO_CEILINGHIDE;
+	boolean AI_ACRO_SPLITS;
+	boolean AI_FALLEN;
+	boolean AI_FALLEN_GETUP;
+	boolean AI_FALLEN_ROLL;
+	boolean AI_HEAL_BULLETPLUCK;
+	boolean AI_HEAL_SHRAPNEL;
+	boolean AI_HEAL_HEALWOUND;
+	boolean AI_HEAL_SPEARPLUCK;
+	boolean AI_JOCKEYRIDE;
+};
+
+void player::init()
+{
+	// Intentionally empty for the standalone greybox player.
+}
+
+
+// ST. BRIELLE minimal global game script.
+
+void doom_main() {
+	// Intentionally empty for the systems laboratory.
+}

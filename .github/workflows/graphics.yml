@@ -1,0 +1,49 @@
+name: Municipal graphics checks
+
+on:
+  push:
+    branches: [st-brielle-foundation, codex/municipal-graphics]
+  pull_request:
+    branches: [st-brielle-foundation]
+
+permissions:
+  contents: read
+
+jobs:
+  assets:
+    runs-on: windows-2022
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Generate base surfaces with Windows PowerShell
+        shell: powershell
+        run: ./tools/setup_annex_textures.ps1
+      - name: Generate corrected Room 214 surfaces
+        shell: powershell
+        run: ./tools/setup_room214_textures.ps1
+      - name: Generate corrected ledger
+        shell: powershell
+        run: ./tools/setup_room214_paper.ps1
+      - name: Verify images and authored map progression
+        shell: powershell
+        run: |
+          python tools/verify_graphics.py --generated
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python tools/test_city_investigation.py
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Verify texture cache reuse
+        shell: powershell
+        run: |
+          powershell.exe -NoProfile -File tools/setup_annex_textures.ps1
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          powershell.exe -NoProfile -File tools/setup_room214_textures.ps1
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Render material inspection sheet
+        shell: powershell
+        run: ./tools/preview_materials.ps1
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: municipal-material-preview
+          path: graphics-validation/municipal-materials.png
+          if-no-files-found: error
+          retention-days: 14

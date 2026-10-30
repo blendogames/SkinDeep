@@ -36,16 +36,16 @@ If you have questions concerning this license or the applicable additional terms
 
 #if defined(__AROS__)
 #define GAME_NAME						"ADoom3"		// appears on window titles and errors
-#define ENGINE_VERSION					"Skin Deep 1.0"	// printed in console
+#define ENGINE_VERSION					"St. Brielle: The Interval 0.1"	// printed in console
 #define CONFIG_FILE						"adoom3.cfg"
 #else
-#define GAME_NAME						"Skin Deep"		// appears on window titles and errors
+#define GAME_NAME						"ST. BRIELLE: THE INTERVAL"		// appears on window titles and errors
 
-#define ENGINE_VERSION					"Skin Deep 1.0"	// printed in console
+#define ENGINE_VERSION					"St. Brielle: The Interval 0.1"	// printed in console
 #endif
 
 // paths
-#define	BASE_GAMEDIR					"base"
+#define	BASE_GAMEDIR					"stbrielle"
 
 // filenames
 #ifndef CONFIG_FILE
@@ -53,7 +53,7 @@ If you have questions concerning this license or the applicable additional terms
 #endif
 
 // base folder where the source code lives
-#define SOURCE_CODE_BASE_FOLDER			"neo"
+#define SOURCE_CODE_BASE_FOLDER			"."
 
 
 // default idnet host address
@@ -88,7 +88,7 @@ If you have questions concerning this license or the applicable additional terms
 #define EDITOR_WINDOWTEXT				"DOOMEdit"
 
 // win32 info
-#define WIN32_CONSOLE_CLASS				"Skin Deep winConsole"
+#define WIN32_CONSOLE_CLASS				"StBrielle winConsole"
 
 // Linux info
 #define LINUX_DEFAULT_PATH				"/usr/local/games/doom3"

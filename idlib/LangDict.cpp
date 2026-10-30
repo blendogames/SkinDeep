@@ -83,14 +83,23 @@ bool idLangDict::Load( const char *fileName, bool clear /* _D3XP */ ) {
 		return false;
 	}
 
-	// SM: Validate for UTF-8 BOM in .lang files, and skip over it for parsing
-	if ( len < 3 || buffer[0] != '\xef' || buffer[1] != '\xbb' || buffer[2] != '\xbf' ) {
-		idLib::common->Error( "Language dictionary %s is missing required UTF-8 BOM.", fileName );
-		return false;
+	// St. Brielle: accept both conventional UTF-8 with BOM and modern
+	// BOM-less UTF-8 text. The original Skin Deep loader required the BOM,
+	// which makes source-controlled localization files unnecessarily fragile.
+	const bool hasUtf8Bom =
+		len >= 3 &&
+		(unsigned char)buffer[0] == 0xef &&
+		(unsigned char)buffer[1] == 0xbb &&
+		(unsigned char)buffer[2] == 0xbf;
+
+	const char *parseBuffer = hasUtf8Bom ? buffer + 3 : buffer;
+	const int parseLength = hasUtf8Bom ? len - 3 : len;
+
+	if ( !hasUtf8Bom ) {
+		idLib::common->DPrintf( "Language dictionary %s is UTF-8 without BOM; accepting it.\n", fileName );
 	}
 
-	src.LoadMemory( buffer + 3, strlen( buffer ) - 3, fileName );
-	//src.LoadMemory( buffer, strlen( buffer ), fileName );
+	src.LoadMemory( parseBuffer, parseLength, fileName );
 	if ( !src.IsLoaded() ) {
 		return false;
 	}

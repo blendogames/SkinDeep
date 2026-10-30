@@ -172,39 +172,84 @@ static std::string readFile( const std::string& fileName )
 		}
 	}
 
-	fileSystem->FreeFile(glslBuffer);
+	if ( glslBuffer != NULL ) {
+		fileSystem->FreeFile( glslBuffer );
+	}
 
 	return contents;
+}
+
+static std::string StBrielleFallbackShader( GLenum shaderType ) {
+	if ( shaderType == GL_VERTEX_SHADER ) {
+		return
+			"#version 330 core\n"
+			"layout(location = 0) in vec3 aPosition;\n"
+			"layout(location = 1) in vec2 aTexCoord;\n"
+			"layout(location = 2) in vec3 aNormal;\n"
+			"layout(location = 3) in vec3 aTangent;\n"
+			"layout(location = 4) in vec3 aBitangent;\n"
+			"layout(location = 5) in vec4 aColor;\n"
+			"uniform mat4 uProjectionMatrix;\n"
+			"uniform mat4 uModelViewMatrix;\n"
+			"uniform mat4 uTextureMatrix;\n"
+			"out vec2 vTexCoord;\n"
+			"out vec4 vColor;\n"
+			"void main() {\n"
+			"    gl_Position = uProjectionMatrix * uModelViewMatrix * vec4(aPosition, 1.0);\n"
+			"    vec4 tc = uTextureMatrix * vec4(aTexCoord, 0.0, 1.0);\n"
+			"    vTexCoord = tc.xy;\n"
+			"    vColor = aColor;\n"
+			"}\n";
+	}
+
+	if ( shaderType == GL_FRAGMENT_SHADER ) {
+		return
+			"#version 330 core\n"
+			"in vec2 vTexCoord;\n"
+			"in vec4 vColor;\n"
+			"out vec4 fragColor;\n"
+			"void main() {\n"
+			"    vec3 debugColor = max(vColor.rgb, vec3(0.28, 0.30, 0.34));\n"
+			"    fragColor = vec4(debugColor, 1.0);\n"
+			"}\n";
+	}
+
+	return std::string();
 }
 
 bool idShaderGL::CompileShader(const idStr& fileName,
 				   GLenum shaderType,
 				   GLuint& outShader)
 {
-	// Open file
 	std::string contents = readFile( fileName.c_str() );
-	if (!contents.empty())
-	{
-		const char* contentsChar = contents.c_str();
-		
-		// Create a shader of the specified type
-		outShader = qglCreateShader(shaderType);
-		// Set the source characters and try to compile
-		qglShaderSource(outShader, 1, &(contentsChar), nullptr);
-		qglCompileShader(outShader);
-		
-		if (!IsCompiled(outShader))
-		{
-			common->Error("%s: failed to compile shader\n", fileName.c_str());
-			return false;
-		}
+
+	if ( contents.empty() ) {
+		// The public Skin Deep source release does not include the shipped GLSL
+		// data pack. For the standalone St. Brielle greybox bootstrap, use a
+		// simple internal shader so renderer initialization and dev maps can run.
+		// Real St. Brielle shader files placed under stbrielle/glsl/ always take
+		// precedence over this fallback.
+		common->Warning( "GLSL %s not found; using St. Brielle greybox fallback.", fileName.c_str() );
+		contents = StBrielleFallbackShader( shaderType );
 	}
-	else
-	{
-		common->Error("%s: file not found\n", fileName.c_str());
+
+	if ( contents.empty() ) {
+		common->Error( "%s: no shader source available\n", fileName.c_str() );
 		return false;
 	}
-	
+
+	const char* contentsChar = contents.c_str();
+
+	outShader = qglCreateShader(shaderType);
+	qglShaderSource(outShader, 1, &(contentsChar), nullptr);
+	qglCompileShader(outShader);
+
+	if (!IsCompiled(outShader))
+	{
+		common->Error("%s: failed to compile shader\n", fileName.c_str());
+		return false;
+	}
+
 	return true;
 }
 

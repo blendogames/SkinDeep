@@ -348,6 +348,9 @@
     <ClCompile Include="..\d3xp\bc_manifeststation.cpp" />
     <ClCompile Include="..\d3xp\bc_mech.cpp" />
     <ClCompile Include="..\d3xp\bc_meta.cpp" />
+    <ClCompile Include="..\d3xp\sb_record.cpp" />
+    <ClCompile Include="..\d3xp\sb_awareness.cpp" />
+    <ClCompile Include="..\d3xp\sb_cycle.cpp" />
     <ClCompile Include="..\d3xp\bc_mushroom.cpp" />
     <ClCompile Include="..\d3xp\bc_notewall.cpp" />
     <ClCompile Include="..\d3xp\bc_nudgepoint.cpp" />
@@ -561,6 +564,9 @@
     <ClInclude Include="..\d3xp\bc_manifeststation.h" />
     <ClInclude Include="..\d3xp\bc_mech.h" />
     <ClInclude Include="..\d3xp\bc_meta.h" />
+    <ClInclude Include="..\d3xp\sb_record.h" />
+    <ClInclude Include="..\d3xp\sb_awareness.h" />
+    <ClInclude Include="..\d3xp\sb_cycle.h" />
     <ClInclude Include="..\d3xp\bc_mushroom.h" />
     <ClInclude Include="..\d3xp\bc_notewall.h" />
     <ClInclude Include="..\d3xp\bc_nudgepoint.h" />

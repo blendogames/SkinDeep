@@ -882,6 +882,53 @@ void idConsoleLocal::UpdateDisplayFraction( void ) {
 
 /*
 ==============
+ConsoleKeyToChar
+
+Fallback for platforms/builds where SDL key events arrive but SDL_TEXTINPUT
+does not. The developer console must remain usable because gameplay input and
+the console toggle are both driven by the key event stream.
+==============
+*/
+static int ConsoleKeyToChar( int key ) {
+	// Ctrl/Alt combinations are handled as console shortcuts, not text.
+	if ( idKeyInput::IsDown( K_CTRL ) || idKeyInput::IsDown( K_ALT ) ) {
+		return 0;
+	}
+
+	const bool shift = idKeyInput::IsDown( K_SHIFT );
+
+	if ( key >= 'a' && key <= 'z' ) {
+		return shift ? ( key - 'a' + 'A' ) : key;
+	}
+
+	if ( key >= '0' && key <= '9' ) {
+		if ( !shift ) {
+			return key;
+		}
+
+		static const char shiftedDigits[] = ")!@#$%^&*(";
+		return shiftedDigits[ key - '0' ];
+	}
+
+	switch ( key ) {
+		case ' ': return ' ';
+		case '-': return shift ? '_' : '-';
+		case '=': return shift ? '+' : '=';
+		case '[': return shift ? '{' : '[';
+		case ']': return shift ? '}' : ']';
+		case '\\': return shift ? '|' : '\\';
+		case ';': return shift ? ':' : ';';
+		case '\'': return shift ? '"' : '\'';
+		case ',': return shift ? '<' : ',';
+		case '.': return shift ? '>' : '.';
+		case '/': return shift ? '?' : '/';
+		case K_BACKSPACE: return K_BACKSPACE;
+		default: return 0;
+	}
+}
+
+/*
+==============
 ProcessEvent
 ==============
 */
@@ -940,7 +987,24 @@ bool	idConsoleLocal::ProcessEvent( const sysEvent_t *event, bool forceAccept ) {
 	}
 
 	// handle key and character events
+	//
+	// SDL normally supplies both SE_KEY and SE_CHAR. Some Windows builds can
+	// receive the key stream without SDL_TEXTINPUT, which leaves the console
+	// visible but impossible to type into. Keep a tiny duplicate guard so we
+	// can synthesize text from key-down events and still accept native SE_CHAR
+	// events when SDL provides them.
+	static int pendingSyntheticChar = 0;
+
 	if ( event->evType == SE_CHAR ) {
+		// If SDL emitted the same character we already synthesized from the
+		// immediately preceding key-down, swallow the duplicate.
+		if ( pendingSyntheticChar != 0 && event->evValue == pendingSyntheticChar ) {
+			pendingSyntheticChar = 0;
+			return true;
+		}
+
+		pendingSyntheticChar = 0;
+
 		// never send the console key as a character
 		if ( event->evValue != Sys_GetConsoleKey( false ) && event->evValue != Sys_GetConsoleKey( true ) ) {
 			consoleField.CharEvent( event->evValue );
@@ -949,12 +1013,23 @@ bool	idConsoleLocal::ProcessEvent( const sysEvent_t *event, bool forceAccept ) {
 	}
 
 	if ( event->evType == SE_KEY ) {
+		// Any new key event means an older synthetic character can no longer
+		// have a matching SDL_TEXTINPUT event immediately behind it.
+		pendingSyntheticChar = 0;
+
 		// ignore up key events
 		if ( event->evValue2 == 0 ) {
 			return true;
 		}
 
 		KeyDownEvent( event->evValue );
+
+		const int ch = ConsoleKeyToChar( event->evValue );
+		if ( ch != 0 ) {
+			consoleField.CharEvent( ch );
+			pendingSyntheticChar = ch;
+		}
+
 		return true;
 	}
 
@@ -1220,7 +1295,7 @@ void idConsoleLocal::DrawSolidConsole( float frac ) {
 
 	renderSystem->SetColor( idVec4(0,.4f, .4f, 1)); //dark cyan for version text.
 													
-	idStr engineversion = idStr::Format( "%s.%i %s %s %s", ENGINE_VERSION, BUILD_NUMBER, CMAKE_INTDIR, __DATE__, __TIME__ );	
+	idStr engineversion = idStr::Format( "%s.%i %s %s %s  [CONSOLE INPUT FIX 3]", ENGINE_VERSION, BUILD_NUMBER, CMAKE_INTDIR, __DATE__, __TIME__ );	
 	i = engineversion.Length();
 	for ( x = 0; x < i; x++ )
 	{

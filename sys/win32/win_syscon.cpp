@@ -239,14 +239,15 @@ LONG WINAPI InputLineWndProc( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam
 		break;
 
 	case WM_CHAR:
-		key = Win_MapKey( lParam );
+		// WM_CHAR already contains the translated character in wParam.
+		key = (int)wParam;
 
 		GetWindowText( s_wcd.hwndInputLine, s_wcd.consoleField.GetBuffer(), MAX_EDIT_LINE );
 		SendMessage( s_wcd.hwndInputLine, EM_GETSEL, (WPARAM) NULL, (LPARAM) &cursor );
 		s_wcd.consoleField.SetCursor( cursor );
 
 		// enter the line
-		if ( key == K_ENTER || key == K_KP_ENTER ) {
+		if ( key == '\r' ) {
 			strncat( s_wcd.consoleText, s_wcd.consoleField.GetBuffer(), sizeof( s_wcd.consoleText ) - strlen( s_wcd.consoleText ) - 5 );
 			strcat( s_wcd.consoleText, "\n" );
 			SetWindowText( s_wcd.hwndInputLine, "" );
@@ -264,7 +265,7 @@ LONG WINAPI InputLineWndProc( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam
 		}
 
 		// command completion
-		if ( key == K_TAB ) {
+		if ( key == '\t' ) {
 			s_wcd.consoleField.AutoComplete();
 
 			SetWindowText( s_wcd.hwndInputLine, s_wcd.consoleField.GetBuffer() );
@@ -345,6 +346,8 @@ void Sys_CreateConsole( void ) {
 		return;
 	}
 
+	SetWindowText( s_wcd.hWnd, "ST. BRIELLE Developer Console [SAFE INPUT]" );
+
 	//
 	// create fonts
 	//
@@ -358,9 +361,15 @@ void Sys_CreateConsole( void ) {
 	//
 	// create the input line
 	//
+	HWND hwndCommandLabel = CreateWindow( "static", "COMMAND:", WS_CHILD | WS_VISIBLE,
+												6, 400, 62, 20,
+												s_wcd.hWnd,
+												NULL,
+												win32.hInstance, NULL );
+
 	s_wcd.hwndInputLine = CreateWindow( "edit", NULL, WS_CHILD | WS_VISIBLE | WS_BORDER |
 												ES_LEFT | ES_AUTOHSCROLL,
-												6, 400, 528, 20,
+												72, 398, 462, 24,
 												s_wcd.hWnd,
 												( HMENU ) INPUT_ID,	// child window ID
 												win32.hInstance, NULL );
@@ -403,6 +412,7 @@ void Sys_CreateConsole( void ) {
 
 	s_wcd.SysInputLineWndProc = ( LONG_PTR ) SetWindowLongPtr( s_wcd.hwndInputLine, GWLP_WNDPROC, ( LONG_PTR ) InputLineWndProc );
 	SendMessage( s_wcd.hwndInputLine, WM_SETFONT, ( WPARAM ) s_wcd.hfBufferFont, 0 );
+	SendMessage( hwndCommandLabel, WM_SETFONT, ( WPARAM ) s_wcd.hfBufferFont, 0 );
 
 // don't show it now that we have a splash screen up
 	if ( win32.win_viewlog.GetBool() ) {

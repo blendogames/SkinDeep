@@ -3024,6 +3024,7 @@ idPlayer::Init
 void idPlayer::Init( void ) {
 	const char			*value;
 	const idKeyValue	*kv;
+	const bool stbrielleMinimalPlayer = spawnArgs.GetBool( "stbrielle_minimal_player", "0" );
 
 	noclip					= false;
 	godmode					= false;
@@ -3110,7 +3111,9 @@ void idPlayer::Init( void ) {
 	nextHealthTake	= 0;
 	healthTake		= false;
 
-	SetupWeaponEntity();
+	if ( !stbrielleMinimalPlayer ) {
+		SetupWeaponEntity();
+	}
 	currentWeaponSlot = -1;
 	previousWeaponSlot = -1;
 
@@ -3192,22 +3195,28 @@ void idPlayer::Init( void ) {
 		renderEntity.shaderParms[6] = 0.0f;
 	}
 
-	value = spawnArgs.GetString( "bone_hips", "" );
-	hipJoint = animator.GetJointHandle( value );
-	if ( hipJoint == INVALID_JOINT ) {
-		gameLocal.Error( "Joint '%s' not found for 'bone_hips' on '%s'", value, name.c_str() );
-	}
+	if ( stbrielleMinimalPlayer ) {
+		hipJoint = INVALID_JOINT;
+		chestJoint = INVALID_JOINT;
+		headJoint = INVALID_JOINT;
+	} else {
+		value = spawnArgs.GetString( "bone_hips", "" );
+		hipJoint = animator.GetJointHandle( value );
+		if ( hipJoint == INVALID_JOINT ) {
+			gameLocal.Error( "Joint '%s' not found for 'bone_hips' on '%s'", value, name.c_str() );
+		}
 
-	value = spawnArgs.GetString( "bone_chest", "" );
-	chestJoint = animator.GetJointHandle( value );
-	if ( chestJoint == INVALID_JOINT ) {
-		gameLocal.Error( "Joint '%s' not found for 'bone_chest' on '%s'", value, name.c_str() );
-	}
+		value = spawnArgs.GetString( "bone_chest", "" );
+		chestJoint = animator.GetJointHandle( value );
+		if ( chestJoint == INVALID_JOINT ) {
+			gameLocal.Error( "Joint '%s' not found for 'bone_chest' on '%s'", value, name.c_str() );
+		}
 
-	value = spawnArgs.GetString( "bone_head", "" );
-	headJoint = animator.GetJointHandle( value );
-	if ( headJoint == INVALID_JOINT ) {
-		gameLocal.Error( "Joint '%s' not found for 'bone_head' on '%s'", value, name.c_str() );
+		value = spawnArgs.GetString( "bone_head", "" );
+		headJoint = animator.GetJointHandle( value );
+		if ( headJoint == INVALID_JOINT ) {
+			gameLocal.Error( "Joint '%s' not found for 'bone_head' on '%s'", value, name.c_str() );
+		}
 	}
 
 	// initialize the script variables
@@ -3284,6 +3293,14 @@ void idPlayer::Init( void ) {
 	cvarSystem->SetCVarBool("ui_chat", false);
 
 
+
+	if ( stbrielleMinimalPlayer ) {
+		hiddenWeapon = true;
+		weaponEnabled = false;
+		tipUp = false;
+		objectiveUp = false;
+		return;
+	}
 
 	//BC INIT
 	
@@ -3591,6 +3608,7 @@ Prepare any resources used by the player.
 void idPlayer::Spawn( void ) {
 	idStr		temp;
 	idBounds	bounds;
+	const bool stbrielleMinimalPlayer = spawnArgs.GetBool( "stbrielle_minimal_player", "0" );
 	
 
 	if ( entityNumber >= MAX_CLIENTS ) {
@@ -3649,14 +3667,20 @@ void idPlayer::Spawn( void ) {
 			cursor->Activate( true, gameLocal.time );
 		}
 
-		objectiveSystem = uiManager->FindGui( "guis/pda.gui", true, false, true );
+		if ( !stbrielleMinimalPlayer ) {
+			objectiveSystem = uiManager->FindGui( "guis/pda.gui", true, false, true );
+		} else {
+			objectiveSystem = NULL;
+		}
 		objectiveSystemOpen = false;
 	}
 
 	SetLastHitTime( 0 );
 
 	// load the armor sound feedback
-	declManager->FindSound( "player_hitarmor" );
+	if ( !stbrielleMinimalPlayer ) {
+		declManager->FindSound( "player_hitarmor" );
+	}
 
 	// set up conditions for animation
 	LinkScriptVariables();
@@ -3670,7 +3694,9 @@ void idPlayer::Spawn( void ) {
 	}
 
 	// create combat collision hull for exact collision detection
-	SetCombatModel();
+	if ( !stbrielleMinimalPlayer ) {
+		SetCombatModel();
+	}
 
 	// init the damage effects
 	playerView.SetPlayerEntity( this );
@@ -3698,8 +3724,18 @@ void idPlayer::Spawn( void ) {
 			assert( spectating );
 		}
 	} else {
-		SetupWeaponEntity();
+		if ( !stbrielleMinimalPlayer ) {
+			SetupWeaponEntity();
+		}
 		SpawnFromSpawnSpot();
+	}
+
+	if ( stbrielleMinimalPlayer ) {
+		hiddenWeapon = true;
+		weaponEnabled = false;
+		tipUp = false;
+		objectiveUp = false;
+		return;
 	}
 
 	// trigger playtesting item gives, if we didn't get here from a previous level
@@ -6321,7 +6357,7 @@ void idPlayer::SpawnToPoint( const idVec3 &spawn_origin, const idAngles &spawn_a
 	physicsObj.SetClipModelAxis();
 	physicsObj.EnableClip();
 
-	if ( !spectating ) {
+	if ( !spectating && !spawnArgs.GetBool( "stbrielle_minimal_player", "0" ) ) {
 		SetCombatContents( true );
 	}
 
@@ -16855,7 +16891,8 @@ void idPlayer::UpdateViewAngles( void ) {
 	if ( !noclip && ((leanState == LEANSTATE_TRANSITIONON || leanState == LEANSTATE_ACTIVE) || eventlogMenuActive || levelselectMenuActive || emailFullscreenState == EFS_ACTIVE || 
 		(contextMenuActive && contextMenuState == CONTEXTMENU_ACTIVE)
 		|| gameLocal.inCinematic || privateCameraView || gameLocal.GetCamera() 
-		|| influenceActive == INFLUENCE_LEVEL2 || objectiveSystemOpen || static_cast<idMeta*>(gameLocal.metaEnt.GetEntity())->GetHightlighterActive()) )
+		|| influenceActive == INFLUENCE_LEVEL2 || objectiveSystemOpen
+		|| ( gameLocal.metaEnt.IsValid() && static_cast<idMeta*>(gameLocal.metaEnt.GetEntity())->GetHightlighterActive() ) ) )
 	{
 		// no view changes at all, but we still want to update the deltas or else when
 		// we get out of this mode, our view will snap to a kind of random angle
@@ -20217,7 +20254,7 @@ bool idPlayer::HandleESC( void ) {
 	}
 
 	//exit highlighter.
-	if (static_cast<idMeta*>(gameLocal.metaEnt.GetEntity())->GetHightlighterActive())
+	if ( gameLocal.metaEnt.IsValid() && static_cast<idMeta*>(gameLocal.metaEnt.GetEntity())->GetHightlighterActive() )
 	{
 		static_cast<idMeta*>(gameLocal.metaEnt.GetEntity())->SkipHighlighter();
 		return true;
@@ -21175,6 +21212,119 @@ Called every tic for each player
 void idPlayer::Think( void ) {
 	renderEntity_t *headRenderEnt;
 	int isBaffled = 0;
+
+	// ST. BRIELLE standalone greybox player:
+	// run only the core first-person loop. The public source release does not
+	// include Skin Deep's player models, animation state machine, weapons,
+	// equipment UI, meta/highlighter manager, or other commercial gameplay data.
+	// Keeping this path deliberately small lets St. Brielle own those systems
+	// instead of depending on placeholder Skin Deep objects.
+	if ( spawnArgs.GetBool( "stbrielle_minimal_player", "0" ) ) {
+		static bool stbrielleLoggedLiveFrame = false;
+		if ( !stbrielleLoggedLiveFrame ) {
+			stbrielleLoggedLiveFrame = true;
+			common->Printf( "[ST. BRIELLE PLAYER] live frame loop active at origin %s\n", GetPhysics()->GetOrigin().ToString() );
+		}
+
+		oldButtons = usercmd.buttons;
+
+		usercmd = gameLocal.usercmds[ entityNumber ];
+		buttonMask &= usercmd.buttons;
+		usercmd.buttons &= ~buttonMask;
+
+		if ( !spawnAnglesSet ) {
+			spawnAnglesSet = true;
+			SetViewAngles( spawnAngles );
+			oldFlags = usercmd.flags;
+		}
+
+		physicsObj.SetSpeed( pm_walkspeed.GetFloat(), pm_crouchspeed.GetFloat() );
+
+		UpdateViewAngles();
+
+		if ( !gameLocal.menuPause || gameLocal.spectatePause ) {
+			Move();
+		}
+
+		if ( !g_stopTime.GetBool() && !noclip && !spectating && health > 0 && !IsHidden() ) {
+			TouchTriggers();
+		}
+
+		CalculateFirstPersonView();
+
+		// ST. BRIELLE interaction layer. The standalone player intentionally
+		// does not run Skin Deep's full frob scanner, so keep one small,
+		// deterministic first-person trace for both the prompt and USE action.
+		const float interactRange = spawnArgs.GetFloat( "stbrielle_interact_range", "112" );
+		const idVec3 interactStart = firstPersonViewOrigin;
+		const idVec3 interactEnd = interactStart + firstPersonViewAxis[0] * interactRange;
+
+		trace_t interactTrace;
+		gameLocal.clip.TracePoint( interactTrace, interactStart, interactEnd, MASK_SOLID | CONTENTS_BODY, this );
+
+		idEntity *interactEnt = NULL;
+		if ( interactTrace.fraction < 1.0f && interactTrace.c.entityNum >= 0 && interactTrace.c.entityNum < MAX_GENTITIES ) {
+			interactEnt = gameLocal.entities[ interactTrace.c.entityNum ];
+		}
+
+		const bool canInteract =
+			interactEnt &&
+			interactEnt != gameLocal.world &&
+			!interactEnt->IsHidden() &&
+			( interactEnt->isFrobbable || interactEnt->spawnArgs.GetBool( "stbrielle_interact", "0" ) );
+
+		if ( hud ) {
+			hud->SetStateBool( "sb_interact_visible", canInteract );
+
+			if ( canInteract ) {
+				idStr interactName = interactEnt->spawnArgs.GetString( "displayname", "" );
+				if ( interactName.IsEmpty() ) {
+					interactName = interactEnt->GetName();
+				}
+
+				idStr interactAction = interactEnt->spawnArgs.GetString( "stbrielle_action", "INTERACT" );
+				interactAction.ToUpper();
+				interactName.ToUpper();
+
+				hud->SetStateString( "sb_interact_action", interactAction.c_str() );
+				hud->SetStateString( "sb_interact_name", interactName.c_str() );
+			} else {
+				hud->SetStateString( "sb_interact_action", "" );
+				hud->SetStateString( "sb_interact_name", "" );
+			}
+
+			hud->StateChanged( gameLocal.time );
+		}
+
+		if ( ( usercmd.buttons & BUTTON_FROB ) && !( oldButtons & BUTTON_FROB ) ) {
+			if ( canInteract ) {
+				const int frobIndex = interactEnt->spawnArgs.GetInt( "frobindex", "0" );
+				const bool handledByEntity = interactEnt->DoFrob( frobIndex, this );
+
+				if ( !handledByEntity && interactEnt->spawnArgs.GetBool( "stbrielle_activate_targets", "1" ) ) {
+					interactEnt->ActivateTargets( this );
+				}
+
+				if ( interactEnt->spawnArgs.GetBool( "stbrielle_use_once", "0" ) ) {
+					interactEnt->isFrobbable = false;
+					interactEnt->spawnArgs.SetBool( "stbrielle_interact", false );
+				}
+
+				if ( interactEnt->spawnArgs.GetBool( "stbrielle_interact_debug", "0" ) ) {
+					common->Printf( "[ST. BRIELLE USE] %s\n", interactEnt->GetName() );
+				}
+			} else if ( spawnArgs.GetBool( "stbrielle_interact_debug", "0" ) ) {
+				common->Printf( "[ST. BRIELLE USE] no interactable in range\n" );
+			}
+		}
+
+		CalculateRenderView();
+
+		Present();
+
+		oldFlags = usercmd.flags;
+		return;
+	}
 
 	//debug draw player velocity
 	if (g_showPlayerSpeed.GetBool())
@@ -23104,7 +23254,7 @@ void idPlayer::Think( void ) {
 		common->Printf("%f\n", luminance);
 	}
 
-	if (gameLocal.menuPause && static_cast<idMeta*>(gameLocal.metaEnt.GetEntity())->GetHightlighterActive())
+	if ( gameLocal.menuPause && gameLocal.metaEnt.IsValid() && static_cast<idMeta*>(gameLocal.metaEnt.GetEntity())->GetHightlighterActive() )
 	{
 		//This allows the highlighter to think regardless of whether the world is paused.
 		static_cast<idMeta*>(gameLocal.metaEnt.GetEntity())->DoHightlighterThink();

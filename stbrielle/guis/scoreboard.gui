@@ -1,0 +1,5 @@
+windowDef Desktop {
+	rect 0, 0, 640, 480
+	visible 1
+	noCursor 1
+}

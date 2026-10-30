@@ -1834,7 +1834,11 @@ bool idProgram::CompileText( const char *source, const char *text, bool console 
 	filenum = GetFilenum( ospath );
 
 	try {
-		compiler.CompileFile( text, filename, console );
+		// Feed the lexer the original virtual filesystem path, not the cached
+		// absolute OS path stored by GetFilenum().  Using the absolute Windows
+		// path here makes #include resolution prepend fs_game to "C:\\...", which
+		// produces malformed paths such as stbrielle/C:\\.../script/script.
+		compiler.CompileFile( text, source, console );
 
 		// check to make sure all functions prototyped have code
 		for( i = 0; i < varDefs.Num(); i++ ) {

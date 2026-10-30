@@ -334,9 +334,9 @@ const int SAVE_WKF_WINIDS[3] = {
 	CSIDL_LOCAL_APPDATA
 };
 const char* SAVE_WKF_SUB_PATHS[3] = {
-	"/skindeep",
-	"/My Games/skindeep",
-	"/skindeep"
+	"/StBrielle",
+	"/My Games/StBrielle",
+	"/StBrielle"
 };
 
 static int GetHomeDir( char *dst, size_t size, saveWindowsKnownFolders_t knownFolder = WKF_DEFAULT )
@@ -360,7 +360,7 @@ static int GetHomeDir( char *dst, size_t size, saveWindowsKnownFolders_t knownFo
 
 	if (bytesFree.QuadPart < minBytes.QuadPart)
 	{
-		idStr errorMsg = idStr::Format("Insufficient disk space for My Documents path %s. Skin deep requires at least %d MB free.", dst, win32.win_mindiskspace.GetInteger());
+		idStr errorMsg = idStr::Format("Insufficient disk space for My Documents path %s. St. Brielle requires at least %d MB free.", dst, win32.win_mindiskspace.GetInteger());
 		MessageBox(NULL, errorMsg.c_str(), "Fatal Error", MB_OK | MB_ICONERROR);
 		exit(1);
 	}
@@ -483,7 +483,7 @@ bool Sys_GetPath(sysPath_t type, idStr &path) {
 					return true;
 				}
 			}
-			Sys_Error("FATAL ERROR:\n\nSkin Deep was unable to access any potential save folder.\nThis may be because of anti-virus or firewall software. For solutions, please visit: https://blendogames.com/skindeep/support.htm");
+			Sys_Error("FATAL ERROR:\n\nSt. Brielle was unable to access any potential save folder.\nThis may be because of anti-virus, firewall, or folder-permission software.");
 			return false;
 		}
 	#endif
@@ -842,7 +842,7 @@ BOOL CALLBACK CrashHandlerProc( HWND hwndDlg, UINT message, WPARAM wParam, LPARA
 		case IDC_DUMP:
 		{
 			// Create the crash dump file
-			HANDLE dmpFile = CreateFile( "skindeep.dmp", GENERIC_WRITE, 0, NULL, CREATE_ALWAYS,
+			HANDLE dmpFile = CreateFile( "stbrielle.dmp", GENERIC_WRITE, 0, NULL, CREATE_ALWAYS,
 				FILE_ATTRIBUTE_NORMAL, NULL );
 			MINIDUMP_EXCEPTION_INFORMATION dumpInfo;
 			dumpInfo.ThreadId = GetCurrentThreadId();
@@ -875,7 +875,7 @@ BOOL CALLBACK CrashHandlerProc( HWND hwndDlg, UINT message, WPARAM wParam, LPARA
 			const int MAX_ZIP_NAME = 1024;
 			char fileName[MAX_ZIP_NAME];
 			
-			idStr::snPrintf( fileName, MAX_ZIP_NAME, "SkinDeep-Crash-%s.zip", dateStr );
+			idStr::snPrintf( fileName, MAX_ZIP_NAME, "StBrielle-Crash-%s.zip", dateStr );
 			OPENFILENAME openInfo;
 			ZeroMemory( &openInfo, sizeof( openInfo ) );
 			openInfo.lStructSize = sizeof( OPENFILENAME );
@@ -907,15 +907,15 @@ BOOL CALLBACK CrashHandlerProc( HWND hwndDlg, UINT message, WPARAM wParam, LPARA
 						if (!success && errorMsg.Length() == 0)
 							errorMsg = "Failed to add crashinfo.txt to zip";
 						
-						success &= AddFileToZip( &zip, "skindeep.pdb" );
+						success &= AddFileToZip( &zip, "stbrielle.pdb" );
 						if (!success && errorMsg.Length() == 0)
 							errorMsg = "Failed to add skindeep.pdb to zip";
 						
-						success &= AddFileToZip( &zip, "skindeep.dmp" );
+						success &= AddFileToZip( &zip, "stbrielle.dmp" );
 						if (!success && errorMsg.Length() == 0)
 							errorMsg = "Failed to add skindeep.dmp to zip";
 						
-						success &= AddFileToZip( &zip, "skindeep.exe" );
+						success &= AddFileToZip( &zip, "stbrielle.exe" );
 						if (!success && errorMsg.Length() == 0)
 							errorMsg = "Failed to add skindeep.exe to zip";
 						
@@ -968,9 +968,12 @@ int SEH_Filter( _EXCEPTION_POINTERS* ex, bool isMainThread = true )
 
 	disableAssertPrintf = true;
 
-	idCVar* versionCvar = cvarSystem->Find( "g_version" );
+	// Build a fresh crash report and avoid dereferencing startup-time state
+	// that may not have been initialized when the exception occurred.
+	outputMsg.Clear();
+	idCVar* versionCvar = cvarSystem ? cvarSystem->Find( "g_version" ) : NULL;
 	outputMsg += "Build: ";
-	outputMsg += versionCvar->GetString();
+	outputMsg += versionCvar ? versionCvar->GetString() : "unavailable";
 	outputMsg += '\n';
 
 	outputMsg += "==================FATAL ERROR====================\n";
@@ -981,29 +984,49 @@ int SEH_Filter( _EXCEPTION_POINTERS* ex, bool isMainThread = true )
 
 	SymInitialize( process, NULL, TRUE );
 
-	frames = CaptureStackBackTrace( 0, 100, stack, NULL );
+	// Never ask CaptureStackBackTrace for more entries than the local array.
+	// The old code requested 100 entries into a 64-entry buffer, corrupting
+	// the exception-handler stack and obscuring the original crash.
+	frames = CaptureStackBackTrace( 0, MAX_STACK_COUNT, stack, NULL );
 	symbol = ( SYMBOL_INFO* )calloc( sizeof( SYMBOL_INFO ) + 256 * sizeof( char ), 1 );
-	symbol->MaxNameLen = 255;
-	symbol->SizeOfStruct = sizeof( SYMBOL_INFO );
+	if ( symbol ) {
+		symbol->MaxNameLen = 255;
+		symbol->SizeOfStruct = sizeof( SYMBOL_INFO );
+	}
 
-	IMAGEHLP_LINE64* line = ( IMAGEHLP_LINE64* )malloc( sizeof( IMAGEHLP_LINE64 ) );
-	DWORD displacement;
+	IMAGEHLP_LINE64* line = ( IMAGEHLP_LINE64* )calloc( 1, sizeof( IMAGEHLP_LINE64 ) );
+	DWORD displacement = 0;
 
 	outputMsg += idStr::Format( "===================CALL STACK====================\n" );
 	idStrList stackFrames;
 	for ( int i = 1; i < frames; i++ )
 	{
-		SymFromAddr( process, ( DWORD64 )( stack[i] ), 0, symbol );
+		const char* symbolName = "<unknown>";
+		DWORD64 symbolAddress = (DWORD64)stack[i];
 
-		memset( line, 0, sizeof( IMAGEHLP_LINE64 ) );
-		line->SizeOfStruct = sizeof( IMAGEHLP_LINE64 );
-		if ( SymGetLineFromAddr64( process, ( DWORD64 )( stack[i] ), &displacement, line ) )
+		if ( symbol ) {
+			memset( symbol, 0, sizeof( SYMBOL_INFO ) + 256 * sizeof( char ) );
+			symbol->MaxNameLen = 255;
+			symbol->SizeOfStruct = sizeof( SYMBOL_INFO );
+			if ( SymFromAddr( process, ( DWORD64 )( stack[i] ), 0, symbol ) ) {
+				symbolName = symbol->Name[0] ? symbol->Name : "<unknown>";
+				symbolAddress = symbol->Address;
+			}
+		}
+
+		if ( line ) {
+			memset( line, 0, sizeof( IMAGEHLP_LINE64 ) );
+			line->SizeOfStruct = sizeof( IMAGEHLP_LINE64 );
+		}
+
+		if ( line && SymGetLineFromAddr64( process, ( DWORD64 )( stack[i] ), &displacement, line ) )
 		{
-			stackFrames.Append( idStr::Format( "%i: %s - %s:%lu\n", frames - i - 1, symbol->Name, line->FileName, line->LineNumber ));
+			const char* fileName = line->FileName ? line->FileName : "<unknown>";
+			stackFrames.Append( idStr::Format( "%i: %s - %s:%lu\n", frames - i - 1, symbolName, fileName, line->LineNumber ));
 		}
 		else
 		{
-			stackFrames.Append( idStr::Format( "%i: %s - 0x%0llX\n", frames - i - 1, symbol->Name, symbol->Address ) );
+			stackFrames.Append( idStr::Format( "%i: %s - 0x%0llX\n", frames - i - 1, symbolName, symbolAddress ) );
 		}
 	}
 
@@ -1036,13 +1059,16 @@ int SEH_Filter( _EXCEPTION_POINTERS* ex, bool isMainThread = true )
 
 	outputMsg += idStr::Format( "Total Memory (MB): %d\n", SDL_GetSystemRAM() );
 
-	outputMsg += idStr::Format( "GPU: %s; %s; %s\n", glConfig.vendor_string, glConfig.renderer_string, glConfig.version_string );
+	outputMsg += idStr::Format( "GPU: %s; %s; %s\n",
+		glConfig.vendor_string ? glConfig.vendor_string : "unavailable",
+		glConfig.renderer_string ? glConfig.renderer_string : "unavailable",
+		glConfig.version_string ? glConfig.version_string : "unavailable" );
 
 	outputMsg += "=================================================\n";
 
 	// If this handler gets called from the non-main thread, using common->Printf may hang
 	if ( isMainThread ) {
-		common->Printf( outputMsg.c_str() );
+		common->Printf( "%s", outputMsg.c_str() );
 
 		// Close the game window
 		GLimp_Shutdown();
@@ -1053,8 +1079,12 @@ int SEH_Filter( _EXCEPTION_POINTERS* ex, bool isMainThread = true )
 	// Show dialog box
 	DialogBoxParam( GetModuleHandle( NULL ), MAKEINTRESOURCE( IDD_CRASHHANDLER ), GetActiveWindow(), ( DLGPROC )CrashHandlerProc, ( LPARAM )&outputMsg );
 
-	free( symbol );
-	free( line );
+	if ( symbol ) {
+		free( symbol );
+	}
+	if ( line ) {
+		free( line );
+	}
 
 	return EXCEPTION_EXECUTE_HANDLER;
 }

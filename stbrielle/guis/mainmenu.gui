@@ -1,0 +1,16 @@
+windowDef Desktop {
+	rect 0, 0, 640, 480
+	visible 1
+	noCursor 1
+	backcolor 0.015, 0.015, 0.02, 1
+
+	listDef mapList {
+		rect 0, 0, 1, 1
+		visible 0
+	}
+
+	listDef serverList {
+		rect 0, 0, 1, 1
+		visible 0
+	}
+}

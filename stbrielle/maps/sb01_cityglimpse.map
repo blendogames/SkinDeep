@@ -1,0 +1,1215 @@
+Version 2
+// ST. BRIELLE: THE INTERVAL
+// sb01_cityglimpse — Departure Count, the first street investigation.
+// Compare the two accounts, certify one, and collect the Mercuria assignment.
+// All progression is guarded by persistent Record checks, including re-entry.
+
+{
+"classname" "worldspawn"
+"editor_drLastCameraPos" "-420 0 80"
+{
+brushDef3
+{
+( 1 0 0 512 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_void" 0 0 0
+( -1 0 0 -544 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_void" 0 0 0
+( 0 1 0 -384 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_void" 0 0 0
+( 0 -1 0 -384 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_void" 0 0 0
+( 0 0 1 -416 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_void" 0 0 0
+( 0 0 -1 -32 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_void" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 -928 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_void" 0 0 0
+( -1 0 0 896 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_void" 0 0 0
+( 0 1 0 -384 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_void" 0 0 0
+( 0 -1 0 -384 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_void" 0 0 0
+( 0 0 1 -416 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_void" 0 0 0
+( 0 0 -1 -32 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_void" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 -896 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_void" 0 0 0
+( -1 0 0 -512 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_void" 0 0 0
+( 0 1 0 352 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_void" 0 0 0
+( 0 -1 0 -384 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_void" 0 0 0
+( 0 0 1 -416 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_void" 0 0 0
+( 0 0 -1 -32 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_void" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 -896 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_void" 0 0 0
+( -1 0 0 -512 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_void" 0 0 0
+( 0 1 0 -384 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_void" 0 0 0
+( 0 -1 0 352 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_void" 0 0 0
+( 0 0 1 -416 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_void" 0 0 0
+( 0 0 -1 -32 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_void" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 -896 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/city_asphalt" 0 0 0
+( -1 0 0 -512 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/city_asphalt" 0 0 0
+( 0 1 0 -352 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/city_asphalt" 0 0 0
+( 0 -1 0 -352 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/city_asphalt" 0 0 0
+( 0 0 1 0 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/city_asphalt" 0 0 0
+( 0 0 -1 -32 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/city_asphalt" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 -896 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_void" 0 0 0
+( -1 0 0 -512 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_void" 0 0 0
+( 0 1 0 -352 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_void" 0 0 0
+( 0 -1 0 -352 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_void" 0 0 0
+( 0 0 1 -416 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_void" 0 0 0
+( 0 0 -1 384 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_void" 0 0 0
+}
+}
+}
+
+{
+"classname" "info_player_start"
+"name" "cityglimpse_player_start"
+"origin" "-430 0 32"
+"angle" "0"
+}
+
+// Broad sidewalks: the street itself remains dark wet stone.
+{
+"classname" "func_static"
+"name" "cityglimpse_sidewalks"
+"model" "cityglimpse_sidewalks"
+"solid" "1"
+{
+brushDef3
+{
+( 1 0 0 -850 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_tile" 0 0 0
+( -1 0 0 -470 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_tile" 0 0 0
+( 0 1 0 -176 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_tile" 0 0 0
+( 0 -1 0 96 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_tile" 0 0 0
+( 0 0 1 -8 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_tile" 0 0 0
+( 0 0 -1 0 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_tile" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 -850 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_tile" 0 0 0
+( -1 0 0 -470 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_tile" 0 0 0
+( 0 1 0 96 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_tile" 0 0 0
+( 0 -1 0 -176 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_tile" 0 0 0
+( 0 0 1 -8 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_tile" 0 0 0
+( 0 0 -1 0 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_tile" 0 0 0
+}
+}
+}
+
+// North-side civic blocks.
+{
+"classname" "func_static"
+"name" "cityglimpse_north_blocks"
+"model" "cityglimpse_north_blocks"
+"solid" "1"
+{
+brushDef3
+{
+( 1 0 0 120 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( -1 0 0 -300 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 1 0 -340 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 -1 0 184 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 0 1 -252 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 0 -1 0 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 -490 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( -1 0 0 -80 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 1 0 -340 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 -1 0 192 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 0 1 -318 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 0 -1 0 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 -830 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/stbrielle/city_brick" 0 0 0
+( -1 0 0 540 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/stbrielle/city_brick" 0 0 0
+( 0 1 0 -340 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/stbrielle/city_brick" 0 0 0
+( 0 -1 0 176 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/stbrielle/city_brick" 0 0 0
+( 0 0 1 -230 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/stbrielle/city_brick" 0 0 0
+( 0 0 -1 0 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/stbrielle/city_brick" 0 0 0
+}
+}
+}
+
+// South-side older brick/civic massing.
+{
+"classname" "func_static"
+"name" "cityglimpse_south_blocks"
+"model" "cityglimpse_south_blocks"
+"solid" "1"
+{
+brushDef3
+{
+( 1 0 0 160 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/stbrielle/city_brick" 0 0 0
+( -1 0 0 -240 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/stbrielle/city_brick" 0 0 0
+( 0 1 0 184 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/stbrielle/city_brick" 0 0 0
+( 0 -1 0 -340 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/stbrielle/city_brick" 0 0 0
+( 0 0 1 -270 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/stbrielle/city_brick" 0 0 0
+( 0 0 -1 0 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/stbrielle/city_brick" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 -400 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( -1 0 0 -80 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 1 0 192 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 -1 0 -340 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 0 1 -224 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 0 -1 0 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 -820 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/stbrielle/city_brick" 0 0 0
+( -1 0 0 450 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/stbrielle/city_brick" 0 0 0
+( 0 1 0 176 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/stbrielle/city_brick" 0 0 0
+( 0 -1 0 -340 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/stbrielle/city_brick" 0 0 0
+( 0 0 1 -302 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/stbrielle/city_brick" 0 0 0
+( 0 0 -1 0 ) ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) "textures/stbrielle/city_brick" 0 0 0
+}
+}
+}
+
+// Warm rectangles suggest occupied windows without turning the teaser into a full facade pass.
+{
+"classname" "func_static"
+"name" "cityglimpse_windows"
+"model" "cityglimpse_windows"
+"solid" "0"
+{
+brushDef3
+{
+( 1 0 0 120 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( -1 0 0 -180 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 1 0 -184 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 -1 0 180 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 0 1 -130 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 0 -1 82 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 -330 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( -1 0 0 270 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 1 0 -192 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 -1 0 188 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 0 1 -176 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 0 -1 118 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 -610 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( -1 0 0 550 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 1 0 188 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 -1 0 -192 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 0 1 -148 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 0 -1 96 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+}
+}
+}
+
+// Distant civic tower and clock-like beacon: first landmark beyond the Annex.
+{
+"classname" "func_static"
+"name" "cityglimpse_civic_tower"
+"model" "cityglimpse_civic_tower"
+"solid" "1"
+{
+brushDef3
+{
+( 1 0 0 -824 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( -1 0 0 738 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 1 0 -70 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 -1 0 -70 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 0 1 -332 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 0 -1 0 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 -802 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_brass" 0 0 0
+( -1 0 0 760 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_brass" 0 0 0
+( 0 1 0 -44 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_brass" 0 0 0
+( 0 -1 0 -44 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_brass" 0 0 0
+( 0 0 1 -286 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_brass" 0 0 0
+( 0 0 -1 274 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_brass" 0 0 0
+}
+}
+}
+
+{
+"ambient" "1"
+"texture" "lights/stbrielle/ambient"
+"light_radius" "1450 500 440"
+"classname" "light"
+"name" "cityglimpse_moon_fill"
+"origin" "60 0 300"
+"_color" "0.085 0.12 0.17"
+"noshadows" "1"
+}
+{
+"texture" "lights/stbrielle/practical"
+"light_radius" "330 280 380"
+"classname" "light"
+"name" "cityglimpse_window_pool_a"
+"origin" "-170 96 174"
+"_color" "1.15 0.81 0.43"
+"noshadows" "0"
+}
+{
+"texture" "lights/stbrielle/practical"
+"light_radius" "340 280 380"
+"classname" "light"
+"name" "cityglimpse_window_pool_b"
+"origin" "300 -96 174"
+"_color" "1.05 0.76 0.43"
+"noshadows" "0"
+}
+{
+"texture" "lights/stbrielle/practical"
+"light_radius" "230 190 300"
+"classname" "light"
+"name" "cityglimpse_record_light"
+"origin" "-250 0 118"
+"_color" "0.18 0.48 0.42"
+"noshadows" "1"
+"start_off" "1"
+}
+{
+"texture" "lights/stbrielle/practical"
+"light_radius" "180 160 280"
+"classname" "light"
+"name" "cityglimpse_tower_beacon"
+"origin" "780 0 314"
+"_color" "0.50 0.12 0.075"
+"noshadows" "1"
+}
+
+{
+"classname" "stbrielle_awareness_director"
+"name" "cityglimpse_awareness_director"
+"fire_current_on_spawn" "0"
+"awareness_debug" "0"
+"origin" "-420 64 32"
+}
+
+{
+"classname" "trigger_once"
+"name" "cityglimpse_arrival_trigger"
+"target" "cityglimpse_arrival_notice"
+"target1" "cityglimpse_complete_record"
+{
+brushDef3
+{
+( 1 0 0 220 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/common/trigger" 0 0 0
+( -1 0 0 -360 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/common/trigger" 0 0 0
+( 0 1 0 -150 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/common/trigger" 0 0 0
+( 0 -1 0 -150 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/common/trigger" 0 0 0
+( 0 0 1 -170 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/common/trigger" 0 0 0
+( 0 0 -1 0 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/common/trigger" 0 0 0
+}
+}
+}
+
+{
+"classname" "target_stbrielle_notice"
+"name" "cityglimpse_arrival_notice"
+"notice_kicker" "CITY OF ST. BRIELLE / PUBLIC WAY"
+"notice_title" "MUNICIPAL ANNEX / DEPARTURE RECEIVED"
+"notice_line1" "ANNEX FILE: CLOSED"
+"notice_line2" "PERSONNEL STATUS: PENDING RECORD"
+"notice_line3" "RECORD STABILITY: PENDING"
+"notice_line4" "CONTINUITY STATUS: ACTIVE"
+"notice_footer" "CIVITAS INCOMPLETA / WATER CYCLE / 23:44"
+"notice_duration" "9.0"
+"origin" "-260 60 32"
+}
+
+{
+"classname" "target_stbrielle_record"
+"name" "cityglimpse_complete_record"
+"record_key" "sb_vertical_slice_complete"
+"record_mode" "set"
+"record_value" "1"
+"record_once" "1"
+"record_debug" "1"
+"target" "cityglimpse_record_light"
+"origin" "-260 -60 32"
+}
+
+// DEPARTURE COUNT / CASE 0214-B
+// Existing assets only; small solid kiosks keep map compilation inexpensive.
+
+{
+"classname" "func_static"
+"name" "city_roster"
+"model" "city_roster"
+"solid" "1"
+"frobbable" "1"
+"stbrielle_interact" "1"
+"stbrielle_use_once" "0"
+"stbrielle_action" "READ"
+"displayname" "CITY ROSTER"
+"target" "city_roster_read"
+{
+brushDef3
+{
+( 1 0 0 62 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( -1 0 0 -118 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 1 0 -154 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 -1 0 118 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 0 1 -68 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 0 -1 8 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 60 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_paper_old" 0 0 0
+( -1 0 0 -120 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_paper_old" 0 0 0
+( 0 1 0 -156 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_paper_old" 0 0 0
+( 0 -1 0 116 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_paper_old" 0 0 0
+( 0 0 1 -72 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_paper_old" 0 0 0
+( 0 0 -1 68 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_paper_old" 0 0 0
+}
+}
+}
+
+{
+"classname" "target_stbrielle_record"
+"name" "city_roster_read"
+"record_key" "sb_city_roster_read"
+"record_value" "1"
+"record_mode" "set"
+"record_once" "0"
+"target" "city_roster_notice"
+}
+
+{
+"classname" "target_stbrielle_notice"
+"name" "city_roster_notice"
+"notice_kicker" "CITY OF ST. BRIELLE / CONTINUITY DESK"
+"notice_title" "DEPARTURE REGISTER"
+"notice_line1" "ANNEX DEPARTURES AT 23:44: ONE"
+"notice_line2" "AUTHORIZED INSPECTOR: $PLAYER"
+"notice_line3" "PHOTOGRAPH 6-B: FIVE SUBJECTS"
+"notice_line4" "SECOND DEPARTURE: NO SUCH PERSON"
+"notice_footer" "COMPARE WITH THE WITNESS SLIP / SOUTH SIDE"
+"notice_duration" "14"
+}
+
+{
+"classname" "func_static"
+"name" "city_testimony"
+"model" "city_testimony"
+"solid" "1"
+"frobbable" "1"
+"stbrielle_interact" "1"
+"stbrielle_use_once" "0"
+"stbrielle_action" "READ"
+"displayname" "WITNESS SLIP"
+"target" "city_testimony_read"
+{
+brushDef3
+{
+( 1 0 0 -208 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( -1 0 0 152 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 1 0 118 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 -1 0 -154 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 0 1 -68 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 0 -1 8 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 -210 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_paper_old" 0 0 0
+( -1 0 0 150 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_paper_old" 0 0 0
+( 0 1 0 116 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_paper_old" 0 0 0
+( 0 -1 0 -156 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_paper_old" 0 0 0
+( 0 0 1 -72 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_paper_old" 0 0 0
+( 0 0 -1 68 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_paper_old" 0 0 0
+}
+}
+}
+
+{
+"classname" "target_stbrielle_record"
+"name" "city_testimony_read"
+"record_key" "sb_city_testimony_read"
+"record_value" "1"
+"record_mode" "set"
+"record_once" "0"
+"target" "city_testimony_notice"
+}
+
+{
+"classname" "target_stbrielle_notice"
+"name" "city_testimony_notice"
+"notice_kicker" "CITY OF ST. BRIELLE / CONTINUITY DESK"
+"notice_title" "UNFILED TESTIMONY"
+"notice_line1" "TWO PEOPLE CAME OUT AT 23:44."
+"notice_line2" "THE SECOND HAD YOUR FACE."
+"notice_line3" "IT WAITED FOR YOU TO LOOK AWAY."
+"notice_line4" "THE DOOR CLOSED. IT WAS STILL THERE."
+"notice_footer" "COMPARE WITH THE CITY ROSTER / NORTH SIDE"
+"notice_duration" "14"
+}
+
+{
+"classname" "target_stbrielle_notice"
+"name" "city_need_roster"
+"notice_kicker" "CITY OF ST. BRIELLE / CONTINUITY DESK"
+"notice_title" "EVIDENCE REQUIRED"
+"notice_line1" "READ THE CITY ROSTER / NORTH SIDE"
+"notice_line2" "THEN READ THE WITNESS SLIP / SOUTH SIDE"
+"notice_line3" "BOTH ACCOUNTS MUST BE EXAMINED."
+"notice_line4" "NO RECORD HAS BEEN CERTIFIED."
+"notice_footer" "CASE 0214-B / OFFICE OF PERPETUAL RECORD"
+"notice_duration" "14"
+}
+
+{
+"classname" "target_stbrielle_notice"
+"name" "city_need_testimony"
+"notice_kicker" "CITY OF ST. BRIELLE / CONTINUITY DESK"
+"notice_title" "WITNESS COPY REQUIRED"
+"notice_line1" "THE CITY HAS SUPPLIED ITS ACCOUNT."
+"notice_line2" "READ THE WITNESS SLIP / SOUTH SIDE"
+"notice_line3" "THEN RETURN TO THE TWO EASTERN SEALS."
+"notice_line4" "NO RECORD HAS BEEN CERTIFIED."
+"notice_footer" "CASE 0214-B / OFFICE OF PERPETUAL RECORD"
+"notice_duration" "14"
+}
+
+{
+"classname" "target_stbrielle_recordcheck"
+"name" "city_review"
+"record_key" "sb_city_certification"
+"record_compare" "equals"
+"record_value" "1"
+"record_once" "0"
+"target" "city_official_result"
+"record_fail_target" "city_witness_result"
+}
+
+{
+"classname" "func_static"
+"name" "city_certify_official"
+"model" "city_certify_official"
+"solid" "1"
+"frobbable" "1"
+"stbrielle_interact" "1"
+"stbrielle_use_once" "0"
+"stbrielle_action" "READ"
+"displayname" "CERTIFY CITY COPY"
+"target" "city_official_open"
+{
+brushDef3
+{
+( 1 0 0 -638 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( -1 0 0 582 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 1 0 -128 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 -1 0 92 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 0 1 -68 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 0 -1 8 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 -640 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_greenstone" 0 0 0
+( -1 0 0 580 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_greenstone" 0 0 0
+( 0 1 0 -130 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_greenstone" 0 0 0
+( 0 -1 0 90 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_greenstone" 0 0 0
+( 0 0 1 -72 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_greenstone" 0 0 0
+( 0 0 -1 68 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_greenstone" 0 0 0
+}
+}
+}
+
+{
+"classname" "target_stbrielle_recordcheck"
+"name" "city_official_open"
+"record_key" "sb_city_certification"
+"record_compare" "lte"
+"record_value" "0"
+"record_once" "0"
+"target" "city_official_roster"
+"record_fail_target" "city_review"
+}
+
+{
+"classname" "target_stbrielle_recordcheck"
+"name" "city_official_roster"
+"record_key" "sb_city_roster_read"
+"record_compare" "true"
+"record_value" "1"
+"record_once" "0"
+"target" "city_official_testimony"
+"record_fail_target" "city_need_roster"
+}
+
+{
+"classname" "target_stbrielle_recordcheck"
+"name" "city_official_testimony"
+"record_key" "sb_city_testimony_read"
+"record_compare" "true"
+"record_value" "1"
+"record_once" "0"
+"target" "city_official_commit"
+"record_fail_target" "city_need_testimony"
+}
+
+{
+"classname" "target_stbrielle_record"
+"name" "city_official_commit"
+"record_key" "sb_city_certification"
+"record_value" "1"
+"record_mode" "set"
+"record_once" "0"
+"target" "city_official_retain"
+}
+
+{
+"classname" "target_stbrielle_record"
+"name" "city_official_retain"
+"record_key" "sb_city_witness_retained"
+"record_value" "0"
+"record_mode" "set"
+"record_once" "0"
+"target" "city_official_route"
+}
+
+{
+"classname" "target_stbrielle_record"
+"name" "city_official_route"
+"record_key" "sb_mercuria_entry_mode"
+"record_value" "1"
+"record_mode" "set"
+"record_once" "0"
+"target" "city_official_result"
+}
+
+{
+"classname" "func_static"
+"name" "city_certify_witness"
+"model" "city_certify_witness"
+"solid" "1"
+"frobbable" "1"
+"stbrielle_interact" "1"
+"stbrielle_use_once" "0"
+"stbrielle_action" "READ"
+"displayname" "RETAIN WITNESS"
+"target" "city_witness_open"
+{
+brushDef3
+{
+( 1 0 0 -638 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( -1 0 0 582 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 1 0 92 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 -1 0 -128 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 0 1 -68 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 0 -1 8 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 -640 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_burgundy" 0 0 0
+( -1 0 0 580 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_burgundy" 0 0 0
+( 0 1 0 90 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_burgundy" 0 0 0
+( 0 -1 0 -130 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_burgundy" 0 0 0
+( 0 0 1 -72 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_burgundy" 0 0 0
+( 0 0 -1 68 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_burgundy" 0 0 0
+}
+}
+}
+
+{
+"classname" "target_stbrielle_recordcheck"
+"name" "city_witness_open"
+"record_key" "sb_city_certification"
+"record_compare" "lte"
+"record_value" "0"
+"record_once" "0"
+"target" "city_witness_roster"
+"record_fail_target" "city_review"
+}
+
+{
+"classname" "target_stbrielle_recordcheck"
+"name" "city_witness_roster"
+"record_key" "sb_city_roster_read"
+"record_compare" "true"
+"record_value" "1"
+"record_once" "0"
+"target" "city_witness_testimony"
+"record_fail_target" "city_need_roster"
+}
+
+{
+"classname" "target_stbrielle_recordcheck"
+"name" "city_witness_testimony"
+"record_key" "sb_city_testimony_read"
+"record_compare" "true"
+"record_value" "1"
+"record_once" "0"
+"target" "city_witness_commit"
+"record_fail_target" "city_need_testimony"
+}
+
+{
+"classname" "target_stbrielle_record"
+"name" "city_witness_commit"
+"record_key" "sb_city_certification"
+"record_value" "2"
+"record_mode" "set"
+"record_once" "0"
+"target" "city_witness_retain"
+}
+
+{
+"classname" "target_stbrielle_record"
+"name" "city_witness_retain"
+"record_key" "sb_city_witness_retained"
+"record_value" "1"
+"record_mode" "set"
+"record_once" "0"
+"target" "city_witness_route"
+}
+
+{
+"classname" "target_stbrielle_record"
+"name" "city_witness_route"
+"record_key" "sb_mercuria_entry_mode"
+"record_value" "2"
+"record_mode" "set"
+"record_once" "0"
+"target" "city_witness_result"
+}
+
+{
+"classname" "target_stbrielle_notice"
+"name" "city_official_result"
+"notice_kicker" "CITY OF ST. BRIELLE / CONTINUITY DESK"
+"notice_title" "CITY COPY CERTIFIED"
+"notice_line1" "DEPARTURE COUNT: ONE"
+"notice_line2" "SECOND PERSON: STRUCK FROM THE RECORD"
+"notice_line3" "MERCURIA ROUTING: SERVICE INSPECTION"
+"notice_line4" "COLLECT YOUR ORDER / CENTRAL DISPATCH"
+"notice_footer" "THIS RECORD IS FINAL / THE WITNESS COPY REMAINS"
+"notice_duration" "14"
+}
+
+{
+"classname" "target_stbrielle_notice"
+"name" "city_witness_result"
+"notice_kicker" "CITY OF ST. BRIELLE / CONTINUITY DESK"
+"notice_title" "WITNESS RETAINED"
+"notice_line1" "DEPARTURE COUNT: TWO"
+"notice_line2" "SECOND PERSON: PRESENCE ACKNOWLEDGED"
+"notice_line3" "MERCURIA ROUTING: DISPUTED ADMISSION"
+"notice_line4" "COLLECT YOUR ORDER / CENTRAL DISPATCH"
+"notice_footer" "THIS RECORD IS FINAL / THE CITY NOW HAS TO AGREE"
+"notice_duration" "14"
+}
+
+{
+"classname" "func_static"
+"name" "city_dispatch"
+"model" "city_dispatch"
+"solid" "1"
+"frobbable" "1"
+"stbrielle_interact" "1"
+"stbrielle_use_once" "0"
+"stbrielle_action" "READ"
+"displayname" "CENTRAL DISPATCH"
+"target" "city_dispatch_gate"
+{
+brushDef3
+{
+( 1 0 0 -438 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( -1 0 0 382 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 1 0 -18 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 -1 0 -18 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 0 1 -68 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 0 -1 8 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 -440 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_brass" 0 0 0
+( -1 0 0 380 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_brass" 0 0 0
+( 0 1 0 -20 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_brass" 0 0 0
+( 0 -1 0 -20 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_brass" 0 0 0
+( 0 0 1 -72 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_brass" 0 0 0
+( 0 0 -1 68 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_brass" 0 0 0
+}
+}
+}
+
+{
+"classname" "target_stbrielle_recordcheck"
+"name" "city_dispatch_gate"
+"record_key" "sb_city_certification"
+"record_compare" "gt"
+"record_value" "0"
+"record_once" "0"
+"target" "city_dispatch_uncollected"
+"record_fail_target" "city_dispatch_hold"
+}
+
+{
+"classname" "target_stbrielle_recordcheck"
+"name" "city_dispatch_uncollected"
+"record_key" "sb_city_dispatch_received"
+"record_compare" "false"
+"record_value" "1"
+"record_once" "0"
+"target" "city_dispatch_record"
+"record_fail_target" "city_dispatch_review"
+}
+
+{
+"classname" "target_stbrielle_record"
+"name" "city_dispatch_record"
+"record_key" "sb_city_dispatch_received"
+"record_value" "1"
+"record_mode" "set"
+"record_once" "0"
+"target" "city_mercuria_record"
+}
+
+{
+"classname" "target_stbrielle_record"
+"name" "city_mercuria_record"
+"record_key" "sb_mercuria_assignment_received"
+"record_value" "1"
+"record_mode" "set"
+"record_once" "0"
+"target" "city_case_complete"
+}
+
+{
+"classname" "target_stbrielle_record"
+"name" "city_case_complete"
+"record_key" "sb_city_investigation_complete"
+"record_value" "1"
+"record_mode" "set"
+"record_once" "0"
+"target" "city_dispatch_review"
+}
+
+{
+"classname" "target_stbrielle_recordcheck"
+"name" "city_dispatch_review"
+"record_key" "sb_city_certification"
+"record_compare" "equals"
+"record_value" "1"
+"record_once" "0"
+"target" "city_dispatch_official"
+"record_fail_target" "city_dispatch_witness"
+}
+
+{
+"classname" "target_stbrielle_notice"
+"name" "city_dispatch_hold"
+"notice_kicker" "CITY OF ST. BRIELLE / CONTINUITY DESK"
+"notice_title" "DISPATCH ON HOLD"
+"notice_line1" "COMPARE BOTH DEPARTURE ACCOUNTS."
+"notice_line2" "GREEN SEAL: CERTIFY THE CITY COPY."
+"notice_line3" "RED SEAL: RETAIN THE WITNESS COPY."
+"notice_line4" "FILING EITHER RECORD IS FINAL."
+"notice_footer" "TWO SEALS / EAST DESK / REVIEW EVIDENCE BEFORE FILING"
+"notice_duration" "14"
+}
+
+{
+"classname" "target_stbrielle_notice"
+"name" "city_dispatch_official"
+"notice_kicker" "CITY OF ST. BRIELLE / CONTINUITY DESK"
+"notice_title" "MERCURIA / WORK ORDER"
+"notice_line1" "ST. MERCURIA MEMORIAL HOSPITAL"
+"notice_line2" "ENTRY: MUNICIPAL SERVICE INSPECTION"
+"notice_line3" "VERIFY AN OCCUPIED ROOM WITH NO BED."
+"notice_line4" "YOUR DEPARTURE COUNT REMAINS ONE."
+"notice_footer" "CASE 0214-B CLOSED / ORDER 0215 ISSUED"
+"notice_duration" "14"
+}
+
+{
+"classname" "target_stbrielle_notice"
+"name" "city_dispatch_witness"
+"notice_kicker" "CITY OF ST. BRIELLE / CONTINUITY DESK"
+"notice_title" "MERCURIA / ADMISSION"
+"notice_line1" "ST. MERCURIA MEMORIAL HOSPITAL"
+"notice_line2" "ENTRY: DISPUTED PATIENT ADMISSION"
+"notice_line3" "A SECOND FILE HAS YOUR EMPLOYEE NUMBER."
+"notice_line4" "DO NOT LET INTAKE COMBINE THE FILES."
+"notice_footer" "CASE 0214-B CLOSED / ORDER 0215 ISSUED"
+"notice_duration" "14"
+}
+
+{
+"texture" "lights/stbrielle/practical"
+"light_radius" "300 220 360"
+"classname" "light"
+"name" "city_certification_light"
+"origin" "600 0 142"
+"_color" "0.12 0.18 0.25"
+"noshadows" "1"
+}
+
+{
+"classname" "func_static"
+"name" "city_retained_witness"
+"model" "city_retained_witness"
+"solid" "0"
+"hide" "1"
+{
+brushDef3
+{
+( 1 0 0 -686 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_ghost" 0 0 0
+( -1 0 0 675 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_ghost" 0 0 0
+( 0 1 0 125 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_ghost" 0 0 0
+( 0 -1 0 -155 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_ghost" 0 0 0
+( 0 0 1 -86 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_ghost" 0 0 0
+( 0 0 -1 8 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_ghost" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 -686 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_ghost" 0 0 0
+( -1 0 0 675 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_ghost" 0 0 0
+( 0 1 0 130 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_ghost" 0 0 0
+( 0 -1 0 -150 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_ghost" 0 0 0
+( 0 0 1 -108 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_ghost" 0 0 0
+( 0 0 -1 86 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/annex_ghost" 0 0 0
+}
+}
+}
+
+// MUNICIPAL GOTHIC / facade courses, six window accents, two practical lamps.
+
+{
+"classname" "func_static"
+"name" "city_masonry_courses"
+"model" "city_masonry_courses"
+"solid" "0"
+{
+brushDef3
+{
+( 1 0 0 116 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( -1 0 0 -304 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 1 0 -186 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 -1 0 178 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 0 1 -24 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 0 -1 8 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 116 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( -1 0 0 -304 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 1 0 -186 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 -1 0 178 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 0 1 -252 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 0 -1 240 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 -494 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( -1 0 0 -84 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 1 0 -194 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 -1 0 186 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 0 1 -24 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 0 -1 8 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 -494 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( -1 0 0 -84 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 1 0 -194 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 -1 0 186 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 0 1 -318 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 0 -1 306 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 -834 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( -1 0 0 536 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 1 0 -178 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 -1 0 170 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 0 1 -24 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 0 -1 8 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 -834 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( -1 0 0 536 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 1 0 -178 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 -1 0 170 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 0 1 -230 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 0 -1 218 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 156 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( -1 0 0 -244 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 1 0 178 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 -1 0 -186 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 0 1 -24 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 0 -1 8 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 156 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( -1 0 0 -244 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 1 0 178 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 -1 0 -186 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 0 1 -270 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 0 -1 258 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 -404 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( -1 0 0 -84 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 1 0 186 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 -1 0 -194 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 0 1 -24 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 0 -1 8 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 -404 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( -1 0 0 -84 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 1 0 186 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 -1 0 -194 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 0 1 -224 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 0 -1 212 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 -824 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( -1 0 0 446 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 1 0 170 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 -1 0 -178 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 0 1 -24 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 0 -1 8 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 -824 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( -1 0 0 446 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 1 0 170 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 -1 0 -178 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 0 1 -302 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+( 0 0 -1 290 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_stone" 0 0 0
+}
+}
+}
+
+{
+"classname" "func_static"
+"name" "city_occupied_windows"
+"model" "city_occupied_windows"
+"solid" "0"
+{
+brushDef3
+{
+( 1 0 0 207 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( -1 0 0 -233 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 1 0 -181 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 -1 0 179 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 0 1 -160 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 0 -1 118 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 -153 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( -1 0 0 127 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 1 0 -189 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 -1 0 187 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 0 1 -222 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 0 -1 180 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 -703 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( -1 0 0 677 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 1 0 -173 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 -1 0 171 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 0 1 -180 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 0 -1 138 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 187 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( -1 0 0 -213 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 1 0 179 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 -1 0 -181 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 0 1 -194 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 0 -1 152 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 -153 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( -1 0 0 127 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 1 0 187 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 -1 0 -189 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 0 1 -157 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 0 -1 115 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 -663 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( -1 0 0 637 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 1 0 171 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 -1 0 -173 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 0 1 -230 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 0 -1 188 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+}
+}
+}
+
+{
+"classname" "func_static"
+"name" "city_lamp_north"
+"model" "city_lamp_north"
+"solid" "0"
+{
+brushDef3
+{
+( 1 0 0 167 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( -1 0 0 -173 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 1 0 -99 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 -1 0 93 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 0 1 -164 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 0 -1 8 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 158 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( -1 0 0 -182 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 1 0 -108 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 -1 0 84 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 0 1 -190 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 0 -1 184 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 162 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( -1 0 0 -178 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 1 0 -104 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 -1 0 88 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 0 1 -184 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 0 -1 176 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+}
+}
+}
+
+{
+"classname" "func_static"
+"name" "city_lamp_south"
+"model" "city_lamp_south"
+"solid" "0"
+{
+brushDef3
+{
+( 1 0 0 -303 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( -1 0 0 297 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 1 0 93 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 -1 0 -99 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 0 1 -164 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 0 -1 8 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 -312 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( -1 0 0 288 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 1 0 84 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 -1 0 -108 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 0 1 -190 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+( 0 0 -1 184 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_blackmetal" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 -308 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( -1 0 0 292 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 1 0 88 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 -1 0 -104 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 0 1 -184 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+( 0 0 -1 176 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/stbrielle/annex_light_warm" 0 0 0
+}
+}
+}

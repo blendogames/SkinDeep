@@ -315,7 +315,10 @@ bool UnicodeCharacterZeroSpace(uint32 ch) {
 void idDeviceContext::Init() {
 	xScale = 0.0;
 	SetSize(VIRTUAL_WIDTH, VIRTUAL_HEIGHT);
-	whiteImage = declManager->FindMaterial("guis/assets/white.tga");
+	// ST. BRIELLE standalone does not ship the legacy guis/assets/white.tga.
+	// Use the renderer's built-in white image so GUI backcolors/borders are
+	// modulated correctly instead of falling back to the debug/default image.
+	whiteImage = declManager->FindMaterial("_white");
 	whiteImage->SetSort( SS_GUI );
 	mbcs = false;
 	// SM: From BFG
@@ -964,6 +967,14 @@ void idDeviceContext::PaintChar( float x, float y, const scaledGlyphInfo_t & gly
 	// blendo eric: override code gen font material
 	if (activeFontMaterial) {
 		hShader = activeFontMaterial;
+	}
+
+	// St. Brielle standalone bootstrap: missing proprietary font data produces
+	// empty glyphs. Do not submit a null/zero-area draw call, because the
+	// renderer substitutes the default debug image and floods the screen with
+	// repeated fallback tiles.
+	if ( hShader == NULL || w <= 0.0f || h <= 0.0f ) {
+		return;
 	}
 
 	if (ClippedCoords( &x, &y, &w, &h, &s, &t, &s2, &t2 )) {

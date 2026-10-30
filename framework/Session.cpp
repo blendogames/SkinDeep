@@ -1949,6 +1949,12 @@ void idSessionLocal::ExecuteMapChange( bool noFadeWipe ) {
 	uiManager->BeginLevelLoad();
 	uiManager->Reload( true );
 
+	// Any GUI object that was active before Reload() may have been rebuilt.
+	// Never carry an active/test GUI pointer across the reload into the loading
+	// spin; the dedicated guiLoading path handles map-load drawing.
+	SetGUI( NULL, NULL );
+	guiTest = NULL;
+
 	// set the loading gui that we will wipe to
 	LoadLoadingGui( mapString );
 
@@ -2693,6 +2699,17 @@ bool idSessionLocal::ProcessEvent( const sysEvent_t *event ) {
 	if ( allowESC && event->evType == SE_KEY && event->evValue2 == 1 && (event->evValue == K_ESCAPE || event->evValue == K_JOY9 || joyEmulateESC) && !idKeyInput::IsDown( K_SHIFT ) )
 	{
 		console->Close();
+
+		// ST. BRIELLE standalone greybox behavior:
+		// the temporary bootstrap build does not yet ship a real pause/main menu.
+		// Escape should therefore exit cleanly instead of activating Skin Deep's
+		// inherited menu stack, which expects GUI assets/state we intentionally
+		// do not create for stbrielle_minimal_player.
+		if ( player && player->spawnArgs.GetBool( "stbrielle_minimal_player", "0" ) ) {
+			cmdSystem->BufferCommandText( CMD_EXEC_APPEND, "quit\n" );
+			return true;
+		}
+
 		if ( game ) {
 			idUserInterface	*gui = NULL;
 			escReply_t		op;

@@ -1,0 +1,11 @@
+windowDef Desktop {
+	rect 0, 0, 640, 480
+	visible 1
+	backcolor 0, 0, 0, 1
+	windowDef label {
+		rect 60, 205, 520, 60
+		text "CIVITAS INCOMPLETA"
+		textscale 0.45
+		forecolor 0.85, 0.85, 0.87, 1
+	}
+}

@@ -1,0 +1,17 @@
+// ST. BRIELLE — Room 214 post-correction skin
+
+skin stbrielle/room214_corrected
+{
+	textures/stbrielle/dev_wall		textures/stbrielle/room214_plaster_corrected
+	textures/stbrielle/annex_plaster	textures/stbrielle/room214_plaster_corrected
+	textures/stbrielle/annex_cream		textures/stbrielle/room214_plaster_corrected
+
+	textures/stbrielle/dev_floor		textures/stbrielle/room214_tile_corrected
+	textures/stbrielle/annex_tile		textures/stbrielle/room214_tile_corrected
+
+	textures/stbrielle/dev_office		textures/stbrielle/room214_wood_corrected
+	textures/stbrielle/annex_wood		textures/stbrielle/room214_wood_corrected
+
+	textures/stbrielle/annex_blackmetal	textures/stbrielle/room214_metal_corrected
+	textures/stbrielle/annex_paper_old	textures/stbrielle/room214_paper_corrected
+}

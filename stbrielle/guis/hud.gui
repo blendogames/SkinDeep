@@ -1,0 +1,147 @@
+windowDef Desktop {
+	rect 0, 0, 640, 480
+	visible 1
+	noCursor 1
+
+	// The street assignment remains readable after the document card closes.
+	windowDef stbrielle_assignment {
+		rect 24, 24, 490, 26
+		visible "gui::sb_assignment_visible"
+		backcolor 0.012, 0.012, 0.016, 0.88
+		windowDef text {
+			rect 10, 6, 470, 16
+			text "gui::sb_assignment_text"
+			textscale 0.20
+			forecolor 0.78, 0.72, 0.59, 1
+		}
+	}
+
+	windowDef stbrielle_reticle_h {
+		rect 316, 239, 8, 2
+		visible 1
+		backcolor 0.72, 0.72, 0.72, 0.75
+	}
+
+	windowDef stbrielle_reticle_v {
+		rect 319, 236, 2, 8
+		visible 1
+		backcolor 0.72, 0.72, 0.72, 0.75
+	}
+
+	// Quiet contextual interaction prompt. Kept deliberately restrained so it
+	// reads as civic interface rather than a gamey objective marker.
+	windowDef stbrielle_interact_prompt {
+		rect 205, 394, 230, 32
+		visible "gui::sb_interact_visible"
+		backcolor 0.015, 0.015, 0.020, 0.88
+		border 1
+		bordercolor 0.28, 0.20, 0.15, 0.90
+
+		windowDef key {
+			rect 8, 6, 24, 20
+			text "E"
+			textscale 0.28
+			textalign 1
+			forecolor 0.82, 0.72, 0.52, 1
+		}
+
+		windowDef divider {
+			rect 39, 6, 1, 20
+			backcolor 0.34, 0.07, 0.09, 1
+		}
+
+		windowDef action {
+			rect 48, 5, 68, 10
+			text "gui::sb_interact_action"
+			textscale 0.18
+			forecolor 0.58, 0.58, 0.60, 1
+		}
+
+		windowDef name {
+			rect 48, 15, 174, 12
+			text "gui::sb_interact_name"
+			textscale 0.22
+			forecolor 0.90, 0.90, 0.88, 1
+		}
+	}
+
+	// Diegetic civic/document readout. This is intentionally closer to an
+	// archival card than a conventional game notification.
+	windowDef stbrielle_notice_card {
+		rect 116, 86, 408, 198
+		visible "gui::sb_notice_visible"
+		backcolor 0.012, 0.012, 0.016, 0.96
+		border 1
+		bordercolor 0.34, 0.24, 0.15, 0.95
+
+		windowDef spine {
+			rect 0, 0, 6, 198
+			backcolor 0.30, 0.025, 0.045, 1
+		}
+
+		windowDef sealTop {
+			rect 24, 20, 360, 1
+			backcolor 0.52, 0.34, 0.12, 1
+		}
+
+		windowDef kicker {
+			rect 28, 30, 350, 14
+			text "gui::sb_notice_kicker"
+			textscale 0.18
+			forecolor 0.62, 0.56, 0.46, 1
+		}
+
+		windowDef title {
+			rect 28, 49, 350, 25
+			text "gui::sb_notice_title"
+			textscale 0.31
+			forecolor 0.92, 0.88, 0.80, 1
+		}
+
+		windowDef rule {
+			rect 28, 81, 350, 1
+			backcolor 0.22, 0.06, 0.07, 1
+		}
+
+		windowDef line1 {
+			rect 28, 94, 350, 15
+			text "gui::sb_notice_line1"
+			textscale 0.20
+			forecolor 0.76, 0.76, 0.74, 1
+		}
+
+		windowDef line2 {
+			rect 28, 114, 350, 15
+			text "gui::sb_notice_line2"
+			textscale 0.20
+			forecolor 0.76, 0.76, 0.74, 1
+		}
+
+		windowDef line3 {
+			rect 28, 134, 350, 15
+			text "gui::sb_notice_line3"
+			textscale 0.20
+			forecolor 0.76, 0.76, 0.74, 1
+		}
+
+		windowDef line4 {
+			rect 28, 154, 350, 15
+			text "gui::sb_notice_line4"
+			textscale 0.20
+			forecolor 0.76, 0.76, 0.74, 1
+		}
+
+		windowDef footer {
+			rect 28, 178, 350, 10
+			text "gui::sb_notice_footer"
+			textscale 0.14
+			forecolor 0.44, 0.40, 0.34, 1
+		}
+
+		windowDef sealBottom {
+			rect 24, 190, 360, 1
+			backcolor 0.52, 0.34, 0.12, 0.75
+		}
+	}
+
+}

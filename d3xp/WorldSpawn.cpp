@@ -277,6 +277,16 @@ void idWorldspawn::InitializeSpawnFilter()
 
 	if (!foundValue)
 	{
-		gameLocal.Error("spawnfilter: unable to initialize '%s'", g_spawnfilter.GetString());
+		// ST. BRIELLE: standalone maps do not need Skin Deep's optional
+		// def_spawnfilter_* tables unless a named spawnfilter was explicitly
+		// requested. An empty g_spawnfilter is a valid "no filter" state.
+		if (g_spawnfilter.GetString()[0] != '\0')
+		{
+			gameLocal.Error("spawnfilter: unable to initialize '%s'", g_spawnfilter.GetString());
+		}
+		else
+		{
+			gameLocal.DPrintf("spawnfilter: no filter requested; continuing without a spawn filter.\n");
+		}
 	}
 }

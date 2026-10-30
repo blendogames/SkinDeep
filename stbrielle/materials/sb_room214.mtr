@@ -1,0 +1,46 @@
+// -----------------------------------------------------------------------------
+// ST. BRIELLE — ROOM 214 / CORRECTED MATERIALS
+//
+// These are deliberately close to the Municipal Annex palette. The anomaly
+// should register only after the player tries to follow seams, stains, or grain.
+// -----------------------------------------------------------------------------
+
+textures/stbrielle/room214_plaster_corrected
+{
+	qer_editorimage	textures/stbrielle/annex/room214_plaster_d.tga
+	diffusemap		textures/stbrielle/annex/room214_plaster_d.tga
+	bumpmap			textures/stbrielle/annex/room214_plaster_local.tga
+	specularmap		textures/stbrielle/annex/room214_plaster_s.tga
+}
+
+textures/stbrielle/room214_tile_corrected
+{
+	qer_editorimage	textures/stbrielle/annex/room214_tile_d.tga
+	diffusemap		textures/stbrielle/annex/room214_tile_d.tga
+	bumpmap			textures/stbrielle/annex/room214_tile_local.tga
+	specularmap		textures/stbrielle/annex/room214_tile_s.tga
+}
+
+textures/stbrielle/room214_wood_corrected
+{
+	qer_editorimage	textures/stbrielle/annex/room214_wood_d.tga
+	diffusemap		textures/stbrielle/annex/room214_wood_d.tga
+	bumpmap			textures/stbrielle/annex/room214_wood_local.tga
+	specularmap		textures/stbrielle/annex/room214_wood_s.tga
+}
+
+textures/stbrielle/room214_metal_corrected
+{
+	qer_editorimage	textures/stbrielle/annex/room214_metal_d.tga
+	diffusemap		textures/stbrielle/annex/room214_metal_d.tga
+	bumpmap			textures/stbrielle/annex/room214_metal_local.tga
+	specularmap		textures/stbrielle/annex/room214_metal_s.tga
+}
+
+textures/stbrielle/room214_paper_corrected
+{
+	qer_editorimage	textures/stbrielle/annex/room214_paper_d.tga
+	diffusemap		textures/stbrielle/annex/room214_paper_d.tga
+	bumpmap			textures/stbrielle/annex/room214_paper_local.tga
+	specularmap		textures/stbrielle/annex/room214_paper_s.tga
+}

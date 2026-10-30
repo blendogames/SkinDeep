@@ -1,4 +1,14 @@
-# Skin Deep
+# ST. BRIELLE: THE INTERVAL
+
+Standalone horror game under development on the `st-brielle-foundation` branch.
+The current route runs from the Municipal Annex into **Departure Count**, the
+first city street investigation.
+
+- [St. Brielle setup and playable route](stbrielle/README.md)
+- [Current development status and Windows playtest](stbrielle/design/DEVELOPMENT_STATUS.md)
+- [Game bible](stbrielle/design/GAME_BIBLE.md)
+
+## Upstream engine — Skin Deep
 
 ## About
 This is the source code to [Skin Deep](http://blendogames.com/skindeep), a first-person immersive sim set inside interstellar spaceships. The game was released April 30, 2025 and is available for purchase at [Steam](https://store.steampowered.com/app/301280/Skin_Deep) and [Epic Games Store](https://store.epicgames.com/en-US/p/skin-deep-a7f697).

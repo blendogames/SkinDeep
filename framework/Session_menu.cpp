@@ -61,6 +61,15 @@ idSessionLocal::StartMainMenu
 ==============
 */
 void idSessionLocal::StartMenu( bool playIntro ) {
+	idPlayer *localPlayer = gameLocal.GetLocalPlayer();
+	if ( localPlayer && localPlayer->spawnArgs.GetBool( "stbrielle_minimal_player", "0" ) ) {
+		// ST. BRIELLE standalone greybox has no production pause menu yet.
+		// Avoid activating the inherited Skin Deep main-menu GUI while a
+		// minimal St. Brielle player is in a live map.
+		cmdSystem->BufferCommandText( CMD_EXEC_APPEND, "quit\n" );
+		return;
+	}
+
 	if ( guiActive == guiMainMenu ) {
 		return;
 	}
@@ -140,15 +149,29 @@ void idSessionLocal::SetGUI( idUserInterface *gui, HandleGuiCommand_t handle ) {
 	}
 
 	if ( guiActive == guiMainMenu ) {
-		SetSaveGameGuiVars();
-		SetMainMenuGuiVars();
+		// ST. BRIELLE standalone bootstrap GUI intentionally omits Skin Deep's
+		// save-game list controls. Only populate those variables when we're not
+		// running the standalone St. Brielle content tree.
+		if ( idStr::Icmp( cvarSystem->GetCVarString( "fs_game" ), "stbrielle" ) != 0 ) {
+			SetSaveGameGuiVars();
+			SetMainMenuGuiVars();
+		}
 	} else if ( guiActive == guiRestartMenu ) {
-		SetSaveGameGuiVars();
+		if ( idStr::Icmp( cvarSystem->GetCVarString( "fs_game" ), "stbrielle" ) != 0 ) {
+			SetSaveGameGuiVars();
+		}
 	}
 
 	sysEvent_t  ev;
 	memset( &ev, 0, sizeof( ev ) );
 	ev.evType = SE_NONE;
+
+	// St. Brielle's bootstrap GUIs are intentionally skeletal. Do not drive
+	// the inherited Skin Deep main-menu event stack during standalone greybox
+	// development; a production St. Brielle menu will replace this path.
+	if ( guiActive == guiMainMenu && idStr::Icmp( cvarSystem->GetCVarString( "fs_game" ), "stbrielle" ) == 0 ) {
+		return;
+	}
 
 	guiActive->HandleEvent( &ev, com_frameTime );
 	guiActive->Activate( true, com_frameTime );
@@ -235,6 +258,16 @@ idSessionLocal::SetSaveGameGuiVars
 */
 //BC Set the information to appear in the 'loadgame' listDef, for the mainmenu load GUI.
 void idSessionLocal::SetSaveGameGuiVars( void ) {
+	if ( guiActive == NULL ) {
+		return;
+	}
+
+	// The standalone St. Brielle bootstrap menu has no loadgame list state.
+	// Save/load UI will be implemented later as a St. Brielle-owned system.
+	if ( idStr::Icmp( cvarSystem->GetCVarString( "fs_game" ), "stbrielle" ) == 0 ) {
+		return;
+	}
+
 	int i;
 	idStr name;
 	idStrList fileList;
@@ -2076,6 +2109,14 @@ void idSessionLocal::GuiFrameEvents() {
 	const char	*cmd;
 	sysEvent_t  ev;
 	idUserInterface	*gui;
+
+	// Loading GUIs are drawn by the dedicated map-change path. Do not dispatch
+	// menu/test GUI events while the UI manager is being reloaded; pointers from
+	// the previous GUI generation may no longer be valid here.
+	if ( insideExecuteMapChange ) {
+		usercmdGen->InhibitUsercmd( INHIBIT_SESSION, true );
+		return;
+	}
 
 	// stop generating move and button commands when a local console or menu is active
 	// running here so SP, async networking and no game all go through it

@@ -1,0 +1,158 @@
+Version 2
+// ST. BRIELLE Record Laboratory 02
+{
+"classname" "worldspawn"
+"editor_drLastCameraPos" "0 0 64"
+{
+brushDef3
+{
+( 1 0 0 512 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/dev_wall" 0 0 0
+( -1 0 0 -544 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/dev_wall" 0 0 0
+( 0 1 0 -288 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/dev_wall" 0 0 0
+( 0 -1 0 -288 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/dev_wall" 0 0 0
+( 0 0 1 -288 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/dev_wall" 0 0 0
+( 0 0 -1 -32 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/dev_wall" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 -544 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/dev_wall" 0 0 0
+( -1 0 0 512 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/dev_wall" 0 0 0
+( 0 1 0 -288 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/dev_wall" 0 0 0
+( 0 -1 0 -288 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/dev_wall" 0 0 0
+( 0 0 1 -288 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/dev_wall" 0 0 0
+( 0 0 -1 -32 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/dev_wall" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 -512 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/dev_wall" 0 0 0
+( -1 0 0 -512 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/dev_wall" 0 0 0
+( 0 1 0 256 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/dev_wall" 0 0 0
+( 0 -1 0 -288 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/dev_wall" 0 0 0
+( 0 0 1 -288 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/dev_wall" 0 0 0
+( 0 0 -1 -32 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/dev_wall" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 -512 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/dev_wall" 0 0 0
+( -1 0 0 -512 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/dev_wall" 0 0 0
+( 0 1 0 -288 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/dev_wall" 0 0 0
+( 0 -1 0 256 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/dev_wall" 0 0 0
+( 0 0 1 -288 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/dev_wall" 0 0 0
+( 0 0 -1 -32 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/dev_wall" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 -512 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/dev_wall" 0 0 0
+( -1 0 0 -512 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/dev_wall" 0 0 0
+( 0 1 0 -256 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/dev_wall" 0 0 0
+( 0 -1 0 -256 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/dev_wall" 0 0 0
+( 0 0 1 0 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/dev_wall" 0 0 0
+( 0 0 -1 -32 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/dev_wall" 0 0 0
+}
+}
+{
+brushDef3
+{
+( 1 0 0 -512 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/dev_wall" 0 0 0
+( -1 0 0 -512 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/dev_wall" 0 0 0
+( 0 1 0 -256 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/dev_wall" 0 0 0
+( 0 -1 0 -256 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/dev_wall" 0 0 0
+( 0 0 1 -288 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/dev_wall" 0 0 0
+( 0 0 -1 256 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/stbrielle/dev_wall" 0 0 0
+}
+}
+}
+{
+"classname" "info_player_start"
+"name" "player_start"
+"origin" "-400 0 32"
+"angle" "0"
+}
+{
+"classname" "trigger_once"
+"name" "trigger_check_record"
+"target" "sb_check_record"
+{
+brushDef3
+{
+( 1 0 0 220 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/common/trigger" 0 0 0
+( -1 0 0 -280 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/common/trigger" 0 0 0
+( 0 1 0 -120 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/common/trigger" 0 0 0
+( 0 -1 0 -120 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/common/trigger" 0 0 0
+( 0 0 1 -128 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/common/trigger" 0 0 0
+( 0 0 -1 0 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/common/trigger" 0 0 0
+}
+}
+}
+{
+"classname" "target_stbrielle_recordcheck"
+"name" "sb_check_record"
+"target" "sb_persist_light"
+"record_key" "sb_test_door"
+"record_compare" "equals"
+"record_value" "1"
+"record_once" "0"
+"record_debug" "1"
+"origin" "-160 0 32"
+}
+{
+"classname" "stbrielle_cycle_director"
+"name" "sb_cycle_director"
+"water_target" "sb_water_cycle_light"
+"code_target" "sb_code_cycle_light"
+"fire_current_on_spawn" "1"
+"cycle_debug" "1"
+"origin" "0 -64 32"
+}
+{
+"classname" "light"
+"name" "sb_water_cycle_light"
+"origin" "-40 -120 180"
+"_color" "0.10 0.45 0.65"
+"light" "180"
+"start_off" "1"
+"noshadows" "1"
+}
+{
+"classname" "light"
+"name" "sb_code_cycle_light"
+"origin" "200 -120 180"
+"_color" "0.75 0.90 1.00"
+"light" "180"
+"start_off" "1"
+"noshadows" "1"
+}
+{
+"classname" "stbrielle_awareness_director"
+"name" "sb_awareness_director"
+"tier1_target" "sb_awareness_persist_light"
+"fire_current_on_spawn" "1"
+"awareness_debug" "1"
+"origin" "0 64 32"
+}
+{
+"classname" "light"
+"name" "sb_awareness_persist_light"
+"origin" "180 100 180"
+"_color" "0.75 0.30 0.90"
+"light" "220"
+"start_off" "1"
+"noshadows" "1"
+}
+{
+"classname" "light"
+"name" "sb_persist_light"
+"origin" "80 0 180"
+"_color" "0.30 1.00 0.35"
+"light" "300"
+"start_off" "1"
+"noshadows" "1"
+}

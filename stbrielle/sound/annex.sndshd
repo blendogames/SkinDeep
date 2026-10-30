@@ -1,0 +1,34 @@
+// ST. BRIELLE — Municipal Annex sound declarations
+
+snd_stbrielle_annex_phone_ring
+{
+	minDistance 2
+	maxDistance 18
+	volume -2
+	looping
+	sound/annex/phone_ring.ogg
+}
+
+// Post-correction Room 214 threshold condition. This should read as a local
+// pressure/electrical anomaly rather than a score cue: nearly inaudible in the
+// corridor, present only when the player approaches the impossible opening.
+snd_stbrielle_room214_threshold
+{
+	minDistance 0.75
+	maxDistance 6
+	volume -13
+	looping
+	sound/annex/room214_threshold.wav
+}
+
+// The first hostile does not get a monster voice. The same low pressure that
+// lives in the corrected Room 214 threshold follows the detached sixth image,
+// quieter and with a slightly wider radius, as if the room has left its frame.
+snd_stbrielle_annex_filed_person
+{
+	minDistance 1
+	maxDistance 9
+	volume -17
+	looping
+	sound/annex/room214_threshold.wav
+}

@@ -1,0 +1,11 @@
+windowDef Desktop {
+	rect 0, 0, 640, 480
+	visible 1
+	backcolor 0, 0, 0, 1
+	windowDef label {
+		rect 80, 210, 480, 40
+		text "THE RECORD CONTINUES."
+		textscale 0.38
+		forecolor 0.8, 0.8, 0.82, 1
+	}
+}

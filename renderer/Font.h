@@ -63,6 +63,7 @@ private:
 	static idFont * RemapFont( const char * baseName );
 
 	bool LoadFont();
+	bool LoadFallbackFont();
 
 	struct glyphInfo_t {
 		byte	width;	// width of glyph in pixels

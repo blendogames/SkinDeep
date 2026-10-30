@@ -33,6 +33,7 @@ If you have questions concerning this license or the applicable additional terms
 #include "idlib/Heap.h"
 #include "framework/Common.h"
 #include "framework/KeyInput.h"
+#include "framework/Console.h"
 #include "renderer/RenderSystem.h"
 #include "renderer/tr_local.h"
 
@@ -120,6 +121,47 @@ static int	joyAxis[MAX_JOYSTICK_AXIS];
 static idList<sysEvent_t> event_overflow;
 static controllerType_t controller_type;
 
+
+static int ConsoleCharFromSDLKey( const SDL_KeyboardEvent &keyEvent ) {
+	if ( keyEvent.state != SDL_PRESSED ) {
+		return 0;
+	}
+
+	const SDL_Keymod mods = (SDL_Keymod)keyEvent.keysym.mod;
+	if ( (mods & KMOD_CTRL) || (mods & KMOD_ALT) ) {
+		return 0;
+	}
+
+	const bool shift = (mods & KMOD_SHIFT) != 0;
+	const SDL_Keycode key = keyEvent.keysym.sym;
+
+	if ( key >= SDLK_a && key <= SDLK_z ) {
+		return shift ? ( 'A' + (key - SDLK_a) ) : ( 'a' + (key - SDLK_a) );
+	}
+
+	if ( key >= SDLK_0 && key <= SDLK_9 ) {
+		if ( !shift ) {
+			return '0' + (key - SDLK_0);
+		}
+		static const char shiftedDigits[] = ")!@#$%^&*(";
+		return shiftedDigits[key - SDLK_0];
+	}
+
+	switch ( key ) {
+		case SDLK_SPACE: return ' ';
+		case SDLK_MINUS: return shift ? '_' : '-';
+		case SDLK_EQUALS: return shift ? '+' : '=';
+		case SDLK_LEFTBRACKET: return shift ? '{' : '[';
+		case SDLK_RIGHTBRACKET: return shift ? '}' : ']';
+		case SDLK_BACKSLASH: return shift ? '|' : '\\';
+		case SDLK_SEMICOLON: return shift ? ':' : ';';
+		case SDLK_QUOTE: return shift ? '"' : '\'';
+		case SDLK_COMMA: return shift ? '<' : ',';
+		case SDLK_PERIOD: return shift ? '>' : '.';
+		case SDLK_SLASH: return shift ? '?' : '/';
+		default: return 0;
+	}
+}
 
 static byte mapkey(SDL_Keycode key) {
 	switch (key) {
@@ -309,6 +351,7 @@ Sys_InitInput
 =================
 */
 void Sys_InitInput() {
+	common->Printf( "ST. BRIELLE BUILD MARKER: CONSOLE INPUT FIX 4 ACTIVE\n" );
 	kbd_polls.SetGranularity(64);
 	mouse_polls.SetGranularity(64);
 
@@ -318,7 +361,11 @@ void Sys_InitInput() {
 	memset(buttonStates, 0, sizeof(buttonStates));
 	memset(joyAxis, 0, sizeof(joyAxis));
 
-#if !SDL_VERSION_ATLEAST(2, 0, 0)
+#if SDL_VERSION_ATLEAST(2, 0, 0)
+	// SDL2 only emits SDL_TEXTINPUT/SE_CHAR events after text input is started.
+	// Without this the console can open, but typed characters never reach it.
+	SDL_StartTextInput();
+#else
 	SDL_EnableUNICODE(1);
 	SDL_EnableKeyRepeat(SDL_DEFAULT_REPEAT_DELAY, SDL_DEFAULT_REPEAT_INTERVAL);
 #endif
@@ -339,6 +386,10 @@ Sys_ShutdownInput
 =================
 */
 void Sys_ShutdownInput() {
+#if SDL_VERSION_ATLEAST(2, 0, 0)
+	SDL_StopTextInput();
+#endif
+
 	kbd_polls.Clear();
 	mouse_polls.Clear();
 	joystick_polls.Clear();
@@ -706,6 +757,19 @@ sysEvent_t Sys_GetEvent() {
 			kbd_polls.Append(kbd_poll_t(key, ev.key.state == SDL_PRESSED));
 
 #if SDL_VERSION_ATLEAST(2, 0, 0)
+			// St. Brielle developer-console fallback:
+			// If the console is active, synthesize SE_CHAR directly from the
+			// already-working SDL_KEYDOWN stream. This avoids relying on a
+			// separate SDL_TEXTINPUT event that some Windows builds are not
+			// delivering to the engine.
+			if ( console && console->Active() && ev.key.state == SDL_PRESSED ) {
+				const int consoleChar = ConsoleCharFromSDLKey( ev.key );
+				if ( consoleChar != 0 ) {
+					sysEvent_t charEvent = { SE_CHAR, consoleChar, 0, 0, NULL };
+					event_overflow.Append( charEvent );
+				}
+			}
+
 			if (key == K_BACKSPACE && ev.key.state == SDL_PRESSED)
 				c = key;
 #else
@@ -717,6 +781,12 @@ sysEvent_t Sys_GetEvent() {
 
 #if SDL_VERSION_ATLEAST(2, 0, 0)
 		case SDL_TEXTINPUT:
+			// While the developer console is active, characters are synthesized
+			// from SDL_KEYDOWN above. Ignore SDL_TEXTINPUT there to avoid duplicate
+			// characters on systems where SDL happens to emit both event types.
+			if ( console && console->Active() ) {
+				continue;
+			}
 			if (ev.text.text[0]) {
 				res.evType = SE_CHAR;
 				res.evValue = ev.text.text[0];

@@ -1,0 +1,76 @@
+// Minimal standalone engine declarations required before map-specific defs.
+entityDef aas_types {
+	// Intentionally empty for the current non-AI systems laboratory.
+	// Navigation types will be added when the first hostile AI enters the slice.
+}
+
+// St. Brielle project entity declarations.
+// Copy/package this directory into the active game content folder when building
+// the standalone St. Brielle data pack.
+
+entityDef target_stbrielle_record {
+	"spawnclass"				"idTarget_StBrielleRecord"
+	"editor_displayFolder"		"St. Brielle/Targets"
+	"editor_usage"				"Mutates persistent St. Brielle Record state when activated."
+	"editor_var record_key"		"Persistent key. Use sb_ prefix."
+	"editor_var record_mode"	"set, add, toggle, or clear"
+	"editor_var record_value"	"Value used by set/add."
+	"editor_bool record_once"	"Remove after activation. Defaults to 1."
+	"editor_bool record_debug"	"Print the resulting value to the console."
+}
+
+entityDef target_stbrielle_recordcheck {
+	"spawnclass"					"idTarget_StBrielleRecordCheck"
+	"editor_displayFolder"			"St. Brielle/Targets"
+	"editor_usage"					"Activates its targets only when a persistent Record condition is true."
+	"editor_var record_key"			"Persistent key to inspect."
+	"editor_var record_compare"		"equals, not_equals, gt, gte, lt, lte, true, false, exists, or missing"
+	"editor_var record_value"		"Expected comparison value."
+	"editor_bool record_once"		"Remove after a successful activation."
+	"editor_var record_fail_target"	"Optional entity to activate on failure instead of the normal targets. Must not point to this check."
+	"editor_bool record_debug"		"Print the check result to the console."
+}
+
+// Invisible per-map Awareness interpreter. Place one in any map that should
+// react to the global sb_awareness value.
+entityDef stbrielle_awareness_director {
+	"spawnclass"					"idStBrielleAwarenessDirector"
+	"editor_displayFolder"			"St. Brielle/System"
+	"editor_usage"					"Activates tier-specific map entities when persistent Awareness changes."
+	"editor_var tier0_target"		"Entity name to activate for Dormant Awareness. Add numeric suffixes for more targets."
+	"editor_var tier1_target"		"Entity name to activate for Noticed Awareness. Add numeric suffixes for more targets."
+	"editor_var tier2_target"		"Entity name to activate for Observing Awareness. Add numeric suffixes for more targets."
+	"editor_var tier3_target"		"Entity name to activate for Correcting Awareness. Add numeric suffixes for more targets."
+	"editor_var tier4_target"		"Entity name to activate for Rupture Awareness. Add numeric suffixes for more targets."
+	"editor_int check_interval_ms"	"Polling interval in milliseconds. Default 250."
+	"editor_bool fire_current_on_spawn" "Fire the current tier once after map spawn. Default 1."
+	"editor_bool awareness_debug"	"Print Awareness tier transitions to the console."
+}
+
+entityDef stbrielle_cycle_director {
+	"spawnclass"					"idStBrielleCycleDirector"
+	"editor_displayFolder"			"St. Brielle/System"
+	"editor_usage"					"Activates map entities when the persistent dominant Cycle changes."
+	"editor_var ink_target"			"Entity name to activate for Ink. Add numeric suffixes for more targets."
+	"editor_var brass_target"		"Entity name to activate for Brass. Add numeric suffixes for more targets."
+	"editor_var water_target"		"Entity name to activate for Water. Add numeric suffixes for more targets."
+	"editor_var code_target"		"Entity name to activate for Code. Add numeric suffixes for more targets."
+	"editor_int check_interval_ms"	"Polling interval in milliseconds. Default 250."
+	"editor_bool fire_current_on_spawn" "Fire the current Cycle once after map spawn. Default 1."
+	"editor_bool cycle_debug"		"Print Cycle transitions to the console."
+}
+
+
+entityDef target_stbrielle_notice {
+	"spawnclass"					"idTarget_StBrielleNotice"
+	"editor_displayFolder"			"St. Brielle/Targets"
+	"editor_usage"					"Shows a timed St. Brielle civic/document card on the player HUD."
+	"editor_var notice_kicker"		"Small institutional heading."
+	"editor_var notice_title"		"Primary notice title."
+	"editor_var notice_line1"		"Body row 1."
+	"editor_var notice_line2"		"Body row 2."
+	"editor_var notice_line3"		"Body row 3."
+	"editor_var notice_line4"		"Body row 4."
+	"editor_var notice_footer"		"Small footer/provenance."
+	"editor_float notice_duration"	"Seconds before dismissal. Default 5."
+}
